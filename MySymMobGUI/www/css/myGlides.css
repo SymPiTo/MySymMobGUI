@@ -46,7 +46,7 @@ button :active {
 	top: 0px;
  	z-index:10;
 	width: 100%;
-	height: 5vh;
+	height: 10vh;
 	border-bottom-style: solid;
 	border-bottom-width: thin;
 	color: #FFFF00;
@@ -66,7 +66,7 @@ button :active {
 	-ms-transition: All 0.5s ease;
 	transition: All 0.5s ease;
 	left: 0;
-	top: 0vh;
+	top: 10vh;
 	background-color: #8BDAF7;
 }
 
