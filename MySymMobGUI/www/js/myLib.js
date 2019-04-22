@@ -2882,5 +2882,51 @@ class CtrlStatButton {
     
     
 	 
-	 
- 
+ /* --------------------- Klasse CtrlTile ---------------------------------------- */
+    class IconBtn { 
+        constructor() {
+            this.ID = "";
+            this.color = "cyan";
+            this.size = "size5";
+            this.icon = "";
+            this.id1 = "";
+            this.id2 = "";
+            this.id3 = "";
+            this.id4 = "";
+            this.id5 = "";
+            this.cmd1 = "";
+            this.cmd2 = "";
+        }
+
+        create(ParentID, posTop, posLeft,Icon){
+             
+            this.icon = Icon ;
+            
+            var elem = document.createElement("div");
+            //elem.className = "Tile";
+            //elem.classList.add(color + "Light");
+            elem.style.position = "absolute";
+            elem.style.left = posLeft;
+            elem.style.top = posTop;
+             
+            this.ID = elem; 
+            
+            var Bild = document.createElement("IMG");
+            Bild.src = "images/" + this.icon;
+            Bild.style.width = "100px";
+            Bild.style.height = "100px";
+            Bild.style.position = "relative";
+            Bild.style.left = "50%x";
+            Bild.style.paddingTop = "5px";
+            this.id1 = Bild;
+            elem.append(Bild);
+            
+       
+
+            
+            document.getElementById(ParentID).appendChild(elem);
+        }
+        
+
+    }
+     
