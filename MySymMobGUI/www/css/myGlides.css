@@ -93,55 +93,13 @@ WebKit inertia scrolling is being added here for any present/future devices that
 	
 }
 /*Entirely optional â€“ just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
-.StartScreen::-webkit-scrollbar,
-.Left::-webkit-scrollbar,
-.floorplan::-webkit-scrollbar,
-.MenuWZ::-webkit-scrollbar,
-.MenuSZ::-webkit-scrollbar,
-.MenuKZ::-webkit-scrollbar,
-.MenuK::-webkit-scrollbar,
-.MenuB::-webkit-scrollbar,
-.MenuMultimedia::-webkit-scrollbar,
-.MenuHz::-webkit-scrollbar,
-.MenuRollo::-webkit-scrollbar,
-.MenuNet::-webkit-scrollbar,
-.HzAll::-webkit-scrollbar,
-.RadioStation::-webkit-scrollbar,
-.RolladenAll::-webkit-scrollbar,
-.Network::-webkit-scrollbar,
-.TVGuide::-webkit-scrollbar,
-.TVSourceCtrl::-webkit-scrollbar,
-.TVChannel::-webkit-scrollbar,
-.TVINet::-webkit-scrollbar,
-.LibList::-webkit-scrollbar,
-.upnp::-webkit-scrollbar,
-.CoverCD::-webkit-scrollbar,
-.CDctrl::-webkit-scrollbar,
-.CEOLctrl::-webkit-scrollbar,
-.CEOLCDctrl::-webkit-scrollbar,
-.Ceol::-webkit-scrollbar,
-.Navigation::-webkit-scrollbar,
-.UPNPConfig::-webkit-scrollbar,
-.CDLib::-webkit-scrollbar,
-.AudioBookLib::-webkit-scrollbar,
-.UpnpCD::-webkit-scrollbar,
-.CEOLServerCtrl::-webkit-scrollbar,
-.UpnpServerCtrl::-webkit-scrollbar,
-.Wetter::-webkit-scrollbar,
-.Uhr::-webkit-scrollbar,
-.ScrollReihe::-webkit-scrollbar,
-.TimePicker::-webkit-scrollbar,
-.TimePickerX::-webkit-scrollbar,
-.IRadio::-webkit-scrollbar,
-.WSS::-webkit-scrollbar,
-.TV::-webkit-scrollbar, 
 .area::-webkit-scrollbar {
     display: none;
 }
 /*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
 .areaMain{
 	position:absolute;
-	top: 5vh;
+	top: 0vh;
 	width: 0px;
 	height: 95vh;
         left:16.2vw;
@@ -149,7 +107,7 @@ WebKit inertia scrolling is being added here for any present/future devices that
 
 .areaCtrl{
 	position:absolute;
-	top: 5vh;
+	top: 0vh;
 	width: 0px;
 	height: 95vh;
         left:74vw;
@@ -157,7 +115,7 @@ WebKit inertia scrolling is being added here for any present/future devices that
 
 .StartScreen {
 	position: absolute;
-	top: 5vh;
+	top: 0vh;
         left: 28vw;
 	width: 72vw;
         height:95vh;
@@ -166,7 +124,7 @@ WebKit inertia scrolling is being added here for any present/future devices that
 }
 .Left {
 	position: relative;
-	top: 5vh;
+	top: 0vh;
 	width: 28vw;
 	background-color: black;
 	margin-bottom: 1px;
