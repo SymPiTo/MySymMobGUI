@@ -126,7 +126,7 @@ WebKit inertia scrolling is being added here for any present/future devices that
 .Left {
 	position: relative;
 	top: 0vh;
-	width: 28vw;
+	width: 100vw;
 	background-color: black;
 	margin-bottom: 1px;
 	margin-right: 1px;
