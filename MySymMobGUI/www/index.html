@@ -1,270 +1,170 @@
 <!doctype html>
 
-<html>
-    <head>
-        <title>MyIPS</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-	<link rel="stylesheet" type="text/css" href="css/myGlides.css">	
-        //<link rel="stylesheet"  href="css/flipclock.css">
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>      
-        
-        //<script src="js/myGlides.js"></script>
-        //<script src="js/myCommands.js"></script>
-        //<script src="js/myVars.js"></script>
-        <script src="js/myLib.js"></script>
-        //<script src="js/data.js"></script>
-         
-        //<script src="js/ips_functions.js"></script>
-         
-       // <script src="js/flipclock.js"></script> 
-      
-        
-		
 
-                
-                
-        <link href="http://allfont.net/allfont.css?fonts=dot-matrix" rel="stylesheet" type="text/css" /> 
-          <link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
-       <!-- <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css"> -->
-        //<link rel="stylesheet"  type="text/css" href="line-awesome/css/line-awesome.min.css">
-        //<link rel="shortcut icon" href="images/favicon.ico">
+<head>
+    <title>MyIPS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--  ..............................................................  -->
-        <!--   WEBSOCKET FUNKTIONEN                                           --> 
-        <!--  ..............................................................  -->
-        <script type='text/javascript'>
-            var socket;
+    <link rel="stylesheet" type="text/css" href="css/myGlides.css">	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>      
+    <script src="js/myLib.js"></script>
 
-            var symvar = []; 
+    <link href="http://allfont.net/allfont.css?fonts=dot-matrix" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <!-- <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css"> -->
+    
 
-                function init() {
-                        // var host = 'ws://ylgsiletvcrasj6i.myfritz.net:9000'; // SET THIS TO YOUR SERVER
-                        var host = 'ws://192.168.178.28:9000'; // SET THIS TO YOUR SERVER
-                        try {
-                                socket = new WebSocket(host);
-                                state('WebSocket: '+socket.readyState);
-                                socket.onopen    = function(msg)    {      
-                                                                        var a = 0;
-                                                                           if(this.readyState === 1){ a = 'connected';}
-                                                                           else if (this.readyState === 2){a = 'connecting';}
-                                                                           else if (this.readyState === 0){a = 'not connecting';}
-                                                                           else {a = 'Connection closed';}
-                                                                           state(' WebSocket: '+ a); 
-                                                                           keepAlive();
-                                                                           led.update(true);
-                                                                            
-                                                                   };
+    <!--  ..............................................................  -->
+    <!--   WEBSOCKET FUNKTIONEN                                           --> 
+    <!--  ..............................................................  -->
+    <script type='text/javascript'>
+        var socket;
+        var symvar = []; 
 
-                                socket.onmessage = function(msg) { 
-                                                                         
-                                                                        var jsontext = msg.data;
-                                                                        if(jsontext.substring(0, 6) == "REPLY:"){
-                                                                            
-                                                                            var feedback = jsontext.substr(6,jsontext.length-6) ;
-                                                                            reply(feedback);
-                                                                        }
-                                                                        else if(jsontext.substring(0, 6) == "AList:"){
-                                                                            
-                                                                            var text = jsontext.substr(6,jsontext.length-6) ;
-                                                                            showAList(text);
-                                                                        }
-                                                                        else if(jsontext.substring(0, 9)  == "IPSValue:"){
-                                                                            //Antwort auf eine Anfrage - nur bestimmte Variable updaten
-                                                                            var ipsID = "ID" + jsontext.substring(10, 5);
-                                                                            var len = jsontext.length - 14;
-                                                                            var ipsJsonValue = jsontext.substring(16, len);
-                                                                            var IPSValue = JSON.parse(ipsJsonValue); 
-                                                                            updateIPSValue(ipsID, IPSValue);
-                                                                        }
-                                                                        else{
-                                                                            
-                                                                            ips = JSON.parse(jsontext); 
-                                                                            symvar = ips[0];
-                                                                             //
-                                                                              log(ips[0]);
-                                                                            var sym = checkUsedVars(ips);
-                                                                             /////Media(ips);
-                                                                            Heizung(sym);
-                                                                            Security(sym);
-                                                                            Klima(sym); 
-                                                                            updateValues(sym);
-                                                                             
-                                                                            
-                                                                        }
+        function init() {
+                // var host = 'ws://ylgsiletvcrasj6i.myfritz.net:9000'; // SET THIS TO YOUR SERVER
+                var host = 'ws://192.168.178.28:9000'; // SET THIS TO YOUR SERVER
+                try {
+                        socket = new WebSocket(host);
+                        state('WebSocket: '+socket.readyState);
+                        socket.onopen    = function(msg)    {      
+                                                                var a = 0;
+                                                                   if(this.readyState === 1){ a = 'connected';}
+                                                                   else if (this.readyState === 2){a = 'connecting';}
+                                                                   else if (this.readyState === 0){a = 'not connecting';}
+                                                                   else {a = 'Connection closed';}
+                                                                   state(' WebSocket: '+ a); 
+                                                                   keepAlive();
+                                                                   led.update(true);
 
-                                                              };
-                                socket.onclose  = function(msg) { 
-                                                                           state('Client disconnected - status '+ this.readyState);
-                                                                           //send('Client' + '*' + 'status' + '*' + 'close connection');
-                                                                           cancelKeepAlive();
-                                                                           led.update(false);
-                                                                   };
-                                socket.onerror = function(err) {
-                                                                        fehler('Client' + '*' + 'status' + '*' + 'err');									 
-                                                                   };
-                        }
-                        catch(ex){  
-                                state(ex); 
-                        }
-                        //$('msg').focus();	
+                                                           };
+
+                        socket.onmessage = function(msg) { 
+
+                                                                var jsontext = msg.data;
+                                                                if(jsontext.substring(0, 6) == "REPLY:"){
+
+                                                                    var feedback = jsontext.substr(6,jsontext.length-6) ;
+                                                                    reply(feedback);
+                                                                }
+                                                                else if(jsontext.substring(0, 6) == "AList:"){
+
+                                                                    var text = jsontext.substr(6,jsontext.length-6) ;
+                                                                    showAList(text);
+                                                                }
+                                                                else if(jsontext.substring(0, 9)  == "IPSValue:"){
+                                                                    //Antwort auf eine Anfrage - nur bestimmte Variable updaten
+                                                                    var ipsID = "ID" + jsontext.substring(10, 5);
+                                                                    var len = jsontext.length - 14;
+                                                                    var ipsJsonValue = jsontext.substring(16, len);
+                                                                    var IPSValue = JSON.parse(ipsJsonValue); 
+                                                                    updateIPSValue(ipsID, IPSValue);
+                                                                }
+                                                                else{
+                                                                    ips = JSON.parse(jsontext); 
+                                                                    symvar = ips[0];
+                                                                     //updateValues(sym);
+     
+                                                                }
+
+                                                      };
+                        socket.onclose  = function(msg) { 
+                                                                   state('Client disconnected - status '+ this.readyState);
+                                                                   //send('Client' + '*' + 'status' + '*' + 'close connection');
+                                                                   cancelKeepAlive();
+                                                                   
+                                                           };
+                        socket.onerror = function(err) {
+                                                                fehler('Client' + '*' + 'status' + '*' + 'err');									 
+                                                           };
                 }
-
-
-                function send(msg){
-                        var msg;
-
-                        if(!msg) { 
-                                alert('Message can not be empty'); 
-                                return; 
-                        }
-
-                        try { 
-                                socket.send(msg); 
-                                //cmd('Sent: '+msg); 
-                        } catch(ex) { 
-                                state(ex); 
-                        }
+                catch(ex){  
+                        state(ex); 
                 }
-
-                function quit(){
-                        if (socket !== null) {
-                                state('Client quit!');
-                                socket.close();
-                                socket=null;
-                        }
-                }
-
-                function reconnect() {
-                        quit();
-                        init();
-                }
-
-
-                var timerID =0;
-                function keepAlive(){
-                        var timeout = 20000;
-                        if (socket.readyState == socket.OPEN) {
-                                send('Client' + '*' + 'status' + '*' + 'keep Alive');
-                        }
-                        timerID = setTimeout(keepAlive, timeout); 
-                        
-                }
-                
-
-                function cancelKeepAlive(){
-                        if (timerID) {
-                                clearTimeout(timerID);
-                                 
-                        }
-                }
-
-
-                function fehler(msg){
-                         $('fehler').innerHTML =  msg; 
-                }
-
-
-			// Utilities
-			function $(id){ return document.getElementById(id); }
-
-			function state(msg){ $('state').innerHTML =  msg; }
-			
-			function cmd(msg){ $('cmd').innerHTML =  msg; }
-			
-
-			
-			function close(msg){
-				if (msg === doclose) {
-					quit();
-				}
-				else{
-				}	
-			}
-			
-                        var z = 0;
-			function log(msga){ 
-                            z = z + 1;
-                            $('log').innerHTML =  z.toString(); 
-                        } 
-                        
-                        
-			function log15(msg){ $('prog').innerHTML =  msg; }
-                        
-
-  function read_json() {
-            $.getJSON("/TVchalles.json", function(data) {
-                alert("My data: " + data["mydata"]);
-                $.each(data["prime"], function(idx,prime) {
-                    alert("Prime number: " + prime);
-                });
-            });
+                //$('msg').focus();	
         }
 
+
+        function send(msg){
+                var msg;
+
+                if(!msg) { 
+                        alert('Message can not be empty'); 
+                        return; 
+                }
+
+                try { 
+                        socket.send(msg); 
+                        //cmd('Sent: '+msg); 
+                } catch(ex) { 
+                        state(ex); 
+                }
+        }
+
+        function quit(){
+                if (socket !== null) {
+                        state('Client quit!');
+                        socket.close();
+                        socket=null;
+                }
+        }
+
+        function reconnect() {
+                quit();
+                init();
+        }
+
+
+        var timerID =0;
+        function keepAlive(){
+                var timeout = 20000;
+                if (socket.readyState == socket.OPEN) {
+                        send('Client' + '*' + 'status' + '*' + 'keep Alive');
+                }
+                timerID = setTimeout(keepAlive, timeout); 
+
+        }
                 
-			function HzWZan(){
-	 			document.getElementById("test").classList.toggle('cyan');
-	 			document.getElementById("test").classList.toggle('cyanA');
 
-			 
-			}
-		
+        function cancelKeepAlive(){
+                if (timerID) {
+                        clearTimeout(timerID);
+
+                }
+        }
+
+
+        function fehler(msg){
+                 $('fehler').innerHTML =  msg; 
+        }
+
+
+        // Utilities
+        function $(id){ return document.getElementById(id); }
+
+        function state(msg){ $('state').innerHTML =  msg; }
+
+        function cmd(msg){ $('cmd').innerHTML =  msg; }
+
+
+
+        function close(msg){
+                if (msg === doclose) {
+                        quit();
+                }
+                else{
+                }	
+        }
+    </script>
  
-			function VarsNetwork(ips){
-	 				$('ws1').innerHTML = ips[0].WS0001 + ' connected: ' + ips[0].WS0011 ;
-					$('ws2').innerHTML = ips[0].WS0002 + ' connected: ' + ips[0].WS0021 ;
-					$('ws3').innerHTML = ips[0].WS0003 + ' connected: ' + ips[0].WS0031 ;
-					document.getElementById('servericon').src = ips[0].ID10960;
-					document.getElementById('clienticon').src = ips[0].ID12017;
-			}
-			
-			
-			
-                     
- 
+</head>
 
-
-
-
-
-
-	
-		</script>
- 
-
-    </head>
-
-    <body onload='init();'>
-        
-<!-- .................................. Gesamt Container ...............................  -->
-    <div id="Container" class="Container">
-	
-        <div id="kopfleiste" class="Top">
-                <div id='state' style='z-index: 6; text-align: left; background-color: transparent'>
-                </div>  
-                <div id="TopTitle">
-                        M Y I P S
-                </div>
-                <div id="fehler" style="z-index: 6; text-align: right;   background-color: transparent">
-                </div>
-                <div id="log" style="z-index: 6; text-align: right;   background-color: transparent">
-                </div>
-            
-
-        </div>
-	<script>
-           var led = new flashLed();
-           led.create("kopfleiste", "yellow", "10px", "500px");
-           // SetValue("32031","Text");
-        </script> 
-            
-<!-- ****************************** Main Menue ********************************************  -->
-	<div id="MainMenu" class="Left">
-            
-        </div>
-
+<body onload='init();'>
+    <!-- .................................. Container ...............................  -->
+    <div id="Container" class="Container">        
+        <!-- ****************************** Main Menue ********************************************  -->
+	<div id="MainMenu" class="Left"></div>
 	<script>	
             var MenuHome = new GlideButton();
             MenuHome.create("MainMenu", "grey", "Home", "_Home_BW_web.png", "MenuStart", "","MM" );  
@@ -297,12 +197,9 @@
             MenuSecurity1.create("MainMenu","cyan", "Security", "_GuestroomBW.jpg", "",  "", "MM" );  
         </script>    
             
-<!-- ********************************************* Unter Menus ***********************************************************  -->
-
- 
+        <!-- ********************************************* Unter Menus ***********************************************************  -->
 	<!-- *********************** StartScreen  **************************  -->
 	<subMenu id="SubMenuStart" class="MenuStart"></subMenu>
- 		
         <script>    
 
             var SubMenuWetter = new GlideButton();
@@ -310,11 +207,8 @@
             var SubMenuShort = new GlideButton();
             SubMenuShort.create("SubMenuStart", "grey", "ShortCuts", "Sequence_BW_web.png", "MainShorts","", "SM" ); 
         </script>
-        
-
-	<!-- *********************** Security  **************************  -->
+	<!-- *********************** SubMenu - Security  **************************  -->
 	<subMenu id="SubMenuSec" class="MenuSec"></subMenu>
- 		
         <script>    
              var SubMenuSecCode = new GlideButton();
             SubMenuSecCode.create("SubMenuSec", "red", "Alarmanlage", "AlarmKey.png", "MainSecCode","", "SM" ); 
@@ -323,11 +217,8 @@
             var SubMenuBatAlarm = new GlideButton();
             SubMenuBatAlarm.create("SubMenuSec", "red", "Battery Alarm", "BatAlarm.png", "MainBatAlarm","", "SM" ); 
         </script>
-        
         <!-- ************************* SubMenu - Wohnzimmer **************************  -->
         <subMenu id= "SubMenuWZ" class="MenuWZ">        </subMenu>  
- 
-            
         <script> 
             var SubMenuHzWZ = new GlideButton();
             SubMenuHzWZ.create("SubMenuWZ", "cyan", "Heizung Wohnzimmer", "_Heizung_BW2.png", "MainHeizungWZ","", "SM" );  
@@ -341,22 +232,17 @@
             var SubMenuRolloWZ = new GlideButton();
             SubMenuRolloWZ.create("SubMenuWZ", "cyan", "BlueRayPlayer", "BlueRay.png", "MainBlueRayWZ","", "SM" ); 
         </script>  
- 
-
-    
-	<!-- *********************** Kinderzimmer  **************************  -->
+	<!-- *********************** SubMenu - Kinderzimmer  **************************  -->
 	<subMenu id="SubMenuKZ" class="MenuKZ"></subMenu>
- 		
+
         <script>    
              var SubMenuHzKZ = new GlideButton();
             SubMenuHzKZ.create("SubMenuKZ", "olive", "Heizung Kinderzimmer", "_Heizung_BW2.png", "MainHzKZ","", "SM" ); 
             var SubMenuRolloKZ = new GlideButton();
             SubMenuRolloKZ.create("SubMenuKZ", "olive", "Rolladen Kinderzimmer", "_Rolladen_BW_web.png", "MainRolloKZ","", "SM" ); 
         </script>  
-        
-	<!-- ************************ Schlafzimmer  ************************  -->
+	<!-- ************************ SubMenu - Schlafzimmer  ************************  -->
 	<subMenu id="SubMenuSZ" class="MenuSZ"></subMenu>
-  		
         <script>    
             var SubMenuHzSZ = new GlideButton();
             SubMenuHzSZ.create("SubMenuSZ", "sandy", "Heizung Schlafzimmer", "_Heizung_BW2.png", "MainHzSZ","", "SM" ); 
@@ -367,10 +253,8 @@
             var SubMenuSonosZ = new GlideButton();
             SubMenuSonosZ.create("SubMenuSZ", "sandy", "Sonos", "Sonos_BW_web.png", "MainSonosSZ","", "SM" );   
         </script>  
-        
-	<!-- ************************ Kueche  ************************  -->
+	<!-- ************************ SubMenu - Kueche  ************************  -->
 	<subMenu id="SubMenuK" class="MenuK"></subMenu>
-  		
         <script>    
             var SubMenuHzK = new GlideButton();
             SubMenuHzK.create("SubMenuK", "midgreen", "Heizung Kueche", "_Heizung_BW2.png", "MainHzK","", "SM" ); 
@@ -381,18 +265,15 @@
             var SubMenuClock = new GlideButton();
             SubMenuClock.create("SubMenuK", "midgreen", "Clock", "Uhr_BW_web.png", "MainClock","", "SM" ); 
         </script> 
-        
-	<!-- ************************ Menu Balkon  ************************  -->
+	<!-- ************************ SubMenu - Menu Balkon  ************************  -->
 	<subMenu id="SubMenuB" class="MenuB"></subMenu>
-  		
         <script>   
             var SubMenuHzB = new GlideButton();
             SubMenuHzB.create("SubMenuB", "blue", "Heizung Balkon", "_Heizung_BW2.png", "MainHzB","", "SM" ); 
             var SubMenuRolloB = new GlideButton();
             SubMenuRolloB.create("SubMenuB", "blue", "Rolladen Balkon", "_Rolladen_BW_web.png", "MainRolloB","", "SM" ); 
         </script> 
-        
-	<!-- ************************ Multimedia  ************************  -->
+	<!-- ************************ SubMenu - Multimedia  ************************  -->
 	<subMenu id="SubMenuMedia" class="MenuMultimedia"></subMenu>	
          <script>   
             var SubMenuTV = new GlideButton();
@@ -410,11 +291,8 @@
             var SubMenuBlueRay = new GlideButton();
             SubMenuBlueRay.create("SubMenuMedia", "purple", "BlueRay Player", "BlueRay.png", "MainBlueRay","", "SM" );
         </script>   
-
-
-	<!-- ************************ Menue  Heizung  ************************  -->
+	<!-- ************************ SubMenu - Menue  Heizung  ************************  -->
 	<subMenu id="SubMenuHz" class="MenuHz"></subMenu>
-  		
         <script>  
             var SubMenuHzAll = new GlideButton();
             SubMenuHzAll.create("SubMenuHz", "purple", "Heizung Uebersicht", "_Heizung_BW2.png", "MainHzAll","", "SM" );  
@@ -428,9 +306,8 @@
             SubMenuHzK.create("SubMenuHz", "midgreen", "Heizung Kueche", "_Heizung_BW2.png", "MainHzK","", "SM" ); 
         </script> 
 
-		<!-- ************************Menu  Rolladen  ************************  -->
+	<!-- ************************ SubMenu -  Rolladen  ************************  -->
 	<subMenu id="SubMenuRollo" class="MenuRollo"></subMenu>
-                    
         <script>  
             var SubMenuRolloAll = new GlideButton();
             SubMenuRolloAll.create("SubMenuRollo", "brown", "Rolladen Uebersicht", "_Rolladen_BW.png", "MainRolloAll","", "SM" );  
@@ -445,27 +322,18 @@
             var SubMenuRolloB = new GlideButton();
             SubMenuRolloB.create("SubMenuRollo", "blue", "Rolladen Balkon", "_Rolladen_BW.png", "MainRolloK","", "SM" ); 
         </script> 
-        
-     
- 		
-                
 	<!-- ************************ Sub Menu Netzwerk  ************************  -->
 	<subMenu id="SubMenuNet" class="MenuNet"></subMenu>
-  		
         <script>   
             var SubMenuWSS = new GlideButton();
             SubMenuWSS.create("SubMenuNet", "midgreen", "WSS Server", "WSS.png", "","MainWSS", "SM" ); 
             var SubMenuWSS = new GlideButton();
             SubMenuWSS.create("SubMenuNet", "midgreen", "WSS Server", "WSS.png", "MainNet","", "SM" ); 
         </script>
-  
- 	 
-                
-
-		<div id=MainStarScreen class="StartScreen">
-			<img src="images/MyHomeControl.png"  alt="image not found" style="width: 400px; padding-top:50px" />
-		</div>
-  
+	<!-- ************************ Sub Menu Netzwerk  ************************  -->
+	<div id=MainStarScreen class="StartScreen">
+            <img src="images/MyHomeControl.png"  alt="image not found" style="width: 400px; padding-top:50px" />
+	</div>
         <script>             
             var CtrlBtnGoodNight = new CtrlButton();
             CtrlBtnGoodNight.create("MainStarScreen", "63vh", "80%",  "normal", "grey", "Good Night", "command", "","goodNight();");
@@ -473,17 +341,11 @@
             CtrlBtnBye.create("MainStarScreen", "53vh", "80%",  "normal", "grey", "Bye", "command", "","Bye();");
             
         </script>
-    <!-- ************************ Container  ************************  -->
+        <!-- ************************ SubMenu Ende  ************************  -->
 
 
-
-	<!-- ************************** Container Ende  ************************** -->
-
-   
-	
- 
+    <!-- ************************** Container Ende  ************************** -->
     </div>
-
-
-   </body>
+</body>
 </html>
+
