@@ -93,6 +93,7 @@ WebKit inertia scrolling is being added here for any present/future devices that
 	
 }
 /*Entirely optional â€“ just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
+.Left::-webkit-scrollbar,
 .area::-webkit-scrollbar {
     display: none;
 }
