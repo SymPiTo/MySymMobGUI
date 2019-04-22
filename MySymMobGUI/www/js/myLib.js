@@ -1044,11 +1044,11 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
                 );
             if(MenuType === "MM") {   
                 //benötigte Fenster einblenden für Main Menu
-                document.getElementById(ParentID).style.width = "8vw";
+                document.getElementById(ParentID).style.width = "15vw";
                 if(IDMain !== ""){
-                    document.getElementsByClassName("StartScreen")[0].style.left = "36vw";
+                    
                     document.getElementsByClassName(IDMain)[0].style.width = "28vw";
-                    document.getElementsByClassName("StartScreen")[0].style.width = "64vw";	
+                     	
                 }
                 else {
                     document.getElementsByClassName("StartScreen")[0].style.width = "0px";
@@ -1079,7 +1079,7 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
                 document.getElementsByClassName("Top")[0].style.backgroundColor = farbe;
                 document.getElementsByClassName("Top")[0].style.color = "black";
                 document.getElementById("TopTitle").innerHTML =  titel ;
-            };
+        };
         
             var elem2 = document.createElement("img"); 
             elem2.className = "icon"; 
