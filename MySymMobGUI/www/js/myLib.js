@@ -2913,11 +2913,9 @@ class CtrlStatButton {
             
             var Bild = document.createElement("IMG");
             Bild.src = "images/" + this.icon;
-            Bild.style.width = "30px";
-            Bild.style.height = "30px";
-            Bild.style.position = "relative";
-            Bild.style.left = "50%x";
-            Bild.style.paddingTop = "5px";
+            Bild.style.width = "40px";
+            Bild.style.height = "40px";
+
             this.id1 = Bild;
             elem.append(Bild);
             
