@@ -1,3 +1,11 @@
 {
-    "name": "Torsten"
+	"id": "{42AB7E19-6215-7260-8403-1A427BD842BA}",
+	"name": "MyIpsMobWebHook",
+	"type": 0,
+	"vendor": "PiTo",
+	"aliases": ["MyIpsMobWebHook"],
+	"parentRequirements": [],
+	"childRequirements": [],
+	"implemented": [],
+	"prefix": "MIMWH"
 }

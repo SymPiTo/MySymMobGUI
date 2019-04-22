@@ -1,3 +1,19 @@
 {
-    "name": "Torsten"
+    "elements":
+            [
+                {
+                    "type":"Label",
+                    "label":"http://127.0.0.1:3777/hook/myipsMobhook/"
+                },
+		{ 
+                    "name": "Username", 
+                    "type": "ValidationTextBox", 
+                    "caption": "Username" 
+                },
+		{ 
+                    "name": "Password", 
+                    "type": "PasswordTextBox", 
+                    "caption": "Password" 
+                }
+            ]
 }
