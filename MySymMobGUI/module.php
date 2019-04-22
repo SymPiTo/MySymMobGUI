@@ -1,6 +1,6 @@
 <?php
 
-    class MyIpsWebHook extends IPSModule {
+    class MyIpsMobWebHook extends IPSModule {
 
         public function Create() {
                 //Never delete this line!
