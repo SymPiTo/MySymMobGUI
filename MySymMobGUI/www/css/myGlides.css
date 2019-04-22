@@ -77,6 +77,17 @@ button :active {
 WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
 */
 .Left,
+.MenuStart,
+.MenuSec,
+.MenuWZ,
+.MenuKZ,
+.MenuSZ,
+.MenuK,
+.MenuB,
+.MenuMultimedia,
+.MenuHz,
+.MenuRollo,
+.MenuNet,
 .area
 {
     overflow: auto;
@@ -94,6 +105,17 @@ WebKit inertia scrolling is being added here for any present/future devices that
 }
 /*Entirely optional â€“ just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
 .Left::-webkit-scrollbar,
+.MenuStart::-webkit-scrollbar,
+.MenuSec::-webkit-scrollbar,
+.MenuWZ::-webkit-scrollbar,
+.MenuKZ::-webkit-scrollbar,
+.MenuSZ::-webkit-scrollbar,
+.MenuK::-webkit-scrollbar,
+.MenuB::-webkit-scrollbar,
+.MenuMultimedia::-webkit-scrollbar,
+.MenuHz::-webkit-scrollbar,
+.MenuRollo::-webkit-scrollbar,
+.MenuNet::-webkit-scrollbar,
 .area::-webkit-scrollbar {
     display: none;
 }

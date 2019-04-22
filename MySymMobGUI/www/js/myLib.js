@@ -1047,7 +1047,7 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
                 document.getElementById(ParentID).style.width = "25vw";
                 if(IDMain !== ""){
                     
-                    document.getElementsByClassName(IDMain)[0].style.width = "28vw";
+                    document.getElementsByClassName(IDMain)[0].style.width = "75vw";
                      	
                 }
                 else {
