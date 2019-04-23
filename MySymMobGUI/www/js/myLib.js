@@ -2919,7 +2919,7 @@ class CtrlStatButton {
             Bild.src = "images/" + this.icon;
             Bild.style.width = "40px";
             Bild.style.height = "40px";
-            Bild.onclick = function(){
+            elem.onclick = function(){
                 // prüfen welches SubMenu aufgeklappt ist
                 var subs = document.getElementsByTagName("SubMenu");
                 var SubMenus = Array.from(subs);
