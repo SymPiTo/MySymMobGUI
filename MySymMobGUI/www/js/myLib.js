@@ -2932,7 +2932,7 @@ class CtrlStatButton {
                         }
                         if(b === "78vw"){
                            document.getElementsByClassName(a)[0].style.width = "0px";  
-                           document.getElementsByClassName("MainMenu")[0].style.width = "78vw";  
+                           document.getElementsByClassName("MainMenu")[0].style.width = "100vw";  
                         }
                     } 
                 );     
