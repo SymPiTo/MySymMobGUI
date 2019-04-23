@@ -2927,7 +2927,7 @@ class CtrlStatButton {
                     var a = element.className;
                         var b = document.getElementsByClassName(a)[0].style.width; 
                         if(b>0){
-                           document.getElementsByClassName(a)[0].style.width = "22vw";  
+                           document.getElementsByClassName(a)[0].style.width = "78vw";  
                             
                         }
                     } 
