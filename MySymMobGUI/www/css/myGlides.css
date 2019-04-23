@@ -2174,6 +2174,9 @@ width:40%;
 .anzeige.size05{
     height: 50px;
 }
+.anzeige.size06{
+    height: 60px;
+}
 .anzeige.size07{
     height: 70px;
 }
@@ -2998,7 +3001,9 @@ h1:after {
 .yellow:active {
     background: -webkit-linear-gradient(hsl(51, 100%, 5%), hsl(51, 100%, 15%)); /* CHROME */
 }
-
+.sandybg {
+    background: -webkit-linear-gradient(hsl(28, 100%, 45%), hsl(28, 100%, 75%), hsl(28, 100%, 45%)); /* CHROME */
+} 
 .sandyLight {
     background: -webkit-linear-gradient(hsl(28, 100%, 75%), hsl(28, 100%, 95%), hsl(28, 100%, 75%))
 }
