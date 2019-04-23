@@ -3125,9 +3125,9 @@ Input:focus + .MoveSlider {
 }
 
 Input:checked + .MoveSlider:before {
-  -webkit-transform: translateX(165px);
-  -ms-transform: translateX(165px);
-  transform: translateX(165px);
+  -webkit-transform: translateX(161px);
+  -ms-transform: translateX(161px);
+  transform: translateX(161px);
 }
 .MoveSlider:after
 {
