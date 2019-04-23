@@ -1044,10 +1044,10 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
                 );
             if(MenuType === "MM") {   
                 //benötigte Fenster einblenden für Main Menu
-                document.getElementById(ParentID).style.width = "23vw";
+                document.getElementById(ParentID).style.width = "22vw";
                 if(IDMain !== ""){
                     
-                    document.getElementsByClassName(IDMain)[0].style.width = "77vw";
+                    document.getElementsByClassName(IDMain)[0].style.width = "78vw";
                      	
                 }
                 else {
@@ -1062,11 +1062,11 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
                     //MainMenue Leiste ausblenden
                     document.getElementById("MainMenu").style.width = "0vw";
                     //SubMenue Leiste verkuerzt einblenden
-                    document.getElementById(ParentID).style.width = "23vw";
+                    document.getElementById(ParentID).style.width = "22vw";
                     //Haupt Fenster einblenden
                     //document.getElementById(IDMain).style.width = "58vw";
                     //Control Fenster einblenden
-                    document.getElementById(IDMain + "Ctrl").style.width = "77vw";
+                    document.getElementById(IDMain + "Ctrl").style.width = "78vw";
                 }
                 else {
                     document.getElementsByClassName("StartScreen")[0].style.width = "0px";
