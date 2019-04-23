@@ -1064,9 +1064,9 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
                     //SubMenue Leiste verkuerzt einblenden
                     document.getElementById(ParentID).style.width = "22vw";
                     //Haupt Fenster einblenden
-                    //document.getElementById(IDMain).style.width = "58vw";
+                    document.getElementById(IDMain).style.width = "78vw";
                     //Control Fenster einblenden
-                    document.getElementById(IDMain + "Ctrl").style.width = "78vw";
+                    //document.getElementById(IDMain + "Ctrl").style.width = "78vw";
                 }
                 else {
                     document.getElementsByClassName("StartScreen")[0].style.width = "0px";
