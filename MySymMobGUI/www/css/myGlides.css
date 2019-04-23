@@ -3082,8 +3082,8 @@ h1:after {
  .MoveSwitch {
   position: relative;
   display: inline-block;
-  width: 180px;
-  height: 50px;
+  width: 200px;
+  height: 60px;
 }
 
 .MoveSwitch input {display:none;}
@@ -3105,7 +3105,7 @@ h1:after {
   content: "";
   height: 50px;
   width: 50px;
-  left: 14px;
+  left: 34px;
   bottom: 4px;
   background-color: white;
   -webkit-transition: .4s;
