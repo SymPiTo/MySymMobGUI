@@ -142,15 +142,15 @@ WebKit inertia scrolling is being added here for any present/future devices that
 	position:absolute;
 	top: 10vh;
 	width: 0px;
-	height: 95vh;
-        left:16.2vw;
+	height: 85vh;
+        left:22vw;
 }
 
 .areaCtrl{
 	position:absolute;
 	top: 10vh;
 	width: 0px;
-	height: 95vh;
+	height: 90vh;
         left:74vw;
 }
 
