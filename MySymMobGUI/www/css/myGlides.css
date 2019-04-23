@@ -3117,7 +3117,7 @@ h1:after {
 
 Input:checked + .MoveSlider {
   background-color: #2196F3;
-  content: "asdasd";
+   
 }
 
 Input:focus + .MoveSlider {
@@ -3128,4 +3128,21 @@ Input:checked + .MoveSlider:before {
   -webkit-transform: translateX(140px);
   -ms-transform: translateX(140px);
   transform: translateX(140px);
+}
+.MoveSlider:after
+{
+ content:'Manual';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ left: 50%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
+}
+
+Input:checked + .MoveSlider:after
+{  
+  content:'Automatic';
 }
