@@ -2928,7 +2928,7 @@ class CtrlStatButton {
                         var b = document.getElementsByClassName(a)[0].style.width; 
                         if(b === "22vw"){
                            document.getElementsByClassName(a)[0].style.width = "78vw";  
-                            
+                           document.getElementsByClassName("MainMenu")[0].style.width = "22vw";  
                         }
                     } 
                 );     
