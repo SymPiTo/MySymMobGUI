@@ -3082,8 +3082,8 @@ h1:after {
  .MoveSwitch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 180px;
+  height: 80px;
 }
 
 .MoveSwitch input {display:none;}
@@ -3103,8 +3103,8 @@ h1:after {
 .MoveSlider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 50px;
+  width: 50px;
   left: 4px;
   bottom: 4px;
   background-color: white;
