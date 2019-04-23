@@ -2969,7 +2969,7 @@ class CtrlStatButton {
             var elem = document.createElement("label");
             elem.className = "MoveSwitch";
             //elem.classList.add(color + "Light");
-            var elem1 = document.createElement("input");
+            var elem1 = document.createElement("Input");
             elem1.type = "checkbox";
             elem.append(elem1);
             var elem2 = document.createElement("div");
