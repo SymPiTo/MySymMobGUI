@@ -3107,7 +3107,7 @@ h1:after {
   position: absolute;
   content: "";
   height: 50px;
-  width: 25px;
+  width: 30px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -3116,7 +3116,7 @@ h1:after {
 }
 
 Input:checked + .MoveSlider {
-  background-color: #2196F3;
+  background-color: transparent;
    
 }
 
@@ -3125,9 +3125,9 @@ Input:focus + .MoveSlider {
 }
 
 Input:checked + .MoveSlider:before {
-  -webkit-transform: translateX(140px);
-  -ms-transform: translateX(140px);
-  transform: translateX(140px);
+  -webkit-transform: translateX(170px);
+  -ms-transform: translateX(170px);
+  transform: translateX(170px);
 }
 .MoveSlider:after
 {
