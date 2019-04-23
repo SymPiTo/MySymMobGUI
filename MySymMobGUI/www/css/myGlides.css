@@ -3105,7 +3105,7 @@ h1:after {
 
 .MoveSlider:before {
   position: absolute;
-  content: "test";
+  content: "";
   height: 50px;
   width: 50px;
   left: 4px;
@@ -3117,6 +3117,7 @@ h1:after {
 
 Input:checked + .MoveSlider {
   background-color: #2196F3;
+  content: "asdasd";
 }
 
 Input:focus + .MoveSlider {
@@ -3124,7 +3125,7 @@ Input:focus + .MoveSlider {
 }
 
 Input:checked + .MoveSlider:before {
-  -webkit-transform: translateX(150px);
-  -ms-transform: translateX(150px);
-  transform: translateX(150px);
+  -webkit-transform: translateX(140px);
+  -ms-transform: translateX(140px);
+  transform: translateX(140px);
 }
