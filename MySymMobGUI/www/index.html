@@ -345,37 +345,37 @@
         <!-- ************************ Rolladen  Schlafzimmer ************************ -->
         <script> 
             var mainwindowRolloSZ = new Area();
-            mainwindowRolloSZ.createCtrl("MainRolloSZCtrl", "midgreen");
+            mainwindowRolloSZ.create("MainRolloSZ", "midgreen");
         </script> 
  		
         <script>
 
             var DisPosRolloSZ = new StateDisplay();
-            DisPosRolloSZ.create("MainRolloSZCtrl", "", "%", "20px", "30px", "size07", "30px", "Position", "Number", "", "", "", "");
+            DisPosRolloSZ.create("MainRolloSZ", "", "%", "20px", "30px", "size07", "30px", "Position", "Number", "", "", "", "");
 
             var DisModeRolloSZ = new StateDisplay();
-            DisModeRolloSZ.create("MainRolloSZCtrl", "", "", "100px", "30px", "size07", "30px", "Mode", "Auto", "Man", "", "", "");
+            DisModeRolloSZ.create("MainRolloSZ", "", "", "100px", "30px", "size07", "30px", "Mode", "Auto", "Man", "", "", "");
 
             var DisST1RolloSZ = new StateDisplay();
-            DisST1RolloSZ.create("MainRolloSZCtrl", "", "", "180px", "30px", "size07", "30px", "Schaltzeiten Mo-Fr", "String", "", "", "", "");
+            DisST1RolloSZ.create("MainRolloSZ", "", "", "180px", "30px", "size07", "30px", "Schaltzeiten Mo-Fr", "String", "", "", "", "");
 
             var DisST2RolloSZ = new StateDisplay();
-            DisST2RolloSZ.create("MainRolloSZCtrl", "", "", "260px", "30px", "size07", "30px", "Schaltzeiten Sa-so", "String", "", "", "", ""); 
+            DisST2RolloSZ.create("MainRolloSZ", "", "", "260px", "30px", "size07", "30px", "Schaltzeiten Sa-so", "String", "", "", "", ""); 
 
             var FontBtnRolloSZup = new FontButtonNew();
-            FontBtnRolloSZup.create("MainRolloSZCtrl", "midgreen", "big", "350px", "10px", "fa fa-chevron-up", "send('command(Rollo,SZ,up)')");
+            FontBtnRolloSZup.create("MainRolloSZ", "midgreen", "big", "350px", "10px", "fa fa-chevron-up", "send('command(Rollo,SZ,up)')");
             var FontBtnRolloSZstop = new FontButtonNew();
-            FontBtnRolloSZstop.create("MainRolloSZCtrl", "midgreen", "big", "350px", "90px", "fa fa-stop", "send('command(Rollo,SZ,stop)')");
+            FontBtnRolloSZstop.create("MainRolloSZ", "midgreen", "big", "350px", "90px", "fa fa-stop", "send('command(Rollo,SZ,stop)')");
             var FontBtnRolloSZdown = new FontButtonNew();
-            FontBtnRolloSZdown.create("MainRolloSZCtrl", "midgreen", "big", "350px", "170px", "fa fa-chevron-down", "send('command(Rollo,SZ,down)')");
+            FontBtnRolloSZdown.create("MainRolloSZ", "midgreen", "big", "350px", "170px", "fa fa-chevron-down", "send('command(Rollo,SZ,down)')");
             var FontBtnRolloSZstepUp = new FontButtonNew();
-            FontBtnRolloSZstepUp.create("MainRolloSZCtrl", "midgreen", "big", "430px", "10px", "fa fa-plus", "send('command(Rollo,SZ,StepUp)')");
+            FontBtnRolloSZstepUp.create("MainRolloSZ", "midgreen", "big", "430px", "10px", "fa fa-plus", "send('command(Rollo,SZ,StepUp)')");
             var FontBtnRolloSZstepDown = new FontButtonNew();
-            FontBtnRolloSZstepDown.create("MainRolloSZCtrl", "midgreen", "big", "430px", "170px", "fa fa-minus", "send('command(Rollo,SZ,StepDown)')");
+            FontBtnRolloSZstepDown.create("MainRolloSZ", "midgreen", "big", "430px", "170px", "fa fa-minus", "send('command(Rollo,SZ,StepDown)')");
 
 
             CbSSrolloK = Object.create(CheckBox);
-            CbSSrolloK.create("MainRolloSZCtrl", "SSRolloK", "midgreen",  "520px", "10px",  "SunRise-SunSet", "command(Rollo,SZ,SSXX");  
+            CbSSrolloK.create("MainRolloSZ", "SSRolloK", "midgreen",  "520px", "10px",  "SunRise-SunSet", "command(Rollo,SZ,SSXX");  
         </script>  
  
  
