@@ -51,6 +51,22 @@ button :active {
 	border-bottom-width: thin;
 	color: #FFFF00;
 }
+.Bottom {
+	display:flex; 
+	align-items: center;
+	justify-content: space-between;
+	background-color: yellow;
+	font-size: x-large;
+	position: absolute;
+	left: 0px;
+	top: 95vh;
+ 	z-index:10;
+	width: 100%;
+	height: 5vh;
+	border-bottom-style: solid;
+	border-bottom-width: thin;
+	color: #FFFF00;
+}
 /*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
 .Container {
 	display: flex;
