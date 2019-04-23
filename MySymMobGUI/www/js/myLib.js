@@ -2930,6 +2930,14 @@ class CtrlStatButton {
                         if(b === "22vw"){
                            document.getElementsByClassName(a)[0].style.width = "78vw";  
                            document.getElementsByClassName("MainMenu")[0].style.width = "22vw";  
+                            // alle Main auf 0px verkleinern 
+                            var Main = document.getElementsByTagName("Main");
+                            var MainWindow = Array.from(Main);
+                            MainWindow.forEach(function(element){
+                            var a = element.className;
+                            document.getElementsByClassName(a)[0].style.width = "0px";   
+                        } 
+                ); 
                         }
                         if(b === "78vw"){
                            document.getElementsByClassName(a)[0].style.width = "0px";  
