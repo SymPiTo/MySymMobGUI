@@ -1087,8 +1087,9 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
         
             var elem2 = document.createElement("img"); 
             elem2.className = "icon"; 
-           
-            elem2.src = "images/" + image; 
+            if(image != ""){
+                elem2.src = "images/" + image; 
+            }
             elem1.append(elem2); 
              
             var elem2a = document.createElement("div"); 
