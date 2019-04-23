@@ -2958,7 +2958,7 @@ class CtrlStatButton {
 
     }
   
- /* --------------------- Klasse CtrlTile ---------------------------------------- */
+ /* --------------------- Klasse MoveSwitch - Schiebescahlter -------------------------------------- */
     class MoveSwitch { 
         constructor() {
             

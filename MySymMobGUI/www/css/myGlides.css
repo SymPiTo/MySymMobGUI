@@ -3083,7 +3083,7 @@ h1:after {
   position: relative;
   display: inline-block;
   width: 200px;
-  height: 60px;
+  height: 40px;
 
   border: solid 1px black;
 
@@ -3106,7 +3106,7 @@ h1:after {
 .MoveSlider:before {
   position: absolute;
   content: "";
-  height: 50px;
+  height: 30px;
   width: 30px;
   left: 4px;
   bottom: 4px;

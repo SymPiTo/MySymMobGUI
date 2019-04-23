@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/myGlides.css">	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>      
     <script src="js/myLib.js"></script>
-
+    <script src="js/myVars.js"></script>
+    
     <link href="http://allfont.net/allfont.css?fonts=dot-matrix" rel="stylesheet" type="text/css" /> 
     <link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
     <!-- <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css"> -->
@@ -358,18 +359,16 @@
 
             var DisPosRolloSZ = new StateDisplay();
             DisPosRolloSZ.create("MainRolloSZ", "", "%", "15px", "30px", "size06", "30px", "Position", "Number", "", "", "", "");
-
-           //var DisModeRolloSZ = new StateDisplay();
-            //DisModeRolloSZ.create("MainRolloSZ", "", "", "85px", "30px", "size06", "30px", "Mode", "Auto", "Man", "", "", "");
-            var slider = new MoveSwitch();
-            slider.create("MainRolloSZ", "85px", "30px");
-
+ 
             var DisST1RolloSZ = new StateDisplay();
-            DisST1RolloSZ.create("MainRolloSZ", "", "", "160px", "30px", "size06", "30px", "Schaltzeiten Mo-Fr", "String", "", "", "", "");
+            DisST1RolloSZ.create("MainRolloSZ", "", "", "85px", "30px", "size06", "30px", "Schaltzeiten Mo-Fr", "String", "", "", "", "");
 
             var DisST2RolloSZ = new StateDisplay();
-            DisST2RolloSZ.create("MainRolloSZ", "", "", "235px", "30px", "size06", "30px", "Schaltzeiten Sa-so", "String", "", "", "", ""); 
-
+            DisST2RolloSZ.create("MainRolloSZ", "", "", "160px", "30px", "size06", "30px", "Schaltzeiten Sa-so", "String", "", "", "", ""); 
+            
+            var Schiebeschalter1 = new MoveSwitch();
+            Schiebeschalter1.create("MainRolloSZ", "235px", "30px");
+            
             var FontBtnRolloSZup = new FontButtonNew();
             FontBtnRolloSZup.create("MainRolloSZ", "sandy", "big", "320px", "10px", "fa fa-chevron-up", "send('command(Rollo,SZ,up)')");
             var FontBtnRolloSZstop = new FontButtonNew();
