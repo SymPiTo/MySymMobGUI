@@ -3084,9 +3084,9 @@ h1:after {
   display: inline-block;
   width: 210px;
   height: 60px;
-  border-bottom-style: solid;
-  border-bottom-color: black;
-  border: thick;
+
+  border: solid 1px black;
+
 }
 
 .MoveSwitch input {display:none;}
