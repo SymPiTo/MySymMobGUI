@@ -3082,7 +3082,7 @@ h1:after {
  .MoveSwitch {
   position: relative;
   display: inline-block;
-  width: 210px;
+  width: 200px;
   height: 60px;
 
   border: solid 1px black;
@@ -3105,7 +3105,7 @@ h1:after {
 
 .MoveSlider:before {
   position: absolute;
-  content: "";
+  content: "test";
   height: 50px;
   width: 50px;
   left: 4px;
@@ -3124,7 +3124,7 @@ Input:focus + .MoveSlider {
 }
 
 Input:checked + .MoveSlider:before {
-  -webkit-transform: translateX(126px);
-  -ms-transform: translateX(126px);
-  transform: translateX(126px);
+  -webkit-transform: translateX(150px);
+  -ms-transform: translateX(150px);
+  transform: translateX(150px);
 }
