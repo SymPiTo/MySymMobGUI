@@ -1062,11 +1062,11 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
                     //MainMenue Leiste ausblenden
                     document.getElementById("MainMenu").style.width = "0vw";
                     //SubMenue Leiste verkuerzt einblenden
-                    document.getElementById(ParentID).style.width = "8vw";
+                    document.getElementById(ParentID).style.width = "25vw";
                     //Haupt Fenster einblenden
-                    document.getElementById(IDMain).style.width = "58vw";
+                    //document.getElementById(IDMain).style.width = "58vw";
                     //Control Fenster einblenden
-                    document.getElementById(IDMain + "Ctrl").style.width = "26vw";
+                    document.getElementById(IDMain + "Ctrl").style.width = "75vw";
                 }
                 else {
                     document.getElementsByClassName("StartScreen")[0].style.width = "0px";
