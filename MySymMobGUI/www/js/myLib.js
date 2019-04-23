@@ -1057,9 +1057,10 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
                     
                 }
             }
-            else {
+            if(MenuType === "SM") {
                 if(IDMain !== ""){
-                    document.getElementsByClassName("StartScreen")[0].style.width = "0px";
+                    //MainMenue Leiste ausblenden
+                    document.getElementById("MainMenu").style.width = "0vw";
                     //SubMenue Leiste verkuerzt einblenden
                     document.getElementById(ParentID).style.width = "8vw";
                     //Haupt Fenster einblenden
@@ -1074,6 +1075,9 @@ function addFontButton(ParentID, color, size, posTop, posLeft, symbol, cmd){
                     //Haupt Fenster komplett einblenden
                     document.getElementById(IDFull).style.width = "92vw"; 
                 }
+            }
+            else{
+                
             }
                 			
                 document.getElementsByClassName("Top")[0].style.backgroundColor = farbe;
