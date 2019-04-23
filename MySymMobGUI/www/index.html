@@ -359,8 +359,10 @@
             var DisPosRolloSZ = new StateDisplay();
             DisPosRolloSZ.create("MainRolloSZ", "", "%", "15px", "30px", "size06", "30px", "Position", "Number", "", "", "", "");
 
-            var DisModeRolloSZ = new StateDisplay();
-            DisModeRolloSZ.create("MainRolloSZ", "", "", "85px", "30px", "size06", "30px", "Mode", "Auto", "Man", "", "", "");
+           //var DisModeRolloSZ = new StateDisplay();
+            //DisModeRolloSZ.create("MainRolloSZ", "", "", "85px", "30px", "size06", "30px", "Mode", "Auto", "Man", "", "", "");
+            var slider = new MoveSwitch();
+            slider.create("MainRolloSZ", "85px", "30px");
 
             var DisST1RolloSZ = new StateDisplay();
             DisST1RolloSZ.create("MainRolloSZ", "", "", "160px", "30px", "size06", "30px", "Schaltzeiten Mo-Fr", "String", "", "", "", "");
