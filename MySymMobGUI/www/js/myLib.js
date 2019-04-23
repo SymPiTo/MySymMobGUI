@@ -2925,7 +2925,7 @@ class CtrlStatButton {
                 var SubMenus = Array.from(subs);
                 SubMenus.forEach(function(element){
                     var a = element.className;
-                        b = document.getElementsByClassName(a)[0].style.width; 
+                        var b = document.getElementsByClassName(a)[0].style.width; 
                         if(b>0){
                            document.getElementsByClassName(a)[0].style.width = "22vw";  
                             
