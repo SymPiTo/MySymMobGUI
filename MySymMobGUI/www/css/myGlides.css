@@ -3132,7 +3132,7 @@ Input:checked + .MoveSlider:before {
 .MoveSlider:after
 {
  content:'Manual';
- color: white;
+ color: red;
  display: block;
  position: absolute;
  transform: translate(-50%,-50%);
@@ -3144,5 +3144,6 @@ Input:checked + .MoveSlider:before {
 
 Input:checked + .MoveSlider:after
 {  
+  color: lime;
   content:'Automatic';
 }
