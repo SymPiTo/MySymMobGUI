@@ -549,7 +549,7 @@ class StateDisplay {
         this.unit = einheit, 
         this.bgColor = color;
         if(color === ""){
-            this.bgColor = "black";
+            this.bgColor = "transparent";
         }
         this.state0 = zus0;
         this.state1 = zus1;
@@ -566,7 +566,7 @@ class StateDisplay {
         elem1.setAttribute("onclick", command);
         var elem3 = document.createElement("div");
         
-        elem3.innerHTML = "----" + this.unit;
+        elem3.innerHTML = "" + this.unit;
         elem3.style.fontSize = SchriftGr;
         elem3.style.paddingTop = "5px";
         elem3.style.color = "white";

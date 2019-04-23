@@ -142,7 +142,7 @@ WebKit inertia scrolling is being added here for any present/future devices that
 	position:absolute;
 	top: 10vh;
 	width: 0px;
-	height: 70vh;
+	height: 85vh;
         left:22.1vw;
 }
 
@@ -2170,7 +2170,10 @@ width:40%;
 .anzeige.normal{
     height: 60px;
 }
- 
+
+.anzeige.size05{
+    height: 50px;
+}
 .anzeige.size07{
     height: 70px;
 }
