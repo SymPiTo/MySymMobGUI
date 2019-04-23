@@ -3095,7 +3095,7 @@ h1:after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: transparent;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -3112,15 +3112,15 @@ h1:after {
   transition: .4s;
 }
 
-input:checked + .MoveSlider {
+MoveInput:checked + .MoveSlider {
   background-color: #2196F3;
 }
 
-Input:focus + .MoveSlider {
+MoveInput:focus + .MoveSlider {
   box-shadow: 0 0 1px #2196F3;
 }
 
-Input:checked + .MoveSlider:before {
+MoveInput:checked + .MoveSlider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);

@@ -2961,22 +2961,23 @@ class CtrlStatButton {
  /* --------------------- Klasse CtrlTile ---------------------------------------- */
     class MoveSwitch { 
         constructor() {
-            this.ID = "";
- 
+            
         }
-
         create(ParentID, posTop, posLeft){
+            var container = document.createElement("div");
+            container.style.position = "absolute";
+            container.style.left = posLeft;
+            container.style.top = posTop;
             var elem = document.createElement("label");
             elem.className = "MoveSwitch";
-            //elem.classList.add(color + "Light");
-            var elem1 = document.createElement("Input");
+            container.append(elem);
+            var elem1 = document.createElement("MoveInput");
             elem1.type = "checkbox";
             elem.append(elem1);
             var elem2 = document.createElement("div");
             elem2.className = "MoveSlider";
             elem.append(elem2);
-            document.getElementById(ParentID).appendChild(elem);
-            
+            document.getElementById(ParentID).appendChild(container);
         }
     }
     
