@@ -3018,7 +3018,7 @@ class MoveSwitch {
 }
 
 /* --------------------- Class Heating Ctrl -------------------------------------- */
-/* -------------------------- Version: 1.04.10.2019 ------------------------- */
+/* -------------------------- Version: 2.04.10.2019 ------------------------- */
 class HeatCtrl {
     constructor() {
         this.ID = "";
@@ -3035,7 +3035,7 @@ class HeatCtrl {
         //optionale Parameter
         this.b = "200px";
         this.h = "220px";
-        this.zeichengr = "15px";
+        this.zeichengr = "25px";
         this.btnTextColor = "black";
         this.labelcolor = "lime";
     }
@@ -3108,6 +3108,7 @@ class HeatCtrl {
         var elem2 = document.createElement("div");
         elem2.style.width = "50%";
         elem2.style.color = this.btnTextColor;
+        elem2.style.fontSize = "200%";
         elem2.className = "ctrlbutton";
         elem2.classList.add(this.color);
         elem2.innerHTML = this.state0;
@@ -3122,6 +3123,7 @@ class HeatCtrl {
         elem4.style.width = "50%";
         elem4.style.flexGrow = "1";
         elem4.style.color = this.btnTextColor;
+        elem4.style.fontSize = "200%";
         elem4.className = "ctrlbutton";
         elem4.classList.add(this.color);
         elem4.innerHTML = this.state1;
@@ -3135,6 +3137,7 @@ class HeatCtrl {
         elem5.style.width = this.b;
         elem5.style.height = "25%";
         elem5.style.padding = "2px";
+
         elem5.style.display = "flex";
         elem5.style.flexDirection = "row";
         elem5.style.justifyContent = "space-around";
@@ -3143,9 +3146,11 @@ class HeatCtrl {
         container.append(elem5);
         // angewählten Sollwert an IPS senden
         var elem6 = document.createElement("div");
+
         elem6.style.flexGrow = "1";
         elem6.className = "ctrlbutton";
         elem6.classList.add(this.color);
+        elem6.style.fontSize = "200%";
         elem6.innerHTML = this.state2;
         elem6.style.color = this.btnTextColor;
         elem6.onclick = function () {

@@ -1782,153 +1782,21 @@ width:40%;
 
 .ctrlbutton{
 	border: thin #000000 solid;
-	height: 80px;
-	width: 202px;
-	color: white;
-	background: -webkit-linear-gradient(hsl(274, 100%, 25%), hsl(274, 100%, 45%));
-	background: linear-gradient(0deg, hsl(274, 100%, 25%) 5%, hsl(274, 100%, 45%) 70%); 
+ 
 	-webkit-transition: All 0.5s ease;
 	-moz-transition: All 0.5s ease;
 	-o-transition: All 0.5s ease;
 	-ms-transition: All 0.5s ease;
 	transition: All 0.5s ease;
-	font-size: xx-large;
-	padding-top: 20px;
+ 
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
        
 	 
 }
-.ctrlbutton.xsmall {
-	font-size: 18px;
-	height: 35px;
-	min-width: 80px;
-	padding-top: 7px;
-	color: #C0C0C0;
-}
-.ctrlbutton.XS {
-	font-size: 20px;
-	height: 70px;
-	width: 110px;
-	padding-top: 2px;
-	color: white;
-}
-.ctrlbutton.XSS {
-	font-size: 20px;
-	height: 70px;
-	width: 91px;
-	padding-top: 2px;
-	color: white;
-}
-.ctrlbutton.small {
-	height: 50px;
-	width: 120px;
-	font-size: 24px;
-	padding-top: 10px;
-}
-.ctrlbutton.smaller {
-	height: 50px;
-	width: 100px;
-	font-size: 20px;
-	padding-top: 10px;
-}
-.ctrlbutton.normal {
-	height: 50px;
-	width: 175px;
-	font-size: 20px;
-        margin-bottom: 2px;
-	padding-top: 10px;
-}
-.ctrlbutton.big {
-	height: 60px;
-	width: 150px;
-	font-size: 22px;
-        margin-bottom: 2px;
-	padding-top: 20px;
-}
 
-.ctrlbutton.smallwide {
-	height: 40px;
-	width: 225px;
-	font-size: 18px;
-        margin-bottom: 2px;
-	padding-top: 10px;
-}
-.ctrlbutton.cyan {
-	background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 45%), hsl(174, 100%, 25%));
-}
-.ctrlbutton.olive {
-	background: -webkit-linear-gradient(hsl(82, 100%, 25%), hsl(82, 100%, 45%));
-}
-/*
-.ctrlbutton.sandy {
-	background: -webkit-linear-gradient(hsl(28, 100%, 25%), hsl(28, 100%, 45%));
-}
-*/
-.ctrlbutton.red {
-	background: -webkit-linear-gradient(hsl(0, 100%, 25%), hsl(0, 100%, 45%), hsl(0, 100%, 25%));
-}
-.ctrlbutton.purple {
-	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%), hsl(300, 100%, 25%));
-	padding-bottom: 20px;
-}
 
-.ctrlbutton.blue {
-	background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 35%), hsl(200, 100%, 45%), hsl(200, 100%, 35%),hsl(200, 100%, 25%));
-}
-.ctrlbutton.blueToggle {
-	background: -webkit-linear-gradient(hsl(200, 100%, 20%), hsl(200, 100%, 15%),hsl(200, 100%, 10%),  hsl(200, 100%, 15%), hsl(200, 100%, 20%));
-}
-/*.ctrlbutton.grey {
-	background: -webkit-linear-gradient(hsl(200, 0%, 25%), hsl(200, 0%, 45%), hsl(200, 100%, 25%));
-}
-*/
- 
-
-.ctrlbutton:hover {
- 
-}
-.ctrlbutton:active {
-	background: -webkit-linear-gradient(hsl(274, 100%, 5%), hsl(274, 100%, 15%));
-}
-.ctrlbutton.cyan:active {
-	background: -webkit-linear-gradient(hsl(174, 100%, 5%), hsl(174, 100%, 15%),hsl(174, 100%, 5%));
-}
-.ctrlbutton.olive:active {
-	background: -webkit-linear-gradient(hsl(82, 100%, 5%), hsl(82, 100%, 15%));
-}
-/*
-.ctrlbutton.sandy:active {
-	background: -webkit-linear-gradient(hsl(28, 100%, 5%), hsl(28, 100%, 15%));
-}
-*/
-.ctrlbutton.red:active {
-	background: -webkit-linear-gradient(hsl(0, 100%, 5%), hsl(0, 100%, 15%));
-}
-.ctrlbutton.purple:active {
-	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%), hsl(300, 100%, 5%));
-}
-.ctrlbutton.blue:active {
-	background: -webkit-linear-gradient(hsl(200, 100%, 5%), hsl(200, 100%, 15%), hsl(200, 100%, 5%));
-}
-/*
-.ctrlbutton.grey:active {
-	background: -webkit-linear-gradient(hsl(200, 0%, 5%), hsl(200, 0%, 15%));
-}
-*/
- 
-
-.ctrlbutton.cyanA {
-	background: -webkit-linear-gradient(hsl(174, 100%, 5%), hsl(174, 100%, 15%));
-}
-
-.ctrlbutton.oliveA {
-	background: -webkit-linear-gradient(hsl(82, 100%, 5%), hsl(82, 100%, 15%));
-}
-.ctrlbutton.sandyA {
-	background: -webkit-linear-gradient(hsl(28, 100%, 5%), hsl(28, 100%, 15%));
-}
-.ctrlbutton.redA {
-	background: -webkit-linear-gradient(hsl(0, 100%, 5%), hsl(0, 100%, 15%));
-}
 
 .Tile {
    width: 200px;
