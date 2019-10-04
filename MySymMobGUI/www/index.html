@@ -162,7 +162,11 @@
 </head>
 
 <body onload='init();'>
-    <!-- .................................. Container ...............................  -->
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                Container                                -->
+<!-- ----------------------------------------------------------------------- -->
+
     <div id="Container" class="Container">      
          <div id="kopfleiste" class="Top">
                 <div id="TopTitle">
@@ -173,7 +177,11 @@
              var Back = new IconBtn();
              Back.create("kopfleiste", "2vh", "80vw", "Back.png");
         </script> 
-        <!-- ****************************** Main Menue ********************************************  -->
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                               Main Menue                                -->
+<!-- ----------------------------------------------------------------------- -->
+
 	<div id="MainMenu" class="MainMenu"></div>
 	<script>	
             var MenuHome = new GlideButton();
@@ -204,8 +212,12 @@
             MenuSecurity1.create("MainMenu","cyan", "Security", "_GuestroomBW.jpg", "",  "", "MM" );  
         </script>    
             
-        <!-- ********************************************* Unter Menus ***********************************************************  -->
-	<!-- *********************** StartScreen  **************************  -->
+<!-- ----------------------------------------------------------------------- -->
+<!--                               Unter Menus                               -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ----------------------------- StartScreen ----------------------------- -->
+
 	<subMenu id="SubMenuStart" class="MenuStart"></subMenu>
         <script>    
             var SubMenuWetter = new GlideButton();
@@ -213,7 +225,9 @@
             var SubMenuShort = new GlideButton();
             SubMenuShort.create("SubMenuStart", "grey", "ShortCuts", "Sequence_BW_web.png", "MainShorts","", "SM" ); 
         </script>
-	<!-- *********************** SubMenu - Security  **************************  -->
+
+<!-- ------------------------- SubMenu - Security -------------------------- -->
+
 	<subMenu id="SubMenuSec" class="MenuSec"></subMenu>
         <script>    
             var SubMenuSecCode = new GlideButton();
@@ -223,7 +237,9 @@
             var SubMenuBatAlarm = new GlideButton();
             SubMenuBatAlarm.create("SubMenuSec", "red", "Battery Alarm", "BatAlarm.png", "MainBatAlarm","", "SM" ); 
         </script>
-        <!-- ************************* SubMenu - Wohnzimmer **************************  -->
+
+<!-- ------------------------ SubMenu - Wohnzimmer ------------------------- -->
+
         <subMenu id= "SubMenuWZ" class="MenuWZ">        </subMenu>  
         <script> 
             var SubMenuHzWZ = new GlideButton();
@@ -238,7 +254,9 @@
             var SubMenuRolloWZ = new GlideButton();
             SubMenuRolloWZ.create("SubMenuWZ", "cyan", "BlueRayPlayer", "BlueRay.png", "MainBlueRayWZ","", "SM" ); 
         </script>  
-	<!-- *********************** SubMenu - Kinderzimmer  **************************  -->
+
+<!-- ----------------------- SubMenu - Kinderzimmer ------------------------ -->
+
 	<subMenu id="SubMenuKZ" class="MenuKZ"></subMenu>
 
         <script>    
@@ -247,7 +265,9 @@
             var SubMenuRolloKZ = new GlideButton();
             SubMenuRolloKZ.create("SubMenuKZ", "olive", "Rolladen Kinderzimmer", "_Rolladen_BW_web.png", "MainRolloKZ","", "SM" ); 
         </script>  
-	<!-- ************************ SubMenu - Schlafzimmer  ************************  -->
+
+<!-- ----------------------- SubMenu - Schlafzimmer ------------------------ -->
+
 	<subMenu id="SubMenuSZ" class="MenuSZ"></subMenu>
         <script>    
             var SubMenuHzSZ = new GlideButton();
@@ -265,7 +285,9 @@
             var SubMenuleer3 = new GlideButton();
             SubMenuleer3.create("SubMenuSZ", "sandy", "", "", "leer3","", "SM" ); 
         </script>  
-	<!-- ************************ SubMenu - Kueche  ************************  -->
+
+<!-- -------------------------- SubMenu - Kueche --------------------------- -->
+
 	<subMenu id="SubMenuK" class="MenuK"></subMenu>
         <script>    
             var SubMenuHzK = new GlideButton();
@@ -277,7 +299,9 @@
             var SubMenuClock = new GlideButton();
             SubMenuClock.create("SubMenuK", "midgreen", "Clock", "Uhr_BW_web.png", "MainClock","", "SM" ); 
         </script> 
-	<!-- ************************ SubMenu - Menu Balkon  ************************  -->
+
+<!-- ------------------------ SubMenu - Menu Balkon ------------------------ -->
+
 	<subMenu id="SubMenuB" class="MenuB"></subMenu>
         <script>   
             var SubMenuHzB = new GlideButton();
@@ -285,7 +309,9 @@
             var SubMenuRolloB = new GlideButton();
             SubMenuRolloB.create("SubMenuB", "blue", "Rolladen Balkon", "_Rolladen_BW_web.png", "MainRolloB","", "SM" ); 
         </script> 
-	<!-- ************************ SubMenu - Multimedia  ************************  -->
+
+<!-- ------------------------ SubMenu - Multimedia ------------------------- -->
+
 	<subMenu id="SubMenuMedia" class="MenuMultimedia"></subMenu>	
          <script>   
             var SubMenuTV = new GlideButton();
@@ -303,7 +329,9 @@
             var SubMenuBlueRay = new GlideButton();
             SubMenuBlueRay.create("SubMenuMedia", "purple", "BlueRay Player", "BlueRay.png", "MainBlueRay","", "SM" );
         </script>   
-	<!-- ************************ SubMenu - Menue  Heizung  ************************  -->
+
+<!-- ---------------------- SubMenu - Menue  Heizung ----------------------- -->
+
 	<subMenu id="SubMenuHz" class="MenuHz"></subMenu>
         <script>  
             var SubMenuHzAll = new GlideButton();
@@ -318,7 +346,8 @@
             SubMenuHzK.create("SubMenuHz", "midgreen", "Heizung Kueche", "_Heizung_BW2.png", "MainHzK","", "SM" ); 
         </script> 
 
-	<!-- ************************ SubMenu -  Rolladen  ************************  -->
+<!-- ------------------------- SubMenu -  Rolladen ------------------------- -->
+
 	<subMenu id="SubMenuRollo" class="MenuRollo"></subMenu>
         <script>  
             var SubMenuRolloAll = new GlideButton();
@@ -334,7 +363,9 @@
             var SubMenuRolloB = new GlideButton();
             SubMenuRolloB.create("SubMenuRollo", "blue", "Rolladen Balkon", "_Rolladen_BW.png", "MainRolloK","", "SM" ); 
         </script> 
-	<!-- ************************ Sub Menu Netzwerk  ************************  -->
+
+<!-- -------------------------- Sub Menu Netzwerk -------------------------- -->
+
 	<subMenu id="SubMenuNet" class="MenuNet"></subMenu>
         <script>   
             var SubMenuWSS = new GlideButton();
@@ -343,12 +374,50 @@
             SubMenuWSS.create("SubMenuNet", "midgreen", "WSS Server", "WSS.png", "MainNet","", "SM" ); 
         </script>
 
-        <!-- ************************ SubMenu Ende  *************************  -->
+<!-- ---------------------------- SubMenu Ende ----------------------------- -->
         
-        <!-- ****************************************************************  --> 
-        <!-- ************************ CONTROLL AREA  ************************  --> 
-        <!-- *********************************************************++++***  --> 
+   
+<!-- ----------------------------------------------------------------------- -->
+<!--                               AREA                                      -->
+<!-- ----------------------------------------------------------------------- -->
+  
         
+<!-- ----------------------------------------------------------------------- -->
+<!--                           Heizung Wohnzimmer                            -->
+<!-- ----------------------------------------------------------------------- -->
+<script>
+        var windowHzWz = new Area();
+        windowHzWz.createMain("MainHeizungWZ", "bgCyan");
+    </script>
+
+    <script>
+        var DisModeHzWZ = new StateDisplay();
+        DisModeHzWZ.create("MainHeizungWZ", "cyanLight", "", "10px", "30px", "size07", "30px", "Mode", "Auto",
+            "Man",
+            "Urlaub", "Party", "");
+        var DisTempHzWZ = new StateDisplay();
+        DisTempHzWZ.create("MainHeizungWZ", "cyanLight", "°C", "85px", "30px", "size07", "30px", "Temperatur",
+            "Number",
+            "", "", "", "");
+        var DisPosHzWZCtrl = new StateDisplay();
+        DisPosHzWZCtrl.create("MainHeizungWZ", "cyanLight", "%", "160px", "30px", "size07", "30px", "Position",
+            "Number",
+            "", "", "", "");
+        var DisHumidWZCtrl = new StateDisplay();
+        DisHumidWZCtrl.create("MainHeizungWZ", "cyanLight", "%rel", "240px", "30px", "size07", "30px",
+            "Humidity",
+            "Number", "",
+            "", "", "");
+
+        var HzCtrlWZ = new HeatCtrl();
+        HzCtrlWZ.create("MainHeizungWZ", "335px", "30px", "cyan", "Heat-Control", "sollTempWZ");
+    </script>
+
+
+
+
+
+
         <!-- ************************ Rolladen  Schlafzimmer ************************ -->
         <script> 
             var mainwindowRolloSZ = new Area();
@@ -388,12 +457,17 @@
  
 
         
-        <!-- ************************ Fuss Leiste  ************************  -->
+<!-- ----------------------------------------------------------------------- -->
+<!--                               Fuss Leiste                               -->
+<!-- ----------------------------------------------------------------------- -->
+
          <div id="Fussleiste" class="Bottom">
                 <div id='state' style='z-index: 6; text-align: left; background-color: transparent'> </div>
                
         </div>
-    <!-- ************************** Container Ende  ************************** -->
+
+<!-- --------------------------- Container Ende ---------------------------- -->
+
     </div>
 </body>
 </html>

@@ -530,23 +530,27 @@ class DynIcon {
 
 
 /* --------------------- class Display status of Variable ---------------------------------------- */
+/* -------------------------- Version: 1.04.10.2019 ------------------------- */
 class StateDisplay {
     constructor() {
         this.ID = "";
         this.unit = "";
-        this.textColor = "white";
+        this.textColor = "black";
         this.state0 = "";
         this.state1 = "";
         this.state2 = "";
         this.state3 = "";
         this.bgColor = "black";
+        //Optionale Parameter
+        this.h = "60px";
+        this.b = "202px";
     }
 
-    create(ParentID, color, einheit, posTop, posLeft, size, SchriftGr, titel, zus0, zus1, zus2, zus3, command) {
+    create(ParentID, color, einheit, posTop, posLeft, size, SchriftGr, titel, zus0, zus1, zus2, zus3, command, ...param) {
         this.unit = einheit,
             this.bgColor = color;
         if (color === "") {
-            this.bgColor = "transparent";
+            this.bgColor = "black";
         }
         this.state0 = zus0;
         this.state1 = zus1;
@@ -555,18 +559,36 @@ class StateDisplay {
         var elem1 = document.createElement("div");
         elem1.className = "anzeige";
         elem1.classList.add(this.bgColor, size);
-        elem1.style.color = "lime";
+        if (param.length > 0) {
+            this.b = param[0];
+            this.h = param[1];
+            elem1.style.width = this.b;
+            elem1.style.height = this.h;
+        } else {
+
+        }
+
+        elem1.style.color = "white";
         elem1.style.position = "absolute";
         elem1.style.left = posLeft;
         elem1.style.top = posTop;
-        elem1.innerHTML = titel;
+
         elem1.setAttribute("onclick", command);
+
+        var elem2 = document.createElement("div");
+        elem2.style.backgroundColor = "black";
+        elem2.style.height = "20px";
+        elem2.innerHTML = titel;
+        elem2.style.paddingTop = "2px"
+        elem1.append(elem2);
+
         var elem3 = document.createElement("div");
 
-        elem3.innerHTML = "" + this.unit;
+
+        elem3.innerHTML = "----" + this.unit;
         elem3.style.fontSize = SchriftGr;
         elem3.style.paddingTop = "5px";
-        elem3.style.color = "white";
+        elem3.style.color = this.textColor;
         this.ID = elem3;
         elem1.append(elem3);
         document.getElementById(ParentID).appendChild(elem1);
@@ -603,8 +625,11 @@ class StateDisplay {
                 }
             }
         } catch (error) {
-            alert("value in Display error" + this.ID);
+            $('fehler').innerHTML = "Variable  fehlt:";
+            //alert("value in Display error" + this.ID);
         }
+
+
     }
 
     setTextColor(farbe) {
@@ -1065,7 +1090,7 @@ class GlideButton {
                     //SubMenue Leiste ausblenden auf 0.1vw zum erkennen
                     document.getElementById(ParentID).style.width = "0.1vw";
                     //Haupt Fenster einblenden
-                    document.getElementById(IDMain).style.width = "78vw";
+                    document.getElementById(IDMain).style.width = "99vw";
                     //Control Fenster einblenden
                     //document.getElementById(IDMain + "Ctrl").style.width = "78vw";
                 } else {
@@ -2988,5 +3013,152 @@ class MoveSwitch {
         elem2.className = "MoveSlider";
         elem.append(elem2);
         document.getElementById(ParentID).appendChild(container);
+    }
+}
+
+/* --------------------- Class Heating Ctrl -------------------------------------- */
+/* -------------------------- Version: 1.04.10.2019 ------------------------- */
+class HeatCtrl {
+    constructor() {
+        this.ID = "";
+        this.value1ID = "";
+        this.value2ID = "";
+        this.color = "";
+        this.state0 = "+";
+        this.state1 = "-";
+        this.state2 = "set";
+        this.unit = "°C";
+        this.leftStat = "00";
+        this.rightStat = "00";
+
+        //optionale Parameter
+        this.b = "200px";
+        this.h = "220px";
+        this.zeichengr = "15px";
+        this.btnTextColor = "black";
+        this.labelcolor = "lime";
+    }
+    create(ParentID, posTop, posLeft, color, label, room, ...param) {
+        this.color = color;
+        if (param.length > 1) {
+            this.b = param[0];
+            this.h = param[1];
+            this.zeichengr = param[2];
+            this.btnTextColor = param[3];
+            this.labelcolor = param[4];
+        }
+        var container = document.createElement("div");
+        this.ID = container;
+        container.style.flexDirection = "column";
+        container.style.position = "absolute";
+        container.style.left = posLeft;
+        container.style.top = posTop;
+        container.className = color + "Light";
+        container.style.width = this.b;
+        container.style.height = this.h;
+        container.style.color = this.labelcolor;
+        // Label 
+        var elem1 = document.createElement("div");
+        elem1.style.paddingTop = "5px";
+        elem1.style.height = "30px";
+        elem1.style.backgroundColor = "black";
+        elem1.innerHTML = label;
+        container.append(elem1)
+        //ausstehender Soll - Einstell Wert - Soll WERT
+        var elemTC = document.createElement("div");
+        elemTC.style.width = this.b;
+        elemTC.style.padding = "5px";
+        elemTC.style.height = "35%";
+        elemTC.style.color = "black";
+        elemTC.style.display = "flex";
+        elemTC.style.alignItems = "flex-end";
+        elemTC.style.flexDirection = "row";
+        elemTC.style.justifyContent = "space-between";
+        container.append(elemTC);
+        //Anzeige ausstehende Soll Temperatur
+        var elemTL = document.createElement("span");
+        this.value1ID = elemTL;
+        elemTL.innerHTML = this.leftStat + this.unit;
+        elemTC.append(elemTL);
+        //Anzeige vorgewählter Sollwert
+        var elemTM = document.createElement("span");
+        elemTM.style.paddingBottom = "10%";
+        elemTM.innerHTML = "22.0" + this.unit;
+        elemTM.style.fontSize = "30px";
+        elemTC.append(elemTM);
+        //Anzeige Sollwert am Regler
+        var elemTR = document.createElement("span");
+        this.value2ID = elemTR;
+        elemTR.innerHTML = this.rightStat + this.unit;
+        elemTC.append(elemTR);
+        // + / - buttons
+        var elem1 = document.createElement("div");
+        elem1.style.width = this.b;
+        elem1.style.height = "25%";
+        elem1.style.display = "flex";
+        elem1.style.flexDirection = "row";
+        elem1.style.justifyContent = "space-around";
+        elem1.style.position = "absolute";
+        elem1.style.top = "51%";
+        elem1.style.padding = "2px";
+        elem1.style.fontsize = this.fs1;
+        container.append(elem1);
+        // Button Vorgabewert - Sollwert um 0,5 °C erhöhen
+        var elem2 = document.createElement("div");
+        elem2.style.width = "50%";
+        elem2.style.color = this.btnTextColor;
+        elem2.className = "ctrlbutton";
+        elem2.classList.add(this.color);
+        elem2.innerHTML = this.state0;
+        elem2.style.flexGrow = "1";
+        elem2.onclick = function () {
+            var solltemp = parseFloat(elemTM.innerHTML) + 0.5;
+            elemTM.innerHTML = solltemp + "°C";
+        }
+        elem1.append(elem2);
+        // Button Vorgabewert - Sollwert um 0,5 °C verringern
+        var elem4 = document.createElement("div");
+        elem4.style.width = "50%";
+        elem4.style.flexGrow = "1";
+        elem4.style.color = this.btnTextColor;
+        elem4.className = "ctrlbutton";
+        elem4.classList.add(this.color);
+        elem4.innerHTML = this.state1;
+        elem4.onclick = function () {
+            var solltemp = parseFloat(elemTM.innerHTML) - 0.5;
+            elemTM.innerHTML = solltemp + "°C";
+        }
+        elem1.append(elem4);
+        // Set Button
+        var elem5 = document.createElement("div");
+        elem5.style.width = this.b;
+        elem5.style.height = "25%";
+        elem5.style.padding = "2px";
+        elem5.style.display = "flex";
+        elem5.style.flexDirection = "row";
+        elem5.style.justifyContent = "space-around";
+        elem5.style.position = "absolute";
+        elem5.style.top = "75%";
+        container.append(elem5);
+        // angewählten Sollwert an IPS senden
+        var elem6 = document.createElement("div");
+        elem6.style.flexGrow = "1";
+        elem6.className = "ctrlbutton";
+        elem6.classList.add(this.color);
+        elem6.innerHTML = this.state2;
+        elem6.style.color = this.btnTextColor;
+        elem6.onclick = function () {
+            var solltemp = parseFloat(elemTM.innerHTML);
+            var cmd = "command(Heizung," + room + "," + solltemp + ")";
+            send(cmd);
+        }
+        elem5.append(elem6);
+
+        document.getElementById(ParentID).appendChild(container);
+    }
+
+    update(value1, value2) {
+        this.value1ID.innerHTML = value1 + this.unit;
+        this.value2ID.innerHTML = value2 + this.unit;
     }
 }
