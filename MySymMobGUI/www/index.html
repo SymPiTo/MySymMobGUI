@@ -391,26 +391,29 @@
     </script>
 
     <script>
+        var iHzWZ = new DynIcon("heizkoerper", "bin", false);
+        iHzWZ.create("MainHeizungWZ", "5px", "10px", "300px", "100px");
+
         var DisModeHzWZ = new StateDisplay();
-        DisModeHzWZ.create("MainHeizungWZ", "cyanLight", "", "10px", "10px", "140px", "60px", "24px", "Mode", "Auto",
+        DisModeHzWZ.create("MainHeizungWZ", "cyanLight", "", "150px", "10px", "140px", "60px", "24px", "Mode", "Auto",
             "Man",
             "Urlaub", "Party", "");
         var DisTempHzWZ = new StateDisplay();
-        DisTempHzWZ.create("MainHeizungWZ", "cyanLight", "°C", "10px", "200px", "140px", "60px", "24px", "Temperatur",
+        DisTempHzWZ.create("MainHeizungWZ", "cyanLight", "°C", "150px", "200px", "140px", "60px", "24px", "Temperatur",
             "Number",
             "", "", "", "");
         var DisPosHzWZCtrl = new StateDisplay();
-        DisPosHzWZCtrl.create("MainHeizungWZ", "cyanLight", "%", "80px", "10px", "140px", "60px", "24px", "Position",
+        DisPosHzWZCtrl.create("MainHeizungWZ", "cyanLight", "%", "220px", "10px", "140px", "60px", "24px", "Position",
             "Number",
             "", "", "", "");
         var DisHumidWZCtrl = new StateDisplay();
-        DisHumidWZCtrl.create("MainHeizungWZ", "cyanLight", "%rel", "80px", "200px", "140px", "60px", "24px",
+        DisHumidWZCtrl.create("MainHeizungWZ", "cyanLight", "%rel", "220px", "200px", "140px", "60px", "24px",
             "Humidity",
             "Number", "",
             "", "", "");
 
         var HzCtrlWZ = new HeatCtrl();
-        HzCtrlWZ.create("MainHeizungWZ", "220px", "10px", "cyan", "Heat-Control", "sollTempWZ");
+        HzCtrlWZ.create("MainHeizungWZ", "320px", "10px", "cyan", "Heat-Control", "sollTempWZ");
     </script>
 
 
