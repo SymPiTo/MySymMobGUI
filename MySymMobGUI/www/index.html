@@ -413,7 +413,18 @@
             "", "", "");
 
         var HzCtrlWZ = new HeatCtrl();
-        HzCtrlWZ.create("MainHeizungWZ", "320px", "10px", "cyan", "Heat-Control", "sollTempWZ");
+        HzCtrlWZ.create("MainHeizungWZ", "320px", "70px", "cyan", "Heat-Control", "sollTempWZ");
+    
+    
+        var btnHzWZauto = new CtrlButton();
+            btnHzWZauto.create("MainHeizungWZ", "700px", "30px", "ctrlbutton", "100px", "50px", "cyan", "Automatik",
+                "command",
+                "", "send('command(Heizung,WZ,auto)')");
+            var btnHzWZman = new CtrlButton();
+            btnHzWZman.create("MainHeizungWZ", "700px", "135px", "ctrlbutton","100px", "50px", "cyan", "Manual", "command",
+                "",
+                "send('command(Heizung,WZ,man)')");
+    
     </script>
 
 

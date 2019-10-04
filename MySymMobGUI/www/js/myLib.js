@@ -164,38 +164,36 @@ class TimePicker {
 
 }
 
-/* ------------------- löschenn ---------------------------------- 
+/* -------------------------------------------------------------------------- */
+/*                              Class CtrlButton                              */
+/* -------------------------------------------------------------------------- */
 
-function addCtrlButton(ParentID, Ident, posTop, posLeft, size, color, text,  command){
-    var elem = document.createElement("div");
-    elem.className = "ctrlbutton";
-    elem.classList.add(size, color);
-    elem.id = Ident;
-    elem.innerHTML = text;
-    elem.style.position = "absolute";
-    elem.style.left = posLeft;
-    elem.style.top = posTop;
-    elem.setAttribute("onclick", command);
-    document.getElementById(ParentID).appendChild(elem);			 
-}
-*/
+/* -------------------------- Version: 1.04.10.2019 ------------------------- */
 
-/* --------------------- Klasse Ctrl Button ---------------------------------------- */
 class CtrlButton {
     constructor() {
         this.ID = "";
+
+        //optionale Parameter
+        this.FontFarbe = "black";
     }
 
-    create(ParentID, posTop, posLeft, size, color, text, ctrltype, ctrlWin, command) {
+    create(ParentID, posTop, posLeft, btnClass, breite, hoehe, color, text, ctrltype, ctrlWin, command, ...param) {
+        if (param.length > 0) {
+            this.FontFarbe = param[0];
+        }
         var elem = document.createElement("div");
-        elem.className = "ctrlbutton";
-        elem.classList.add(size, color);
+        elem.className = btnClass;
+        elem.classList.add(color);
+        elem.style.width = breite;
+        elem.style.height = hoehe;
         this.ID = elem;
+        elem.style.color = this.FontFarbe;
         elem.innerHTML = text;
         elem.style.position = "absolute";
         elem.style.left = posLeft;
         elem.style.top = posTop;
-
+        elem.style.zIndex = "3";
         if (ctrltype === "ctrlWindow") {
             elem.onclick = function () {
 
@@ -225,13 +223,34 @@ class CtrlButton {
                 document.getElementsByClassName(ctrlWin)[0].style.width = "26vw";
 
                 send(command);
-
             }
-        }
+        } else if (ctrltype === "CtrlFunc") {
+            elem.onclick = function () {
 
+                // alle Ctrl auf 0px verkleinern 
+                var Ctrl = document.getElementsByTagName("Ctrl");
+                var MCtrlWindow = Array.from(Ctrl);
+                MCtrlWindow.forEach(function (element) {
+                    var a = element.className;
+                    document.getElementsByClassName(a)[0].style.width = "0px";
+                });
+                // ctrlWindow umschalten
+                document.getElementsByClassName(ctrlWin)[0].style.width = "26vw";
+
+                ShowHidePanel(command);
+            }
+
+
+        }
         document.getElementById(ParentID).appendChild(elem);
     }
+    off() {
+        this.ID.style.transition = "all 2s ease-in";
+        this.ID.style.height = "0px";
+        this.ID.style.opacity = "0";
+        this.ID.style.visibility = "hidden";
 
+    }
 
 }
 
