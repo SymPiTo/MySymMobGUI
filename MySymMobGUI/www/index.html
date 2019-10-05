@@ -263,7 +263,7 @@
 
         <script>    
              var SubMenuHzKZ = new GlideButton();
-            SubMenuHzKZ.create("SubMenuKZ", "olive", "Heizung Kinderzimmer", "_Heizung_BW2.png", "MainHzKZ","", "SM" ); 
+            SubMenuHzKZ.create("SubMenuKZ", "olive", "Heizung Kinderzimmer", "_Heizung_BW2.png", "MainHeizungKZ","", "SM" ); 
             var SubMenuRolloKZ = new GlideButton();
             SubMenuRolloKZ.create("SubMenuKZ", "olive", "Rolladen Kinderzimmer", "_Rolladen_BW_web.png", "MainRolloKZ","", "SM" ); 
         </script>  
@@ -273,7 +273,7 @@
 	<subMenu id="SubMenuSZ" class="MenuSZ"></subMenu>
         <script>    
             var SubMenuHzSZ = new GlideButton();
-            SubMenuHzSZ.create("SubMenuSZ", "sandy", "Heizung Schlafzimmer", "_Heizung_BW2.png", "MainHzSZ","", "SM" ); 
+            SubMenuHzSZ.create("SubMenuSZ", "sandy", "Heizung Schlafzimmer", "_Heizung_BW2.png", "MainHeizungSZ","", "SM" ); 
             var SubMenuRolloSZ = new GlideButton();
             SubMenuRolloSZ.create("SubMenuSZ", "sandy", "Rolladen Schlafzimmer", "_Rolladen_BW_web.png", "MainRolloSZ","", "SM" ); 
             var SubMenuLightSZ = new GlideButton();
@@ -293,7 +293,7 @@
 	<subMenu id="SubMenuK" class="MenuK"></subMenu>
         <script>    
             var SubMenuHzK = new GlideButton();
-            SubMenuHzK.create("SubMenuK", "midgreen", "Heizung Kueche", "_Heizung_BW2.png", "MainHzK","", "SM" ); 
+            SubMenuHzK.create("SubMenuK", "midgreen", "Heizung Kueche", "_Heizung_BW2.png", "MainHeizungK","", "SM" ); 
             var SubMenuRolloK = new GlideButton();
             SubMenuRolloK.create("SubMenuK", "midgreen", "Rolladen Kueche", "_Rolladen_BW_web.png", "MainRolloK","", "SM" ); 
             var SubMenuRezepte = new GlideButton();
@@ -391,74 +391,250 @@
         var windowHzWz = new Area();
         windowHzWz.createMain("MainHeizungWZ", "bgCyan");
     </script>
-
     <script>
         var iHzWZ = new DynIcon("heizkoerper", "bin", false);
-        iHzWZ.create("MainHeizungWZ", "10px", "20px", "270px", "100px");
-
+                iHzWZ.create("MainHeizungWZ", "10px", "20px", "270px", "100px");
         var MainTempVHzWZ = new VarDis();
-        MainTempVHzWZ.create("MainHeizungWZ", "transparent", "40px", "270px", "normal", "°C");
+                MainTempVHzWZ.create("MainHeizungWZ", "transparent", "40px", "270px", "normal", "°C");
         var MainTempRHzWZ = new VarDis();
-        MainTempRHzWZ.create("MainHeizungWZ", "transparent", "80px", "270px", "normal", "°C");
-         
+                MainTempRHzWZ.create("MainHeizungWZ", "transparent", "70px", "270px", "normal", "°C");
         var DisModeHzWZ = new StateDisplay();
-        DisModeHzWZ.create("MainHeizungWZ", "cyanLight", "", "150px", "10px", "140px", "60px", "24px", "Mode", "Auto",
+                DisModeHzWZ.create("MainHeizungWZ", "cyanLight", "", "150px", "10px", "140px", "60px", "24px", "Mode", "Auto",
             "Man",
             "Urlaub", "Party", "");
         var DisTempHzWZ = new StateDisplay();
-        DisTempHzWZ.create("MainHeizungWZ", "cyanLight", "°C", "150px", "200px", "140px", "60px", "24px", "Temperatur",
+                DisTempHzWZ.create("MainHeizungWZ", "cyanLight", "°C", "150px", "200px", "140px", "60px", "24px", "Temperatur",
             "Number",
             "", "", "", "");
         var DisPosHzWZCtrl = new StateDisplay();
-        DisPosHzWZCtrl.create("MainHeizungWZ", "cyanLight", "%", "220px", "10px", "140px", "60px", "24px", "Position",
+                DisPosHzWZCtrl.create("MainHeizungWZ", "cyanLight", "%", "220px", "10px", "140px", "60px", "24px", "Position",
             "Number",
             "", "", "", "");
         var DisHumidWZCtrl = new StateDisplay();
-        DisHumidWZCtrl.create("MainHeizungWZ", "cyanLight", "%rel", "220px", "200px", "140px", "60px", "24px",
+                DisHumidWZCtrl.create("MainHeizungWZ", "cyanLight", "%rel", "220px", "200px", "140px", "60px", "24px",
             "Humidity",
             "Number", "",
             "", "", "");
-
         var HzCtrlWZ = new HeatCtrl();
-        HzCtrlWZ.create("MainHeizungWZ", "310px", "70px", "cyan", "Heat-Control", "sollTempWZ");
-    
+                HzCtrlWZ.create("MainHeizungWZ", "310px", "70px", "cyan", "Heat-Control", "sollTempWZ");
         var Rahmen1WZ = new Kachel();
             Rahmen1WZ.create("MainHeizungWZ", "700px", "60px", "230px", "110px", "cyan", "Mode");
-            
         var btnHzWZauto = new CtrlButton();
             btnHzWZauto.create("MainHeizungWZ", "740px", "70px", "ctrlbutton", "100px", "50px", "cyan", "Automatik",
                 "command",
                 "", "send('command(Heizung,WZ,auto)')");
-            var btnHzWZman = new CtrlButton();
+        var btnHzWZman = new CtrlButton();
             btnHzWZman.create("MainHeizungWZ", "740px", "175px", "ctrlbutton","100px", "50px", "cyan", "Manual", "command",
                 "",
                 "send('command(Heizung,WZ,man)')");
-
-           
-                var Rahmen3WZ = new Kachel();
+        var Rahmen3WZ = new Kachel();
             Rahmen3WZ.create("MainHeizungWZ", "840px", "60px", "230px", "110px", "cyan", "Preset");
-            var btnHzWZUrlaub = new CtrlButton();
+        var btnHzWZUrlaub = new CtrlButton();
             btnHzWZUrlaub.create("MainHeizungWZ", "880px", "70px", "ctrlbutton", "100px", "50px", "cyan", "Urlaub", "command",
                 "", "send('command(Heizung,WZ,urlaub)')");
-            var btnHzWZParty = new CtrlButton();
+        var btnHzWZParty = new CtrlButton();
             btnHzWZParty.create("MainHeizungWZ", "880px", "175px", "ctrlbutton", "100px", "50px", "cyan", "Party", "command",
                 "", "send('command(Heizung,WZ,party)')");
-
-
-            var Rahmen2WZ = new Kachel();
+        var Rahmen2WZ = new Kachel();
             Rahmen2WZ.create("MainHeizungWZ", "560px", "40px", "270px", "110px", "cyan", "Control")
- 
-            var btnHzWZHeizen = new FontCtrlButton();
+        var btnHzWZHeizen = new FontCtrlButton();
             btnHzWZHeizen.create("MainHeizungWZ", "cyan", "600px", "50px", "fa fa-temperature-high", "Heizen",
                 "command",
                 "send('command(Heizung,WZ,heizen)') ", "", "120px", "50px", "black", "19px", "red");
-            var btnHzWZAbsenken = new FontCtrlButton();
+        var btnHzWZAbsenken = new FontCtrlButton();
             btnHzWZAbsenken.create("MainHeizungWZ", "cyan", "600px", "180px", "fa fa-temperature-low", "Absenken",
                 "command",
                 "send('command(Heizung,WZ,absenken)') ", "", "120px", "50px", "black", "19px", "blue");
- 
     </script>
 
+<!-- ----------------------------------------------------------------------- -->
+<!--                           Heizung Schlafzimmer                          -->
+<!-- ----------------------------------------------------------------------- -->
+<script>
+        var windowHzSz = new Area();
+        windowHzSz.createMain("MainHeizungSZ", "bgSandy");
+    </script>
+    <script>
+        var iHzSZ = new DynIcon("heizkoerper", "bin", false);
+                iHzSZ.create("MainHeizungSZ", "10px", "20px", "270px", "100px");
+        var MainTempVHzSZ = new VarDis();
+                MainTempVHzSZ.create("MainHeizungSZ", "transparent", "40px", "270px", "normal", "°C");
+        var MainTempRHzSZ = new VarDis();
+                MainTempRHzSZ.create("MainHeizungSZ", "transparent", "70px", "270px", "normal", "°C");
+        var DisModeHzSZ = new StateDisplay();
+                DisModeHzSZ.create("MainHeizungSZ", "sandyLight", "", "150px", "10px", "140px", "60px", "24px", "Mode", "Auto",
+            "Man",
+            "Urlaub", "Party", "");
+        var DisTempHzSZ = new StateDisplay();
+                DisTempHzSZ.create("MainHeizungSZ", "sandyLight", "°C", "150px", "200px", "140px", "60px", "24px", "Temperatur",
+            "Number",
+            "", "", "", "");
+        var DisPosHzSZCtrl = new StateDisplay();
+                DisPosHzSZCtrl.create("MainHeizungSZ", "sandyLight", "%", "220px", "10px", "140px", "60px", "24px", "Position",
+            "Number",
+            "", "", "", "");
+        var DisHumidSZCtrl = new StateDisplay();
+                DisHumidSZCtrl.create("MainHeizungSZ", "sandyLight", "%rel", "220px", "200px", "140px", "60px", "24px",
+            "Humidity",
+            "Number", "",
+            "", "", "");
+        var HzCtrlSZ = new HeatCtrl();
+                HzCtrlSZ.create("MainHeizungSZ", "310px", "70px", "sandy", "Heat-Control", "sollTempSZ");
+        var Rahmen1SZ = new Kachel();
+            Rahmen1SZ.create("MainHeizungSZ", "700px", "60px", "230px", "110px", "sandy", "Mode");
+        var btnHzSZauto = new CtrlButton();
+            btnHzSZauto.create("MainHeizungSZ", "740px", "70px", "ctrlbutton", "100px", "50px", "sandy", "Automatik",
+                "command",
+                "", "send('command(Heizung,SZ,auto)')");
+        var btnHzSZman = new CtrlButton();
+            btnHzSZman.create("MainHeizungSZ", "740px", "175px", "ctrlbutton","100px", "50px", "sandy", "Manual", "command",
+                "",
+                "send('command(Heizung,SZ,man)')");
+        var Rahmen3SZ = new Kachel();
+            Rahmen3SZ.create("MainHeizungSZ", "840px", "60px", "230px", "110px", "sandy", "Preset");
+        var btnHzSZUrlaub = new CtrlButton();
+            btnHzSZUrlaub.create("MainHeizungSZ", "880px", "70px", "ctrlbutton", "100px", "50px", "sandy", "Urlaub", "command",
+                "", "send('command(Heizung,SZ,urlaub)')");
+        var btnHzSZParty = new CtrlButton();
+            btnHzSZParty.create("MainHeizungSZ", "880px", "175px", "ctrlbutton", "100px", "50px", "sandy", "Party", "command",
+                "", "send('command(Heizung,SZ,party)')");
+        var Rahmen2SZ = new Kachel();
+            Rahmen2SZ.create("MainHeizungSZ", "560px", "40px", "270px", "110px", "sandy", "Control")
+        var btnHzSZHeizen = new FontCtrlButton();
+            btnHzSZHeizen.create("MainHeizungSZ", "sandy", "600px", "50px", "fa fa-temperature-high", "Heizen",
+                "command",
+                "send('command(Heizung,SZ,heizen)') ", "", "120px", "50px", "black", "19px", "red");
+        var btnHzSZAbsenken = new FontCtrlButton();
+            btnHzSZAbsenken.create("MainHeizungSZ", "sandy", "600px", "180px", "fa fa-temperature-low", "Absenken",
+                "command",
+                "send('command(Heizung,SZ,absenken)') ", "", "120px", "50px", "black", "19px", "blue");
+    </script>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                           Heizung Kinderzimmer                          -->
+<!-- ----------------------------------------------------------------------- -->
+<script>
+        var windowHzKz = new Area();
+        windowHzKz.createMain("MainHeizungKZ", "bgSandy");
+    </script>
+    <script>
+        var iHzKZ = new DynIcon("heizkoerper", "bin", false);
+                iHzKZ.create("MainHeizungKZ", "10px", "20px", "270px", "100px");
+        var MainTempVHzKZ = new VarDis();
+                MainTempVHzKZ.create("MainHeizungKZ", "transparent", "40px", "270px", "normal", "°C");
+        var MainTempRHzKZ = new VarDis();
+                MainTempRHzKZ.create("MainHeizungKZ", "transparent", "70px", "270px", "normal", "°C");
+        var DisModeHzKZ = new StateDisplay();
+                DisModeHzKZ.create("MainHeizungKZ", "oliveLight", "", "150px", "10px", "140px", "60px", "24px", "Mode", "Auto",
+            "Man",
+            "Urlaub", "Party", "");
+        var DisTempHzKZ = new StateDisplay();
+                DisTempHzKZ.create("MainHeizungKZ", "oliveLight", "°C", "150px", "200px", "140px", "60px", "24px", "Temperatur",
+            "Number",
+            "", "", "", "");
+        var DisPosHzKZCtrl = new StateDisplay();
+                DisPosHzKZCtrl.create("MainHeizungKZ", "oliveLight", "%", "220px", "10px", "140px", "60px", "24px", "Position",
+            "Number",
+            "", "", "", "");
+        var DisHumidKZCtrl = new StateDisplay();
+                DisHumidKZCtrl.create("MainHeizungKZ", "oliveLight", "%rel", "220px", "200px", "140px", "60px", "24px",
+            "Humidity",
+            "Number", "",
+            "", "", "");
+        var HzCtrlKZ = new HeatCtrl();
+                HzCtrlKZ.create("MainHeizungKZ", "310px", "70px", "olive", "Heat-Control", "sollTempKZ");
+        var Rahmen1KZ = new Kachel();
+            Rahmen1KZ.create("MainHeizungKZ", "700px", "60px", "230px", "110px", "olive", "Mode");
+        var btnHzKZauto = new CtrlButton();
+            btnHzKZauto.create("MainHeizungKZ", "740px", "70px", "ctrlbutton", "100px", "50px", "olive", "Automatik",
+                "command",
+                "", "send('command(Heizung,KZ,auto)')");
+        var btnHzKZman = new CtrlButton();
+            btnHzKZman.create("MainHeizungKZ", "740px", "175px", "ctrlbutton","100px", "50px", "olive", "Manual", "command",
+                "",
+                "send('command(Heizung,KZ,man)')");
+        var Rahmen3KZ = new Kachel();
+            Rahmen3KZ.create("MainHeizungKZ", "840px", "60px", "230px", "110px", "olive", "Preset");
+        var btnHzKZUrlaub = new CtrlButton();
+            btnHzKZUrlaub.create("MainHeizungKZ", "880px", "70px", "ctrlbutton", "100px", "50px", "olive", "Urlaub", "command",
+                "", "send('command(Heizung,KZ,urlaub)')");
+        var btnHzKZParty = new CtrlButton();
+            btnHzKZParty.create("MainHeizungKZ", "880px", "175px", "ctrlbutton", "100px", "50px", "olive", "Party", "command",
+                "", "send('command(Heizung,KZ,party)')");
+        var Rahmen2KZ = new Kachel();
+            Rahmen2KZ.create("MainHeizungKZ", "560px", "40px", "270px", "110px", "olive", "Control")
+        var btnHzKZHeizen = new FontCtrlButton();
+            btnHzKZHeizen.create("MainHeizungKZ", "olive", "600px", "50px", "fa fa-temperature-high", "Heizen",
+                "command",
+                "send('command(Heizung,KZ,heizen)') ", "", "120px", "50px", "black", "19px", "red");
+        var btnHzKZAbsenken = new FontCtrlButton();
+            btnHzKZAbsenken.create("MainHeizungKZ", "olive", "600px", "180px", "fa fa-temperature-low", "Absenken",
+                "command",
+                "send('command(Heizung,KZ,absenken)') ", "", "120px", "50px", "black", "19px", "blue");
+    </script>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                           Heizung Küche                          -->
+<!-- ----------------------------------------------------------------------- -->
+<script>
+        var windowHzK = new Area();
+        windowHzK.createMain("MainHeizungK", "bgMidgreen");
+    </script>
+    <script>
+        var iHzK = new DynIcon("heizkoerper", "bin", false);
+                iHzK.create("MainHeizungK", "10px", "20px", "270px", "100px");
+        var MainTempVHzK = new VarDis();
+                MainTempVHzK.create("MainHeizungK", "transparent", "40px", "270px", "normal", "°C");
+        var MainTempRHzK = new VarDis();
+                MainTempRHzK.create("MainHeizungK", "transparent", "70px", "270px", "normal", "°C");
+        var DisModeHzK = new StateDisplay();
+                DisModeHzK.create("MainHeizungK", "midgreenLight", "", "150px", "10px", "140px", "60px", "24px", "Mode", "Auto",
+            "Man",
+            "Urlaub", "Party", "");
+        var DisTempHzK = new StateDisplay();
+                DisTempHzK.create("MainHeizungK", "midgreenLight", "°C", "150px", "200px", "140px", "60px", "24px", "Temperatur",
+            "Number",
+            "", "", "", "");
+        var DisPosHzKCtrl = new StateDisplay();
+                DisPosHzKCtrl.create("MainHeizungK", "midgreenLight", "%", "220px", "10px", "140px", "60px", "24px", "Position",
+            "Number",
+            "", "", "", "");
+        var DisHumidKCtrl = new StateDisplay();
+                DisHumidKCtrl.create("MainHeizungK", "midgreenLight", "%rel", "220px", "200px", "140px", "60px", "24px",
+            "Humidity",
+            "Number", "",
+            "", "", "");
+        var HzCtrlK = new HeatCtrl();
+                HzCtrlK.create("MainHeizungK", "310px", "70px", "midgreen", "Heat-Control", "sollTempK");
+        var Rahmen1K = new Kachel();
+            Rahmen1K.create("MainHeizungK", "700px", "60px", "230px", "110px", "midgreen", "Mode");
+        var btnHzKauto = new CtrlButton();
+            btnHzKauto.create("MainHeizungK", "740px", "70px", "ctrlbutton", "100px", "50px", "midgreen", "Automatik",
+                "command",
+                "", "send('command(Heizung,K,auto)')");
+        var btnHzKman = new CtrlButton();
+            btnHzKman.create("MainHeizungK", "740px", "175px", "ctrlbutton","100px", "50px", "midgreen", "Manual", "command",
+                "",
+                "send('command(Heizung,K,man)')");
+        var Rahmen3K = new Kachel();
+            Rahmen3K.create("MainHeizungK", "840px", "60px", "230px", "110px", "midgreen", "Preset");
+        var btnHzKUrlaub = new CtrlButton();
+            btnHzKUrlaub.create("MainHeizungK", "880px", "70px", "ctrlbutton", "100px", "50px", "midgreen", "Urlaub", "command",
+                "", "send('command(Heizung,K,urlaub)')");
+        var btnHzKParty = new CtrlButton();
+            btnHzKParty.create("MainHeizungK", "880px", "175px", "ctrlbutton", "100px", "50px", "midgreen", "Party", "command",
+                "", "send('command(Heizung,K,party)')");
+        var Rahmen2K = new Kachel();
+            Rahmen2K.create("MainHeizungK", "560px", "40px", "270px", "110px", "midgreen", "Control")
+        var btnHzKHeizen = new FontCtrlButton();
+            btnHzKHeizen.create("MainHeizungK", "midgreen", "600px", "50px", "fa fa-temperature-high", "Heizen",
+                "command",
+                "send('command(Heizung,K,heizen)') ", "", "120px", "50px", "black", "19px", "red");
+        var btnHzKAbsenken = new FontCtrlButton();
+            btnHzKAbsenken.create("MainHeizungK", "midgreen", "600px", "180px", "fa fa-temperature-low", "Absenken",
+                "command",
+                "send('command(Heizung,K,absenken)') ", "", "120px", "50px", "black", "19px", "blue");
+    </script>
 
 
 

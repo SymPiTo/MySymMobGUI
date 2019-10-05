@@ -728,6 +728,30 @@
       DisTempHzWZ.update(sym[2], 1);
       DisPosHzWZCtrl.update(sym[4]);
       DisHumidWZCtrl.update(sym[233]);
-
-
+      /* -------------------------- Heizung Schlafzimmer -------------------------- */
+      MainTempVHzSZ.update(sym[39], 1);
+      MainTempRHzSZ.update(sym[40], 1);
+      iHzSZ.update(sym[6]);
+      HzCtrlSZ.update(sym[38], sym[37]);
+      DisModeHzSZ.update(sym[36]);
+      DisTempHzSZ.update(sym[0]);
+      DisPosHzSZCtrl.update(sym[6]);
+      DisHumidSZCtrl.update(sym[11]);
+      /* -------------------------- Heizung Kinderzimmer -------------------------- */
+      MainTempVHzKZ.update("0.0", 1);
+      MainTempRHzKZ.update("0.0", 1);
+      iHzKZ.update(sym[5]);
+      HzCtrlKZ.update(sym[35], sym[34]);
+      DisModeHzKZ.update(sym[33]);
+      DisTempHzKZ.update(sym[1], 1);
+      DisPosHzKZCtrl.update(sym[5]);
+      DisHumidKZCtrl.update(sym[10]);
+      /* ----------------------------- Heizung Kueche ----------------------------- */
+      MainTempVHzK.update("0.0", 1);
+      MainTempRHzK.update("0.0", 1);
+      iHzK.update(sym[7]);
+      HzCtrlK.update(sym[43], sym[42]);
+      DisModeHzK.update(sym[41]);
+      DisTempHzK.update(sym[3], 1);
+      DisPosHzKCtrl.update(sym[7]);
     }
