@@ -1,65 +1,65 @@
-    function reply(msg){
-        switch(msg) {
-            case "HzWZauto":
-             //   DisModeHzWZ.setTextColor("yellow");
-                break;
-            case "HzWZman":
-            //    DisModeHzWZ.setTextColor("yellow");
-                break;
-            case "HzWZparty":
-            //    DisModeHzWZ.setTextColor("yellow");
-                break;
-            case "HzWZurlaub":
-           //     DisModeHzWZ.setTextColor("yellow");
-                break;
-                
-            case "HzKZauto":
-            //    DisModeHzKZ.setTextColor("yellow");
-                break;
-            case "HzKZman":
-            //    DisModeHzKZ.setTextColor("yellow");
-                break;
-            case "HzKZparty":
-             //   DisModeHzKZ.setTextColor("yellow");
-                break;
-            case "HzKZurlaub":
-              //  DisModeHzKZ.setTextColor("yellow");
-                break;
-                
-            case "HzSZauto":
-              //  DisModeHzSZ.setTextColor("yellow");
-                break;
-            case "HzSZman":
-              //  DisModeHzSZ.setTextColor("yellow");
-                break;
-            case "HzSZparty":
-             //   DisModeHzSZ.setTextColor("yellow");
-                break;
-            case "HzSZurlaub":
-              //  DisModeHzSZ.setTextColor("yellow");
-                break;
-                
-            case "HzKauto":
-             //   DisModeHzK.setTextColor("yellow");
-                break;
-            case "HzKman":
-             //  DisModeHzK.setTextColor("yellow");
-                break;
-            case "HzKparty":
-             //   DisModeHzK.setTextColor("yellow");
-                break;
-            case "HzKurlaub":
-            //   DisModeHzK.setTextColor("yellow");
-                break;
-        }		 		
+    function reply(msg) {
+      switch (msg) {
+        case "HzWZauto":
+          //   DisModeHzWZ.setTextColor("yellow");
+          break;
+        case "HzWZman":
+          //    DisModeHzWZ.setTextColor("yellow");
+          break;
+        case "HzWZparty":
+          //    DisModeHzWZ.setTextColor("yellow");
+          break;
+        case "HzWZurlaub":
+          //     DisModeHzWZ.setTextColor("yellow");
+          break;
+
+        case "HzKZauto":
+          //    DisModeHzKZ.setTextColor("yellow");
+          break;
+        case "HzKZman":
+          //    DisModeHzKZ.setTextColor("yellow");
+          break;
+        case "HzKZparty":
+          //   DisModeHzKZ.setTextColor("yellow");
+          break;
+        case "HzKZurlaub":
+          //  DisModeHzKZ.setTextColor("yellow");
+          break;
+
+        case "HzSZauto":
+          //  DisModeHzSZ.setTextColor("yellow");
+          break;
+        case "HzSZman":
+          //  DisModeHzSZ.setTextColor("yellow");
+          break;
+        case "HzSZparty":
+          //   DisModeHzSZ.setTextColor("yellow");
+          break;
+        case "HzSZurlaub":
+          //  DisModeHzSZ.setTextColor("yellow");
+          break;
+
+        case "HzKauto":
+          //   DisModeHzK.setTextColor("yellow");
+          break;
+        case "HzKman":
+          //  DisModeHzK.setTextColor("yellow");
+          break;
+        case "HzKparty":
+          //   DisModeHzK.setTextColor("yellow");
+          break;
+        case "HzKurlaub":
+          //   DisModeHzK.setTextColor("yellow");
+          break;
+      }
     }
-     
-     function showAList(text){
-         AList.update(text);
-     }
-    
- 
-     function checkUsedVars(ips) {
+
+    function showAList(text) {
+      AList.update(text);
+    }
+
+
+    function checkUsedVars(ips) {
       var sym = [];
       try {
         sym[0] = ips[0].ID23116; //Temperatur SZ
@@ -358,367 +358,376 @@
 
 
     function check(index) {
-          $('fehler').innerHTML =  "Variable  wrong ID:" + index;  
-        
-    } 
-     
-    function MediaValues(ips){
-
-            //client = ips[0].ID42831;
-            //albumno = ips[0].ID22217;
-            //l = albumno.length; 
-            //a = l-4;
-            //albumnr = albumno.substr(a , 4)
-
-
-            //albumpic = 'CDs/'+ albumnr +'.jpg';
-            //document.getElementById("iconCover").src=albumpic;
-
-/*
-
-
-            var element = sym[105];
-            switch(element) {
-                case 0:
-                    document.getElementById('source_A').innerHTML =  'Radio';
-                    break;
-                case 1:
-                    document.getElementById('source_A').innerHTML = 'Media';
-                    break;
-                case 2:
-                    document.getElementById('source_A').innerHTML = 'USB';
-                    break;
-                case3:
-                    document.getElementById('source_A').innerHTML = 'IPOD';
-                    break;
-                case 4:
-                    document.getElementById('source_A').innerHTML =  'AUX A';
-                    break;
-                case 5:
-                    document.getElementById('source_A').innerHTML =  'AUX D';
-                    break;
-                default:
-            }
-       
-
-
-
-            
-            //document.getElementById('Progress').style.width = ips[0].ID13479*4.8;
-
- 
-
-*/ 
-            //if (ips[0].ID49480 == '1'){
-            //	document.getElementById('power').style.color = 'lime';
-            //}else{
-            //	document.getElementById('power').style.color = 'red';
-            //} 
+      $('fehler').innerHTML = "Variable  wrong ID:" + index;
 
     }
-    function Media(ips){
-        $('message').innerHTML =  ips[0].ID55254;
-        $('activeServer_A').innerHTML =  ips[0].ID40574;
-        //$('activeClient_A').innerHTML =  ips[0].ID16761; 
-        $('activeServer_B').innerHTML =  ips[0].ID40574;
-        $('activeClient_B').innerHTML =  ips[0].ID16761; 
-        $('sz2_A').innerHTML =  ips[0].ID14566;
-        $('sz3_A').innerHTML =  sym[95];
-        $('FAV_A').innerHTML =  'Fav ' + ips[0].ID58379;
-        $('DDILAlbum_B').innerHTML =  ips[0].ID59926;
-        $('DIDLArtist_B').innerHTML =  ips[0].ID12457;
-        $('DIDLTitle_B').innerHTML =  ips[0].ID10602;
-        
-        $('vol_A').innerHTML =  sym[97] + ' db';
-        $('vol_B').innerHTML =  ips[0].ID54000 + ' %';
-        $('Playlist_B').innerHTML =  ips[0].ID22199;
-        $('trackNo_A').innerHTML =  ips[0].ID25782.toString();
-        $('CD_A').innerHTML =  ips[0].ID49481;
-        
 
-        
-        var pm_A = ips[0].ID50251;
-        if (pm_A == '0'){pm_A = 'NORMAL';}
-        else if (pm_A == '1'){pm_A = 'RANDOM';}
-        else if (pm_A == '2'){pm_A = 'REPEAT_ONE';}
-        else if (pm_A == '3'){pm_A = 'REPEAT_ALL';}
-        $('playmode_A').innerHTML =pm_A;  
-        
-        var elem = document.getElementById("progressbar_A"); 
-        var width = ips[0].ID54627;
-        elem.style.width = width + '%';
-        
-        var elem = document.getElementById("progressbar_B"); 
-        var width = ips[0].ID54627;
-        elem.style.width = width + '%'; 
-        
-        var pm = ips[0].ID45176; 
-        if (pm == '0'){pm = 'NORMAL';}
-        else if (pm == '1'){pm = 'RANDOM';}
-        else if (pm == '2'){pm = 'REPEAT_ONE';}
-        else if (pm == '3'){pm = 'REPEAT_ALL';}
-        $('playmode').innerHTML =  pm; 
+    function MediaValues(ips) {
+
+      //client = ips[0].ID42831;
+      //albumno = ips[0].ID22217;
+      //l = albumno.length; 
+      //a = l-4;
+      //albumnr = albumno.substr(a , 4)
+
+
+      //albumpic = 'CDs/'+ albumnr +'.jpg';
+      //document.getElementById("iconCover").src=albumpic;
+
+      /*
+
+
+                  var element = sym[105];
+                  switch(element) {
+                      case 0:
+                          document.getElementById('source_A').innerHTML =  'Radio';
+                          break;
+                      case 1:
+                          document.getElementById('source_A').innerHTML = 'Media';
+                          break;
+                      case 2:
+                          document.getElementById('source_A').innerHTML = 'USB';
+                          break;
+                      case3:
+                          document.getElementById('source_A').innerHTML = 'IPOD';
+                          break;
+                      case 4:
+                          document.getElementById('source_A').innerHTML =  'AUX A';
+                          break;
+                      case 5:
+                          document.getElementById('source_A').innerHTML =  'AUX D';
+                          break;
+                      default:
+                  }
+             
+
+
+
+                  
+                  //document.getElementById('Progress').style.width = ips[0].ID13479*4.8;
+
        
-        var src = sym[105]; 
-        if (src == '0'){
-            src = 'IRadio';
-            var radioStation = '000' + ips[0].ID58379 + '.png';
-            document.getElementById("CDimg_A").src='images/RadioStation/' + radioStation;
-        }
-        else if (src == '1'){
-            src = 'Media';
-            document.getElementById("CDimg_A").src = ips[0].ID57135;
-        }
-        else if (src == '2'){src = 'USB';}
-        else if (src == '3'){src = 'IPOD';}
-        else if (src == '4'){src = 'AUX A';}
-        else if (src == '5'){src = 'AUX D';}
-        $('source_A').innerHTML =  src;  
-         
-        var CeolPower = sym[96];
-        if (CeolPower){
-          document.getElementById('power_A').style.color = "lime";
-          document.getElementById('pwrceol').innerHTML =  'Ceol '   +  'on'; 
-        }
-        else if (!CeolPower) {
-            document.getElementById('power_A').style.color = "red";
-            document.getElementById('pwrceol').innerHTML =  'Ceol ' + 'off';
-        }
-        
-        var cover_A = 'CDs/'+ ips[0].ID49481.substring(3, 7) +'.jpg'; 
-        document.getElementById("CDCover_A").src=cover_A;
-        
-        //<!-- -------------------------- TV Variable  ------------------------------  -->  
-        if (ips[0].ID37104 != null) {
-            $('statVol_D').innerHTML =  ips[0].ID37104;
-        }
-        if (ips[0].ID37005 != null) {
-            $('statCh_D').innerHTML =  ips[0].ID37005;
-        }
-        if (ips[0].ID58897 != null) {
-        $('TVLine1_D').innerHTML =  ips[0].ID58897;
-            var TVChannel = ips[0].ID58897;
-            var TVChannelx = TVChannel.substr(1, TVChannel.length-2) + '.png';
-            document.getElementById("TVimg_D").src='images/Sender/' + TVChannelx;
-        }    
-        
-        if (ips[0].ID25544 != null) {
-            var guide = ips[0].ID25544;
-            Woerter = guide.split(';');
-            $('TVz1').innerHTML =  Woerter[0];
-            $('TVz2').innerHTML =  Woerter[1];
-            $('TVz3').innerHTML =  Woerter[2];
-            $('TVz4').innerHTML =  Woerter[3];
-            $('TVz5').innerHTML =  Woerter[4];
-            $('TVz6').innerHTML =  Woerter[5];
-            $('TVz7').innerHTML =  Woerter[6];
-            $('TVz8').innerHTML =  Woerter[7];
-            $('TVz9').innerHTML =  Woerter[8];
-            $('TVz10').innerHTML =  Woerter[9];
-            $('TVz11').innerHTML =  Woerter[10];
-            $('TVz12').innerHTML =  Woerter[11];
-            $('TVz13').innerHTML =  Woerter[12];
-            $('TVz14').innerHTML =  Woerter[13];
-            $('TVz15').innerHTML =  Woerter[14];
-            $('TVz16').innerHTML =  Woerter[15];
-            $('TVz17').innerHTML =  Woerter[16];
-            $('TVz18').innerHTML =  Woerter[17];
-            $('TVz19').innerHTML =  Woerter[18];
-            $('TVz20').innerHTML =  Woerter[19];
-            $('TVz21').innerHTML =  Woerter[20];
-            $('TVz22').innerHTML =  Woerter[21];
-            $('TVz23').innerHTML =  Woerter[22];
-            $('TVz24').innerHTML =  Woerter[23];
-            $('TVz25').innerHTML =  Woerter[24];
-            $('TVz26').innerHTML =  Woerter[25];
-            $('TVz27').innerHTML =  Woerter[26];
-            $('TVz28').innerHTML =  Woerter[27];
-            $('TVz29').innerHTML =  Woerter[28];
-            $('TVz30').innerHTML =  Woerter[29];
-            $('TVz31').innerHTML =  Woerter[30];
-            $('TVz32').innerHTML =  Woerter[31];
-            $('TVz33').innerHTML =  Woerter[32];
-            $('TVz34').innerHTML =  Woerter[33];
-            $('TVz35').innerHTML =  Woerter[34];
-            $('TVz36').innerHTML =  Woerter[35];
-        }
+
+      */
+      //if (ips[0].ID49480 == '1'){
+      //	document.getElementById('power').style.color = 'lime';
+      //}else{
+      //	document.getElementById('power').style.color = 'red';
+      //} 
+
     }
-			
-    function Heizung(sym){
-        //<!-- ******************** Temperatur   Werte Floorplan **************************  -->
-        VarDisTempK_E.update(sym[3], 1);
-        VarDisTempWZ_E.update(sym[2], 1);
-        VarDisTempSZ_E.update(sym[0], 1);
-        VarDisTempKZ_E.update(sym[1], 1);
 
-        //<!-- Temperatur Glide Floorplan  -->
-        LeftMenuFP.update(sym[3], "°C", sym[2], "°C",  sym[0], "°C",  sym[1], "°C");
-        
- 
-        //<!-- Temperatur Werte Glide Button  -->
-        LeftMenuK.update(sym[3], "°C","","","","","","" );
-        LeftMenuWZ.update(sym[3], "°C","","","","","","" );
-        LeftMenuSZ.update(sym[3], "°C","","","","","","" );
-        LeftMenuKZ.update(sym[3], "°C","","","","","","");
- 
-        //<!-- ************************ Heizung Wohnzimmer ************************  -->
-        MainTempHzWZ.update(sym[2], 1);
-        MainPosHzWZ.update(sym[4], 0);
-        MainTempVHzWZ.update("0.0", 1);
-        MainTempRHzWZ.update("0.0", 1);
-        
-/*
-        $('TempVorHzWZ1').innerHTML =  "--"  + '°C'  ;
-        $('TempRueckHzWZ1').innerHTML =  "--" + '°C' ;
-   */
-        $('SollTempHzWZ1').innerHTML =  sym[27] + '°C'  ;
-        $('SollTempAusHzWZ1').innerHTML =  sym[28] + '°C' ;
+    function Media(ips) {
+      $('message').innerHTML = ips[0].ID55254;
+      $('activeServer_A').innerHTML = ips[0].ID40574;
+      //$('activeClient_A').innerHTML =  ips[0].ID16761; 
+      $('activeServer_B').innerHTML = ips[0].ID40574;
+      $('activeClient_B').innerHTML = ips[0].ID16761;
+      $('sz2_A').innerHTML = ips[0].ID14566;
+      $('sz3_A').innerHTML = sym[95];
+      $('FAV_A').innerHTML = 'Fav ' + ips[0].ID58379;
+      $('DDILAlbum_B').innerHTML = ips[0].ID59926;
+      $('DIDLArtist_B').innerHTML = ips[0].ID12457;
+      $('DIDLTitle_B').innerHTML = ips[0].ID10602;
 
-        iHzWZ.update(sym[4]);
-       
-        DisModeHzWZ.update(sym[26]);
-        DisTempHzWZ.update(sym[2]);
-        DisPosHzWZCtrl.update(sym[4]);
-        
-        var BatHzWZ1 = sym[29];
-        if (BatHzWZ1){
-            document.getElementById("BatHzWZ1").style.color  = 'red';
-          
-        }
-        else {
-           document.getElementById("BatHzWZ1").style.color = 'lime';
-        }
-        //<!-- ************************ Heizung Kinderzimmer ************************  -->
- 
-      
-        MainTempHzKZ.update(sym[1], 1);
-        MainPosHzKZ.update(sym[5], 0);     
-        MainTempVHzKZ.update("0.0", 1);
-        MainTempRHzKZ.update("0.0", 1);
-        
-        //$('PosHzKZ2').innerHTML =   Math.round(sym[5]).toFixed(0) + '%';
-        
-        /*
+      $('vol_A').innerHTML = sym[97] + ' db';
+      $('vol_B').innerHTML = ips[0].ID54000 + ' %';
+      $('Playlist_B').innerHTML = ips[0].ID22199;
+      $('trackNo_A').innerHTML = ips[0].ID25782.toString();
+      $('CD_A').innerHTML = ips[0].ID49481;
+
+
+
+      var pm_A = ips[0].ID50251;
+      if (pm_A == '0') {
+        pm_A = 'NORMAL';
+      } else if (pm_A == '1') {
+        pm_A = 'RANDOM';
+      } else if (pm_A == '2') {
+        pm_A = 'REPEAT_ONE';
+      } else if (pm_A == '3') {
+        pm_A = 'REPEAT_ALL';
+      }
+      $('playmode_A').innerHTML = pm_A;
+
+      var elem = document.getElementById("progressbar_A");
+      var width = ips[0].ID54627;
+      elem.style.width = width + '%';
+
+      var elem = document.getElementById("progressbar_B");
+      var width = ips[0].ID54627;
+      elem.style.width = width + '%';
+
+      var pm = ips[0].ID45176;
+      if (pm == '0') {
+        pm = 'NORMAL';
+      } else if (pm == '1') {
+        pm = 'RANDOM';
+      } else if (pm == '2') {
+        pm = 'REPEAT_ONE';
+      } else if (pm == '3') {
+        pm = 'REPEAT_ALL';
+      }
+      $('playmode').innerHTML = pm;
+
+      var src = sym[105];
+      if (src == '0') {
+        src = 'IRadio';
+        var radioStation = '000' + ips[0].ID58379 + '.png';
+        document.getElementById("CDimg_A").src = 'images/RadioStation/' + radioStation;
+      } else if (src == '1') {
+        src = 'Media';
+        document.getElementById("CDimg_A").src = ips[0].ID57135;
+      } else if (src == '2') {
+        src = 'USB';
+      } else if (src == '3') {
+        src = 'IPOD';
+      } else if (src == '4') {
+        src = 'AUX A';
+      } else if (src == '5') {
+        src = 'AUX D';
+      }
+      $('source_A').innerHTML = src;
+
+      var CeolPower = sym[96];
+      if (CeolPower) {
+        document.getElementById('power_A').style.color = "lime";
+        document.getElementById('pwrceol').innerHTML = 'Ceol ' + 'on';
+      } else if (!CeolPower) {
+        document.getElementById('power_A').style.color = "red";
+        document.getElementById('pwrceol').innerHTML = 'Ceol ' + 'off';
+      }
+
+      var cover_A = 'CDs/' + ips[0].ID49481.substring(3, 7) + '.jpg';
+      document.getElementById("CDCover_A").src = cover_A;
+
+      //<!-- -------------------------- TV Variable  ------------------------------  -->  
+      if (ips[0].ID37104 != null) {
+        $('statVol_D').innerHTML = ips[0].ID37104;
+      }
+      if (ips[0].ID37005 != null) {
+        $('statCh_D').innerHTML = ips[0].ID37005;
+      }
+      if (ips[0].ID58897 != null) {
+        $('TVLine1_D').innerHTML = ips[0].ID58897;
+        var TVChannel = ips[0].ID58897;
+        var TVChannelx = TVChannel.substr(1, TVChannel.length - 2) + '.png';
+        document.getElementById("TVimg_D").src = 'images/Sender/' + TVChannelx;
+      }
+
+      if (ips[0].ID25544 != null) {
+        var guide = ips[0].ID25544;
+        Woerter = guide.split(';');
+        $('TVz1').innerHTML = Woerter[0];
+        $('TVz2').innerHTML = Woerter[1];
+        $('TVz3').innerHTML = Woerter[2];
+        $('TVz4').innerHTML = Woerter[3];
+        $('TVz5').innerHTML = Woerter[4];
+        $('TVz6').innerHTML = Woerter[5];
+        $('TVz7').innerHTML = Woerter[6];
+        $('TVz8').innerHTML = Woerter[7];
+        $('TVz9').innerHTML = Woerter[8];
+        $('TVz10').innerHTML = Woerter[9];
+        $('TVz11').innerHTML = Woerter[10];
+        $('TVz12').innerHTML = Woerter[11];
+        $('TVz13').innerHTML = Woerter[12];
+        $('TVz14').innerHTML = Woerter[13];
+        $('TVz15').innerHTML = Woerter[14];
+        $('TVz16').innerHTML = Woerter[15];
+        $('TVz17').innerHTML = Woerter[16];
+        $('TVz18').innerHTML = Woerter[17];
+        $('TVz19').innerHTML = Woerter[18];
+        $('TVz20').innerHTML = Woerter[19];
+        $('TVz21').innerHTML = Woerter[20];
+        $('TVz22').innerHTML = Woerter[21];
+        $('TVz23').innerHTML = Woerter[22];
+        $('TVz24').innerHTML = Woerter[23];
+        $('TVz25').innerHTML = Woerter[24];
+        $('TVz26').innerHTML = Woerter[25];
+        $('TVz27').innerHTML = Woerter[26];
+        $('TVz28').innerHTML = Woerter[27];
+        $('TVz29').innerHTML = Woerter[28];
+        $('TVz30').innerHTML = Woerter[29];
+        $('TVz31').innerHTML = Woerter[30];
+        $('TVz32').innerHTML = Woerter[31];
+        $('TVz33').innerHTML = Woerter[32];
+        $('TVz34').innerHTML = Woerter[33];
+        $('TVz35').innerHTML = Woerter[34];
+        $('TVz36').innerHTML = Woerter[35];
+      }
+    }
+
+    function Heizung(sym) {
+      //<!-- ******************** Temperatur   Werte Floorplan **************************  -->
+      VarDisTempK_E.update(sym[3], 1);
+      VarDisTempWZ_E.update(sym[2], 1);
+      VarDisTempSZ_E.update(sym[0], 1);
+      VarDisTempKZ_E.update(sym[1], 1);
+
+      //<!-- Temperatur Glide Floorplan  -->
+      LeftMenuFP.update(sym[3], "°C", sym[2], "°C", sym[0], "°C", sym[1], "°C");
+
+
+      //<!-- Temperatur Werte Glide Button  -->
+      LeftMenuK.update(sym[3], "°C", "", "", "", "", "", "");
+      LeftMenuWZ.update(sym[3], "°C", "", "", "", "", "", "");
+      LeftMenuSZ.update(sym[3], "°C", "", "", "", "", "", "");
+      LeftMenuKZ.update(sym[3], "°C", "", "", "", "", "", "");
+
+      //<!-- ************************ Heizung Wohnzimmer ************************  -->
+      MainTempHzWZ.update(sym[2], 1);
+      MainPosHzWZ.update(sym[4], 0);
+      MainTempVHzWZ.update("0.0", 1);
+      MainTempRHzWZ.update("0.0", 1);
+
+      /*
+              $('TempVorHzWZ1').innerHTML =  "--"  + '°C'  ;
+              $('TempRueckHzWZ1').innerHTML =  "--" + '°C' ;
+         */
+      $('SollTempHzWZ1').innerHTML = sym[27] + '°C';
+      $('SollTempAusHzWZ1').innerHTML = sym[28] + '°C';
+
+      iHzWZ.update(sym[4]);
+
+      DisModeHzWZ.update(sym[26]);
+      DisTempHzWZ.update(sym[2]);
+      DisPosHzWZCtrl.update(sym[4]);
+
+      var BatHzWZ1 = sym[29];
+      if (BatHzWZ1) {
+        document.getElementById("BatHzWZ1").style.color = 'red';
+
+      } else {
+        document.getElementById("BatHzWZ1").style.color = 'lime';
+      }
+      //<!-- ************************ Heizung Kinderzimmer ************************  -->
+
+
+      MainTempHzKZ.update(sym[1], 1);
+      MainPosHzKZ.update(sym[5], 0);
+      MainTempVHzKZ.update("0.0", 1);
+      MainTempRHzKZ.update("0.0", 1);
+
+      //$('PosHzKZ2').innerHTML =   Math.round(sym[5]).toFixed(0) + '%';
+
+      /*
         $('TempVorHzKZ1').innerHTML =  "--"  + '°C'  ;
         $('TempRueckHzKZ1').innerHTML =  "--" + '°C'  ;
        */
-        $('SollTempHzKZ1').innerHTML =  sym[34] + '°C'  ;
-        $('SollTempAusHzKZ1').innerHTML =  sym[35] + '°C' ;
- 
-        iHzKZ.update(sym[5]);
-        
-       
-        DisModeHzKZCtrl.update(sym[33]);
-        DisTempHzKZCtrl.update(sym[1]);
-        DisPosHzKZCtrl.update(sym[5]);
-        
-        var BatHzKZ1 = sym[30];
-        if (BatHzKZ1){
-            document.getElementById("BatHzKWZ1").style.color  = 'red';
-          
-        }
-        else {
-           document.getElementById("BatHzKZ1").style.color = 'lime';
-        }
-         //<!-- ************************ Heizung Schlafzimmer ************************  -->
-       
-        MainTempHzSZ.update(sym[0], 1);
-        MainPosHzSZ.update(sym[6], 0); 
-        MainTempVHzSZ.update("0.0", 1);
-        MainTempRHzSZ.update("0.0", 1);
-        
-        
+      $('SollTempHzKZ1').innerHTML = sym[34] + '°C';
+      $('SollTempAusHzKZ1').innerHTML = sym[35] + '°C';
+
+      iHzKZ.update(sym[5]);
+
+
+      DisModeHzKZCtrl.update(sym[33]);
+      DisTempHzKZCtrl.update(sym[1]);
+      DisPosHzKZCtrl.update(sym[5]);
+
+      var BatHzKZ1 = sym[30];
+      if (BatHzKZ1) {
+        document.getElementById("BatHzKWZ1").style.color = 'red';
+
+      } else {
+        document.getElementById("BatHzKZ1").style.color = 'lime';
+      }
+      //<!-- ************************ Heizung Schlafzimmer ************************  -->
+
+      MainTempHzSZ.update(sym[0], 1);
+      MainPosHzSZ.update(sym[6], 0);
+      MainTempVHzSZ.update("0.0", 1);
+      MainTempRHzSZ.update("0.0", 1);
+
+
       //  $('PosHzSZ2').innerHTML =   Math.round(sym[6]).toFixed(0) + '%';
-     /* 
+      /* 
         $('TempVorHzSZ1').innerHTML =  sym[39] + '°C'  ;
         $('TempRueckHzSZ1').innerHTML = sym[40] + '°C'  ;
         $('SollTempHzSZ1').innerHTML =  sym[37] + '°C'  ;
         $('SollTempAusHzSZ1').innerHTML =  sym[38] + '°C' ;
   */
-        iHzSZ.update(sym[6]);
-        
-       
-        DisModeHzSZCtrl.update(sym[36]);
-        DisTempHzSZCtrl.update(sym[0]);
-        DisPosHzSZCtrl.update(sym[6]);
+      iHzSZ.update(sym[6]);
 
-        
-        var BatHzSZ1 = sym[31];
-        if (BatHzSZ1){
-            document.getElementById("BatHzSZ1").style.color  = 'red';
-          
-        }
-        else {
-           document.getElementById("BatHzSZ1").style.color = 'lime';
-        }
-        //<!-- ************************ Heizung Kueche ************************  -->
-        /*
+
+      DisModeHzSZCtrl.update(sym[36]);
+      DisTempHzSZCtrl.update(sym[0]);
+      DisPosHzSZCtrl.update(sym[6]);
+
+
+      var BatHzSZ1 = sym[31];
+      if (BatHzSZ1) {
+        document.getElementById("BatHzSZ1").style.color = 'red';
+
+      } else {
+        document.getElementById("BatHzSZ1").style.color = 'lime';
+      }
+      //<!-- ************************ Heizung Kueche ************************  -->
+      /*
          $('TempHzK1').innerHTML =  sym[3] + '°C'  ;
          $('PosHzK1').innerHTML =   Math.round(sym[7]).toFixed(0) + '%';
-       */  
-        MainTempHzK.update(sym[3], 1);
-        MainPosHzK.update(sym[7], 0);   
-        MainTempVHzK.update("0.0", 1);
-        MainTempRHzK.update("0.0", 1);
-      
-     //   $('PosHzK2').innerHTML =   Math.round(sym[7]).toFixed(0) + '%';
-     /*
+       */
+      MainTempHzK.update(sym[3], 1);
+      MainPosHzK.update(sym[7], 0);
+      MainTempVHzK.update("0.0", 1);
+      MainTempRHzK.update("0.0", 1);
+
+      //   $('PosHzK2').innerHTML =   Math.round(sym[7]).toFixed(0) + '%';
+      /*
         $('TempVorHzK1').innerHTML =  "--"  + '°C'  ;
         $('TempRueckHzK1').innerHTML =  "--" + '°C'  ;
   
         $('SollTempHzK1').innerHTML =  sym[42] + '°C'  ;
         $('SollTempAusHzK1').innerHTML =  sym[43] + '°C' ;
      */
-        iHzK.update(sym[7]);
-        
-       
-        DisModeHzKCtrl.update(sym[41]);
-        DisTempHzKCtrl.update(sym[3]);
-        DisPosHzKCtrl.update(sym[7]);
-        
-         var BatHzK1 = sym[32];
-        if (BatHzK1){
-            document.getElementById("BatHzK1").style.color  = 'red';
-          
-        }
-        else {
-           document.getElementById("BatHzK1").style.color = 'lime';
-        }
+      iHzK.update(sym[7]);
 
-        
-        
-        //<!-- ************************ Heizung Uebersicht ************************  -->
-        $('tempkueche4').innerHTML =  'Kueche ' + sym[3] + '°C'  ;
-        $('tempwohnzimmer4').innerHTML =  'Wohnzimmer ' + sym[2] + '°C'  ;
-        $('tempschlafzimmer4').innerHTML =  'Schlafzimmer ' + sym[0] + '°C'  ;
-        $('tempkinderzimmer4').innerHTML =  'Kinderzimmer ' + sym[1] + '°C';        
+
+      DisModeHzKCtrl.update(sym[41]);
+      DisTempHzKCtrl.update(sym[3]);
+      DisPosHzKCtrl.update(sym[7]);
+
+      var BatHzK1 = sym[32];
+      if (BatHzK1) {
+        document.getElementById("BatHzK1").style.color = 'red';
+
+      } else {
+        document.getElementById("BatHzK1").style.color = 'lime';
+      }
+
+
+
+      //<!-- ************************ Heizung Uebersicht ************************  -->
+      $('tempkueche4').innerHTML = 'Kueche ' + sym[3] + '°C';
+      $('tempwohnzimmer4').innerHTML = 'Wohnzimmer ' + sym[2] + '°C';
+      $('tempschlafzimmer4').innerHTML = 'Schlafzimmer ' + sym[0] + '°C';
+      $('tempkinderzimmer4').innerHTML = 'Kinderzimmer ' + sym[1] + '°C';
     }
-    
-   //<!-- ************************ Übergabe nur eine Variable von IPS ************************  -->
-   function updateIPSValue(ipsID, IPSValue){
-        switch(ipsID) {
-            case x:
-              // code block
-              break;
-            case y:
-              // code block
-              break;
-            default:
-              // code block
-        }
-   }
-   
-   
-    function updateValues(sym){
+
+    //<!-- ************************ Übergabe nur eine Variable von IPS ************************  -->
+    function updateIPSValue(ipsID, IPSValue) {
+      switch (ipsID) {
+        case x:
+          // code block
+          break;
+        case y:
+          // code block
+          break;
+        default:
+          // code block
+      }
+    }
+
+
+    function updateValues(sym) {
       /* --------------------------- Heizung Wohnzimmer --------------------------- */
+      MainTempVHzWZ.update(sym[215], 1);
+      MainTempRHzWZ.update(sym[216], 1);
       HzCtrlWZ.update(sym[28], sym[27]);
       iHzWZ.update(sym[4]);
       DisModeHzWZ.update(sym[26]);
       DisTempHzWZ.update(sym[2], 1);
       DisPosHzWZCtrl.update(sym[4]);
       DisHumidWZCtrl.update(sym[233]);
-            
-     
+
+
     }
-			
-    
