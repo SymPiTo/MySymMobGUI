@@ -3193,3 +3193,174 @@ class HeatCtrl {
         this.value2ID.innerHTML = value2 + this.unit;
     }
 }
+
+
+/* --------------------- Class Kachel -------------------------------------- */
+/* -------------------------- Version:1.05.10.2019 -------------------------- */
+
+class Kachel {
+    constructor() {
+        this.ID = "";
+
+
+        //optionale Parameter
+        this.b = "200px";
+        this.h = "350px";
+
+        this.btnTextColor = "black";
+        this.labelcolor = "lime";
+    }
+    create(ParentID, posTop, posLeft, breite, hoehe, color, title, ...param) {
+        this.color = color;
+        this.b = breite;
+        this.h = hoehe;
+        if (param.length > 1) {
+            this.b = param[0];
+            this.h = param[1];
+
+            this.btnTextColor = param[2];
+            this.labelcolor = param[3];
+        }
+        var container = document.createElement("div");
+        this.ID = container;
+        container.style.flexDirection = "column";
+        container.style.position = "absolute";
+        container.style.left = posLeft;
+        container.style.top = posTop;
+        container.className = color + "Light";
+        container.style.width = this.b;
+        container.style.height = this.h;
+        container.style.color = this.labelcolor;
+        container.style.border = "thin solid black";
+
+        // Label 
+        var label = document.createElement("div");
+        label.style.paddingTop = "2px";
+        label.style.height = "30px";
+        label.style.backgroundColor = "black";
+        label.innerHTML = title;
+        container.append(label);
+
+        document.getElementById(ParentID).appendChild(container);
+    }
+}
+
+
+/* ---------------------  Klasse FontCtrlButton   ---------------------------------------- */
+/* -------------------------- Version: 1.05.10.2019 ------------------------- */
+class FontCtrlButton {
+    constructor() {
+        this.ID = "";
+
+        //optionale Parameter
+        this.b = "200px";
+        this.h = "60px";
+        this.textfarbe = "black";
+        this.textgr = "20px";
+        this.textfarbeAF = "black";
+    }
+    create(ParentID, color, posTop, posLeft, symbol, text, ctrltype, cmd, ctrlWin, ...param) {
+        if (param.length > 1) {
+            this.b = param[0];
+            this.h = param[1];
+            this.textfarbe = param[2];
+            this.textgr = param[3];
+            this.textfarbeAF = param[4];
+        }
+        var container = document.createElement("div");
+        container.className = "ctrlbutton";
+        container.classList.add(color);
+        this.ID = container;
+        container.style.width = this.b;
+        container.style.height = this.h;
+        container.style.position = "absolute";
+        container.style.left = posLeft;
+        container.style.top = posTop;
+        container.style.display = "flex";
+        container.style.flexDirection = "row";
+        container.style.justifyContent = "space-around";
+
+        switch (ctrltype) {
+            case "command":
+                container.setAttribute("onclick", cmd);
+                break;
+            case "ctrlWindow":
+                container.onclick = function () {
+                    // alle Ctrl auf 0px verkleinern 
+                    var Ctrl = document.getElementsByTagName("Ctrl");
+                    var MCtrlWindow = Array.from(Ctrl);
+                    MCtrlWindow.forEach(function (element) {
+                        var a = element.className;
+                        document.getElementsByClassName(a)[0].style.width = "0px";
+                    });
+                    // ctrlWindow umschalten
+                    document.getElementsByClassName(ctrlWin)[0].style.width = "26vw";
+                };
+                break;
+            case "CtrlFunc":
+                container.onclick = function () {
+                    // alle Ctrl auf 0px verkleinern 
+                    var Ctrl = document.getElementsByTagName("Ctrl");
+                    var MCtrlWindow = Array.from(Ctrl);
+                    MCtrlWindow.forEach(function (element) {
+                        var a = element.className;
+                        document.getElementsByClassName(a)[0].style.width = "0px";
+                    });
+                    // ctrlWindow umschalten
+                    document.getElementsByClassName(ctrlWin)[0].style.width = "26vw";
+                    ShowHidePanel(cmd);
+                }
+                break;
+            case "CtrlCmd":
+                container.onclick = function () {
+                    // alle Ctrl auf 0px verkleinern 
+                    var Ctrl = document.getElementsByTagName("Ctrl");
+                    var MCtrlWindow = Array.from(Ctrl);
+                    MCtrlWindow.forEach(function (element) {
+                        var a = element.className;
+                        document.getElementsByClassName(a)[0].style.width = "0px";
+                    });
+                    // ctrlWindow umschalten
+                    document.getElementsByClassName(ctrlWin)[0].style.width = "26vw";
+
+                    send(cmd);
+                }
+                break;
+            default:
+                container.setAttribute("onclick", cmd);
+        }
+
+        var elem = document.createElement("div");
+        elem.style.backgroundColor = "transparent";
+        elem.style.width = "20%";
+        elem.style.height = "75%";
+        elem.style.display = "flex";
+        elem.style.alignItems = "center";
+        elem.style.justifyContent = "center";
+        container.append(elem);
+
+        var elem1 = document.createElement("span");
+        elem1.className = symbol;
+        elem1.style.fontSize = this.textgr;
+        elem1.style.color = this.textfarbeAF;
+        elem.append(elem1);
+
+        var textContainer = document.createElement("div");
+        textContainer.style.width = "70%";
+        textContainer.style.height = "75%";
+        textContainer.style.backgroundColor = "transparent";
+        textContainer.style.display = "flex";
+        textContainer.style.alignItems = "center";
+        textContainer.style.justifyContent = "center";
+        container.append(textContainer);
+
+        var textelem = document.createElement("span");
+        textelem.style.color = this.textfarbe;
+        textelem.style.fontSize = this.textgr;
+        textelem.innerHTML = text;
+        textContainer.append(textelem);
+
+        document.getElementById(ParentID).appendChild(container);
+    }
+};
+

@@ -12,9 +12,9 @@
     <script src="js/myVars.js"></script>
     
     <link href="http://allfont.net/allfont.css?fonts=dot-matrix" rel="stylesheet" type="text/css" /> 
-    <link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <!-- <link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    -->
     <!-- <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css"> -->
-    
+    <link rel="stylesheet" type="text/css" href="css/fontawesome_5-10-2/css/all.css">
 
     <!--  ..............................................................  -->
     <!--   WEBSOCKET FUNKTIONEN                                           --> 
@@ -65,7 +65,9 @@
                                                                 else{
                                                                     ips = JSON.parse(jsontext); 
                                                                     symvar = ips[0];
-                                                                     //updateValues(sym);
+                                                                     
+                                                                    var sym = checkUsedVars(ips);
+                                                                    updateValues(sym);
      
                                                                 }
 
@@ -392,7 +394,7 @@
 
     <script>
         var iHzWZ = new DynIcon("heizkoerper", "bin", false);
-        iHzWZ.create("MainHeizungWZ", "5px", "10px", "300px", "100px");
+        iHzWZ.create("MainHeizungWZ", "10px", "20px", "270px", "100px");
 
         var DisModeHzWZ = new StateDisplay();
         DisModeHzWZ.create("MainHeizungWZ", "cyanLight", "", "150px", "10px", "140px", "60px", "24px", "Mode", "Auto",
@@ -413,18 +415,43 @@
             "", "", "");
 
         var HzCtrlWZ = new HeatCtrl();
-        HzCtrlWZ.create("MainHeizungWZ", "320px", "70px", "cyan", "Heat-Control", "sollTempWZ");
+        HzCtrlWZ.create("MainHeizungWZ", "310px", "70px", "cyan", "Heat-Control", "sollTempWZ");
     
-    
+        var Rahmen1WZ = new Kachel();
+            Rahmen1WZ.create("MainHeizungWZ", "700px", "60px", "230px", "110px", "cyan", "Mode");
+            
         var btnHzWZauto = new CtrlButton();
-            btnHzWZauto.create("MainHeizungWZ", "700px", "30px", "ctrlbutton", "100px", "50px", "cyan", "Automatik",
+            btnHzWZauto.create("MainHeizungWZ", "740px", "70px", "ctrlbutton", "100px", "50px", "cyan", "Automatik",
                 "command",
                 "", "send('command(Heizung,WZ,auto)')");
             var btnHzWZman = new CtrlButton();
-            btnHzWZman.create("MainHeizungWZ", "700px", "135px", "ctrlbutton","100px", "50px", "cyan", "Manual", "command",
+            btnHzWZman.create("MainHeizungWZ", "740px", "175px", "ctrlbutton","100px", "50px", "cyan", "Manual", "command",
                 "",
                 "send('command(Heizung,WZ,man)')");
-    
+
+           
+                var Rahmen3WZ = new Kachel();
+            Rahmen3WZ.create("MainHeizungWZ", "840px", "60px", "230px", "110px", "cyan", "Preset");
+            var btnHzWZUrlaub = new CtrlButton();
+            btnHzWZUrlaub.create("MainHeizungWZ", "880px", "70px", "ctrlbutton", "100px", "50px", "cyan", "Urlaub", "command",
+                "", "send('command(Heizung,WZ,urlaub)')");
+            var btnHzWZParty = new CtrlButton();
+            btnHzWZParty.create("MainHeizungWZ", "880px", "175px", "ctrlbutton", "100px", "50px", "cyan", "Party", "command",
+                "", "send('command(Heizung,WZ,party)')");
+
+
+            var Rahmen2WZ = new Kachel();
+            Rahmen2WZ.create("MainHeizungWZ", "560px", "40px", "270px", "110px", "cyan", "Control")
+ 
+            var btnHzWZHeizen = new FontCtrlButton();
+            btnHzWZHeizen.create("MainHeizungWZ", "cyan", "600px", "50px", "fa fa-temperature-high", "Heizen",
+                "command",
+                "send('command(Heizung,WZ,heizen)') ", "", "120px", "50px", "black", "19px", "red");
+            var btnHzWZAbsenken = new FontCtrlButton();
+            btnHzWZAbsenken.create("MainHeizungWZ", "cyan", "600px", "180px", "fa fa-temperature-low", "Absenken",
+                "command",
+                "send('command(Heizung,WZ,absenken)') ", "", "120px", "50px", "black", "19px", "blue");
+ 
     </script>
 
 
