@@ -555,7 +555,7 @@ class DynIcon {
 
 
 /* --------------------- class Display status of Variable ---------------------------------------- */
-/* -------------------------- Version: 1.04.10.2019 ------------------------- */
+/* -------------------------- Version: 1.18.10.2019 ------------------------- */
 class StateDisplay {
     constructor() {
         this.ID = "";
@@ -3363,4 +3363,3 @@ class FontCtrlButton {
         document.getElementById(ParentID).appendChild(container);
     }
 };
-
