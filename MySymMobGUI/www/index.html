@@ -691,7 +691,7 @@
 
         <script>
             var mainwindowRolloSZ = new Area();
-            mainwindowRolloSZ.createMain("MainRolloSZ", "sandybg");
+            mainwindowRolloSZ.createMain("MainRolloSZ", "bgSandy");
         </script>
 
         <script>
@@ -708,22 +708,23 @@
                 "", "", "", "");
 
 
-
+            var Rahmen2RolloSZ = new Kachel();
+            Rahmen2RolloSZ.create("MainRolloSZ", "290px", "10px", "300px", "190px", "sandy", "Control");
 
             var FontBtnRolloSZup = new FontButtonNew();
-            FontBtnRolloSZup.create("MainRolloSZ", "sandy", "big", "320px", "30px", "fa fa-chevron-up",
+            FontBtnRolloSZup.create("MainRolloSZ", "sandy", "big", "320px", "20px", "fa fa-chevron-up",
                 "send('command(Rollo,SZ,up)')");
             var FontBtnRolloSZstop = new FontButtonNew();
             FontBtnRolloSZstop.create("MainRolloSZ", "sandy", "big", "320px", "110px", "fa fa-stop",
                 "send('command(Rollo,SZ,stop)')");
             var FontBtnRolloSZdown = new FontButtonNew();
-            FontBtnRolloSZdown.create("MainRolloSZ", "sandy", "big", "320px", "190px", "fa fa-chevron-down",
+            FontBtnRolloSZdown.create("MainRolloSZ", "sandy", "big", "320px", "200px", "fa fa-chevron-down",
                 "send('command(Rollo,SZ,down)')");
             var FontBtnRolloSZstepUp = new FontButtonNew();
-            FontBtnRolloSZstepUp.create("MainRolloSZ", "sandy", "big", "400px", "30px", "fa fa-plus",
+            FontBtnRolloSZstepUp.create("MainRolloSZ", "sandy", "big", "400px", "20px", "fa fa-plus",
                 "send('command(Rollo,SZ,StepUp)')");
             var FontBtnRolloSZstepDown = new FontButtonNew();
-            FontBtnRolloSZstepDown.create("MainRolloSZ", "sandy", "big", "400px", "190px", "fa fa-minus",
+            FontBtnRolloSZstepDown.create("MainRolloSZ", "sandy", "big", "400px", "200px", "fa fa-minus",
                 "send('command(Rollo,SZ,StepDown)')");
 
 

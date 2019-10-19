@@ -3188,9 +3188,12 @@ class HeatCtrl {
         document.getElementById(ParentID).appendChild(container);
     }
 
-    update(value1, value2) {
+    update(value1, value2, change = "false") {
         this.value1ID.innerHTML = value1 + this.unit;
         this.value2ID.innerHTML = value2 + this.unit;
+        if (change) {
+            this.elemSollTemp.innerHTML = value2 + this.unit;
+        }
     }
 }
 
