@@ -447,6 +447,11 @@
       DisST2RolloK.update(sym[51]);
       CbSSrolloK.update(sym[52]);
       /* ----------------------------- Rollo Balkontür ---------------------------- */
-      //iRolloB.update(sym[22]);
+      iRolloB.update(sym[22]);
+      DisPosRolloB.update(sym[22], 0);
+      DisModeRolloB.update(sym[21]);
+      DisST1RolloB.update(sym[55]);
+      DisST2RolloB.update(sym[56]);
+      CbSSrolloB.update(sym[57]);
 
     }
