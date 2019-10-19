@@ -740,8 +740,8 @@
                 "Schaltzeiten Sa-so",
                 "String", "", "", "", "");
 
-            CbSSrolloK = Object.create(CheckBox);
-            CbSSrolloK.create("MainRolloSZ", "SSRolloK", "sandy", "640px", "50px", "SunRise-SunSet",
+            CbSSrolloSZ = Object.create(CheckBox);
+            CbSSrolloSZ.create("MainRolloSZ", "SSRolloK", "sandy", "640px", "50px", "SunRise-SunSet",
                 "command(Rollo,SZ,SSXX");
 
             var Rahmen1RolloSZ = new Kachel();
@@ -750,12 +750,12 @@
             btnRolloSZauto.create("MainRolloSZ", "740px", "65px", "ctrlbutton", "100px", "50px", "sandy",
                 "Automatik",
                 "command",
-                "", "send('command(Heizung,K,auto)')");
+                "", "send('command(Rollo,SZ,Auto)')");
             var btnRolloSZman = new CtrlButton();
             btnRolloSZman.create("MainRolloSZ", "740px", "175px", "ctrlbutton", "100px", "50px", "sandy", "Manual",
                 "command",
                 "",
-                "send('command(Heizung,K,man)')");
+                "send('command(Rollo,SZ,Man)')");
         </script>
 
 
