@@ -731,28 +731,28 @@
 
 
             var DisST1RolloSZ = new StateDisplay();
-            DisST1RolloSZ.create("MainRolloSZ", "sandyLight", "", "560px", "10px", "140px", "60px", "30px",
+            DisST1RolloSZ.create("MainRolloSZ", "sandyLight", "", "560px", "30px", "140px", "60px", "30px",
                 "Schaltzeiten Mo-Fr",
                 "String", "", "", "", "");
 
             var DisST2RolloSZ = new StateDisplay();
-            DisST2RolloSZ.create("MainRolloSZ", "sandyLight", "", "560px", "160px", "140px", "60px", "30px",
+            DisST2RolloSZ.create("MainRolloSZ", "sandyLight", "", "560px", "180px", "140px", "60px", "30px",
                 "Schaltzeiten Sa-so",
                 "String", "", "", "", "");
 
             CbSSrolloK = Object.create(CheckBox);
-            CbSSrolloK.create("MainRolloSZ", "SSRolloK", "sandy", "640px", "30px", "SunRise-SunSet",
+            CbSSrolloK.create("MainRolloSZ", "SSRolloK", "sandy", "640px", "50px", "SunRise-SunSet",
                 "command(Rollo,SZ,SSXX");
 
             var Rahmen1RolloSZ = new Kachel();
-            Rahmen1RolloSZ.create("MainRolloSZ", "700px", "30px", "230px", "110px", "sandy", "Mode");
+            Rahmen1RolloSZ.create("MainRolloSZ", "700px", "55px", "230px", "110px", "sandy", "Mode");
             var btnRolloSZauto = new CtrlButton();
-            btnRolloSZauto.create("MainRolloSZ", "740px", "40px", "ctrlbutton", "100px", "50px", "sandy",
+            btnRolloSZauto.create("MainRolloSZ", "740px", "65px", "ctrlbutton", "100px", "50px", "sandy",
                 "Automatik",
                 "command",
                 "", "send('command(Heizung,K,auto)')");
             var btnRolloSZman = new CtrlButton();
-            btnRolloSZman.create("MainRolloSZ", "740px", "150px", "ctrlbutton", "100px", "50px", "sandy", "Manual",
+            btnRolloSZman.create("MainRolloSZ", "740px", "175px", "ctrlbutton", "100px", "50px", "sandy", "Manual",
                 "command",
                 "",
                 "send('command(Heizung,K,man)')");
