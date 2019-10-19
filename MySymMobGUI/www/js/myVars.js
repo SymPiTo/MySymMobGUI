@@ -423,7 +423,7 @@
 
 
       /* ---------------------------- Rollo Wohnzimmer ---------------------------- */
-      iRolloWZ.update(sym[17]);
+      //iRolloWZ.update(sym[17]);
 
 
 
@@ -436,12 +436,12 @@
       CbSSrolloSZ.update(sym[118]);
 
       /* --------------------------- Rollo Kinderzimmer --------------------------- */
-      iRolloKZ.update(sym[13]);
+      //iRolloKZ.update(sym[13]);
 
       /* ------------------------------- Rollo Küche ------------------------------ */
-      iRolloK.update(sym[15]);
+      //iRolloK.update(sym[15]);
 
       /* ----------------------------- Rollo Balkontür ---------------------------- */
-      iRolloB.update(sym[22]);
+      //iRolloB.update(sym[22]);
 
     }
