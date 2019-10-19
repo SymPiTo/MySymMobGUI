@@ -418,15 +418,13 @@
       DisModeHzK.update(sym[41]);
       DisTempHzK.update(sym[3], 1);
       DisPosHzKCtrl.update(sym[7]);
-
-
-
-
       /* ---------------------------- Rollo Wohnzimmer ---------------------------- */
-      //iRolloWZ.update(sym[17]);
-
-
-
+      iRolloWZ.update(sym[17]);
+      DisPosRolloWZ.update(sym[17], 0);
+      DisModeRolloWZ.update(sym[18]);
+      DisST1RolloWZ.update(sym[19]);
+      DisST2RolloWZ.update(sym[20]);
+      CbSSrolloWZ.update(sym[53]);
       /* --------------------------- Rollo Schlafzimmer --------------------------- */
       iRolloSZ.update(sym[114]);
       DisModeRolloSZ.update(sym[113]);
@@ -434,13 +432,20 @@
       DisST1RolloSZ.update(sym[116]);
       DisST2RolloSZ.update(sym[117]);
       CbSSrolloSZ.update(sym[118]);
-
       /* --------------------------- Rollo Kinderzimmer --------------------------- */
-      //iRolloKZ.update(sym[13]);
-
+      iRolloKZ.update(sym[13]);
+      DisPosRolloKZ.update(sym[13], 0);
+      DisModeRolloKZ.update(sym[12]);
+      DisST1RolloKZ.update(sym[122]);
+      DisST2RolloKZ.update(sym[119]);
+      CbSSrolloKZ.update(sym[120]);
       /* ------------------------------- Rollo Küche ------------------------------ */
-      //iRolloK.update(sym[15]);
-
+      iRolloK.update(sym[15]);
+      DisPosRolloK.update(sym[15], 0);
+      DisModeRolloK.update(sym[14]);
+      DisST1RolloK.update(sym[50]);
+      DisST2RolloK.update(sym[51]);
+      CbSSrolloK.update(sym[52]);
       /* ----------------------------- Rollo Balkontür ---------------------------- */
       //iRolloB.update(sym[22]);
 

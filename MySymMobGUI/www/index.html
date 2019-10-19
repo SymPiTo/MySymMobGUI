@@ -682,7 +682,76 @@
         </script>
 
 
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                         Rolladen  Wohnzimmer                            -->
+        <!-- ----------------------------------------------------------------------- -->
+        <script>
+            var mainwindowRolloWZ = new Area();
+            mainwindowRolloWZ.createMain("MainRolloWZ", "bgCyan");
+        </script>
 
+        <script>
+            var iRolloWZ = new DynIcon("rollo", "ana", false);
+            iRolloWZ.create("MainRolloWZ", "0px", "40px", "250px", "200px");
+
+            var DisModeRolloWZ = new StateDisplay();
+            DisModeRolloWZ.create("MainRolloWZ", "cyanLight", "", "220px", "190px", "140px", "60px", "24px", "Mode",
+                "Auto", "Man", "", "", "");
+
+            var DisPosRolloWZ = new StateDisplay();
+            DisPosRolloWZ.create("MainRolloWZ", "cyanLight", "%", "220px", "20px", "140px", "60px", "24px", "Position",
+                "Number",
+                "", "", "", "");
+
+
+            var Rahmen2RolloWZ = new Kachel();
+            Rahmen2RolloWZ.create("MainRolloWZ", "310px", "20px", "310px", "200px", "cyan", "Control");
+
+            var FontBtnRolloWZup = new FontButtonNew();
+            FontBtnRolloWZup.create("MainRolloWZ", "cyan", "big", "350px", "35px", "fa fa-chevron-up",
+                "send('command(Rollo,WZ,up)')");
+            var FontBtnRolloWZstop = new FontButtonNew();
+            FontBtnRolloWZstop.create("MainRolloWZ", "cyan", "big", "350px", "135px", "fa fa-stop",
+                "send('command(Rollo,WZ,stop)')");
+            var FontBtnRolloWZdown = new FontButtonNew();
+            FontBtnRolloWZdown.create("MainRolloWZ", "cyan", "big", "350px", "230px", "fa fa-chevron-down",
+                "send('command(Rollo,WZ,down)')");
+            var FontBtnRolloWZstepUp = new FontButtonNew();
+            FontBtnRolloWZstepUp.create("MainRolloWZ", "cyan", "big", "430px", "35px", "fa fa-plus",
+                "send('command(Rollo,WZ,StepUp)')");
+            var FontBtnRolloWZstepDown = new FontButtonNew();
+            FontBtnRolloWZstepDown.create("MainRolloWZ", "cyan", "big", "430px", "230px", "fa fa-minus",
+                "send('command(Rollo,WZ,StepDown)')");
+
+
+
+            var DisST1RolloWZ = new StateDisplay();
+            DisST1RolloWZ.create("MainRolloWZ", "cyanLight", "", "560px", "30px", "140px", "60px", "14px",
+                "Schaltzeiten Mo-Fr",
+                "String", "", "", "", "");
+
+            var DisST2RolloWZ = new StateDisplay();
+            DisST2RolloWZ.create("MainRolloWZ", "cyanLight", "", "560px", "180px", "140px", "60px", "14px",
+                "Schaltzeiten Sa-so",
+                "String", "", "", "", "");
+
+            CbSSrolloWZ = Object.create(CheckBox);
+            CbSSrolloWZ.create("MainRolloWZ", "SSRolloWZ", "cyan", "640px", "50px", "SunRise-SunSet",
+                "command(Rollo,WZ,SSXX");
+
+            var Rahmen1RolloWZ = new Kachel();
+            Rahmen1RolloWZ.create("MainRolloWZ", "700px", "55px", "230px", "110px", "cyan", "Mode");
+            var btnRolloWZauto = new CtrlButton();
+            btnRolloWZauto.create("MainRolloWZ", "740px", "65px", "ctrlbutton", "100px", "50px", "cyan",
+                "Automatik",
+                "command",
+                "", "send('command(Rollo,WZ,Auto)')");
+            var btnRolloWZman = new CtrlButton();
+            btnRolloWZman.create("MainRolloWZ", "740px", "175px", "ctrlbutton", "100px", "50px", "cyan", "Manual",
+                "command",
+                "",
+                "send('command(Rollo,WZ,Man)')");
+        </script>
 
 
         <!-- ----------------------------------------------------------------------- -->
@@ -810,7 +879,7 @@
                 "String", "", "", "", "");
 
             CbSSrolloKZ = Object.create(CheckBox);
-            CbSSrolloKZ.create("MainRolloKZ", "SSRolloK", "olive", "640px", "50px", "SunRise-SunSet",
+            CbSSrolloKZ.create("MainRolloKZ", "SSRolloKZ", "olive", "640px", "50px", "SunRise-SunSet",
                 "command(Rollo,KZ,SSXX");
 
             var Rahmen1RolloKZ = new Kachel();
@@ -826,6 +895,154 @@
                 "",
                 "send('command(Rollo,KZ,Man)')");
         </script>
+
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                         Rolladen  Küche                                 -->
+        <!-- ----------------------------------------------------------------------- -->
+        <script>
+            var mainwindowRolloK = new Area();
+            mainwindowRolloK.createMain("MainRolloK", "bgMidgreen");
+        </script>
+
+        <script>
+            var iRolloK = new DynIcon("rollo", "ana", false);
+            iRolloK.create("MainRolloK", "0px", "40px", "250px", "200px");
+
+            var DisModeRolloK = new StateDisplay();
+            DisModeRolloK.create("MainRolloK", "midgreenLight", "", "220px", "190px", "140px", "60px", "24px", "Mode",
+                "Auto", "Man", "", "", "");
+
+            var DisPosRolloK = new StateDisplay();
+            DisPosRolloK.create("MainRolloK", "midgreenLight", "%", "220px", "20px", "140px", "60px", "24px",
+                "Position",
+                "Number",
+                "", "", "", "");
+
+
+            var Rahmen2RolloK = new Kachel();
+            Rahmen2RolloK.create("MainRolloK", "310px", "20px", "310px", "200px", "midgreen", "Control");
+
+            var FontBtnRolloKup = new FontButtonNew();
+            FontBtnRolloKup.create("MainRolloK", "midgreen", "big", "350px", "35px", "fa fa-chevron-up",
+                "send('command(Rollo,K,up)')");
+            var FontBtnRolloKstop = new FontButtonNew();
+            FontBtnRolloKstop.create("MainRolloK", "midgreen", "big", "350px", "135px", "fa fa-stop",
+                "send('command(Rollo,K,stop)')");
+            var FontBtnRolloKdown = new FontButtonNew();
+            FontBtnRolloKdown.create("MainRolloK", "midgreen", "big", "350px", "230px", "fa fa-chevron-down",
+                "send('command(Rollo,K,down)')");
+            var FontBtnRolloKstepUp = new FontButtonNew();
+            FontBtnRolloKstepUp.create("MainRolloK", "midgreen", "big", "430px", "35px", "fa fa-plus",
+                "send('command(Rollo,K,StepUp)')");
+            var FontBtnRolloKstepDown = new FontButtonNew();
+            FontBtnRolloKstepDown.create("MainRolloK", "midgreen", "big", "430px", "230px", "fa fa-minus",
+                "send('command(Rollo,K,StepDown)')");
+
+
+
+            var DisST1RolloK = new StateDisplay();
+            DisST1RolloK.create("MainRolloK", "midgreenLight", "", "560px", "30px", "140px", "60px", "14px",
+                "Schaltzeiten Mo-Fr",
+                "String", "", "", "", "");
+
+            var DisST2RolloK = new StateDisplay();
+            DisST2RolloK.create("MainRolloK", "midgreenLight", "", "560px", "180px", "140px", "60px", "14px",
+                "Schaltzeiten Sa-so",
+                "String", "", "", "", "");
+
+            CbSSrolloK = Object.create(CheckBox);
+            CbSSrolloK.create("MainRolloK", "SSRolloK", "midgreen", "640px", "50px", "SunRise-SunSet",
+                "command(Rollo,K,SSXX");
+
+            var Rahmen1RolloK = new Kachel();
+            Rahmen1RolloK.create("MainRolloK", "700px", "55px", "230px", "110px", "midgreen", "Mode");
+            var btnRolloKauto = new CtrlButton();
+            btnRolloKauto.create("MainRolloK", "740px", "65px", "ctrlbutton", "100px", "50px", "midgreen",
+                "Automatik",
+                "command",
+                "", "send('command(Rollo,K,Auto)')");
+            var btnRolloKman = new CtrlButton();
+            btnRolloKman.create("MainRolloK", "740px", "175px", "ctrlbutton", "100px", "50px", "midgreen", "Manual",
+                "command",
+                "",
+                "send('command(Rollo,K,Man)')");
+        </script>
+
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                         Rolladen  Balkontür                                 -->
+        <!-- ----------------------------------------------------------------------- -->
+        <script>
+            var mainwindowRolloB = new Area();
+            mainwindowRolloB.createMain("MainRolloB", "bgBlue");
+        </script>
+
+        <script>
+            var iRolloB = new DynIcon("rollo", "ana", false);
+            iRolloB.create("MainRolloB", "0px", "40px", "250px", "200px");
+
+            var DisModeRolloB = new StateDisplay();
+            DisModeRolloB.create("MainRolloB", "blueLight", "", "220px", "190px", "140px", "60px", "24px", "Mode",
+                "Auto", "Man", "", "", "");
+
+            var DisPosRolloB = new StateDisplay();
+            DisPosRolloB.create("MainRolloB", "blueLight", "%", "220px", "20px", "140px", "60px", "24px",
+                "Position",
+                "Number",
+                "", "", "", "");
+
+
+            var Rahmen2RolloB = new Kachel();
+            Rahmen2RolloB.create("MainRolloB", "310px", "20px", "310px", "200px", "blue", "Control");
+
+            var FontBtnRolloBup = new FontButtonNew();
+            FontBtnRolloBup.create("MainRolloB", "blue", "big", "350px", "35px", "fa fa-chevron-up",
+                "send('command(Rollo,B,up)')");
+            var FontBtnRolloBstop = new FontButtonNew();
+            FontBtnRolloBstop.create("MainRolloB", "blue", "big", "350px", "135px", "fa fa-stop",
+                "send('command(Rollo,B,stop)')");
+            var FontBtnRolloBdown = new FontButtonNew();
+            FontBtnRolloBdown.create("MainRolloB", "blue", "big", "350px", "230px", "fa fa-chevron-down",
+                "send('command(Rollo,B,down)')");
+            var FontBtnRolloBstepUp = new FontButtonNew();
+            FontBtnRolloBstepUp.create("MainRolloB", "blue", "big", "430px", "35px", "fa fa-plus",
+                "send('command(Rollo,B,StepUp)')");
+            var FontBtnRolloBstepDown = new FontButtonNew();
+            FontBtnRolloBstepDown.create("MainRolloB", "blue", "big", "430px", "230px", "fa fa-minus",
+                "send('command(Rollo,B,StepDown)')");
+
+
+
+            var DisST1RolloB = new StateDisplay();
+            DisST1RolloB.create("MainRolloB", "blueLight", "", "560px", "30px", "140px", "60px", "14px",
+                "Schaltzeiten Mo-Fr",
+                "String", "", "", "", "");
+
+            var DisST2RolloB = new StateDisplay();
+            DisST2RolloB.create("MainRolloB", "blueLight", "", "560px", "180px", "140px", "60px", "14px",
+                "Schaltzeiten Sa-so",
+                "String", "", "", "", "");
+
+            CbSSrolloB = Object.create(CheckBox);
+            CbSSrolloB.create("MainRolloB", "SSRolloB", "blue", "640px", "50px", "SunRise-SunSet",
+                "command(Rollo,B,SSXX");
+
+            var Rahmen1RolloB = new Kachel();
+            Rahmen1RolloB.create("MainRolloB", "700px", "55px", "230px", "110px", "blue", "Mode");
+            var btnRolloBauto = new CtrlButton();
+            btnRolloBauto.create("MainRolloB", "740px", "65px", "ctrlbutton", "100px", "50px", "blue",
+                "Automatik",
+                "command",
+                "", "send('command(Rollo,B,Auto)')");
+            var btnRolloBman = new CtrlButton();
+            btnRolloBman.create("MainRolloB", "740px", "175px", "ctrlbutton", "100px", "50px", "blue", "Manual",
+                "command",
+                "",
+                "send('command(Rollo,B,Man)')");
+        </script>
+
+
+
+
 
 
 
