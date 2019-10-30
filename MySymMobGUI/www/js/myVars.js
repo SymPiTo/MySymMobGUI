@@ -62,13 +62,13 @@
     function checkUsedVars(ips) {
       var sym = [];
       try {
-        sym[0] = ips[0].ID23116; //Temperatur SZ
+        sym[0] = ips[0].ID15922; //Temperatur SZ (HM)
         sym[1] = ips[0].ID37045; //Temperatur KZ
         sym[2] = ips[0].ID51079; //Temperatur WZ
         sym[3] = ips[0].ID54070; //Temperatur K
         sym[4] = ips[0].ID18059; //Position HZ WZ
         sym[5] = ips[0].ID49335; //Position HZ KZ
-        sym[6] = ips[0].ID36448; //Position HZ SZ 
+        sym[6] = ips[0].ID37431 * 100; //Position HZ SZ (HM)
         sym[7] = ips[0].ID51619; //Position HZ K   
         sym[8] = ips[0].ID36168; // Diele Präsenzmelder
         sym[9] = ips[0].ID22196; // Diele Haustür   
@@ -96,14 +96,14 @@
         sym[28] = ips[0].ID27789; //Soll Temp Ausstehend Hz WZ
         sym[29] = ips[0].ID23472; //Bat Hz WZ
         sym[30] = ips[0].ID52085; //Bat Hz KZ
-        sym[31] = ips[0].ID57118; //Bat Hz SZ
+        sym[31] = ips[0].ID42343; //Bat Hz Aktor SZ
         sym[32] = ips[0].ID22083; //Bat Hz K
         sym[33] = ips[0].ID34102; //Soll Modus Hz KZ
         sym[34] = ips[0].ID36377; //Soll Temp Hz KZ 
         sym[35] = ips[0].ID38441; //Soll Temp Ausstehend Hz KZ
-        sym[36] = ips[0].ID31202; //Soll Modus Hz SZ
-        sym[37] = ips[0].ID17998; //Soll Temp Hz SZ 
-        sym[38] = ips[0].ID51755; //Soll Temp Ausstehend Hz SZ
+        sym[36] = ips[0].ID47734; //Soll Modus Hz SZ (HM)
+        sym[37] = ips[0].ID36544; //Soll Temp Hz SZ  (HM)
+        sym[38] = ips[0].ID55889; //Soll Temp Ausstehend Hz SZ (HM)
         sym[39] = ips[0].ID26565; //Temp Vor Hz SZ
         sym[40] = ips[0].ID32007; //Temp Rueck Hz SZ  
         sym[41] = ips[0].ID39562; //Soll Modus Hz K
@@ -344,7 +344,20 @@
         sym[234] = ips[0].ID36753; // Wohnzimmer SollTempChanged
         sym[235] = ips[0].ID50046; // Kinderzimmer SollTempChanged
         sym[236] = ips[0].ID17734; // Küche SollTempChanged
-        sym[237] = ips[0].ID10827; // Schlafzimmer SollTempChanged
+        sym[237] = ips[0].ID57325; // Schlafzimmer SollTempChanged
+        sym[238] = ips[0].ID54140; // UPNP Meldung
+        sym[239] = ips[0].ID37871; // Arbeitszimmer Präsenzmelder Batterie
+        sym[240] = ips[0].ID48751; // Bad Temt Feuchte Sensor - Regler Batterie
+        sym[241] = ips[0].ID10829; // Diele Lichtschalter Batterie
+        sym[242] = ips[0].ID41083; // HaustürKontakt Batterie
+        sym[243] = ips[0].ID47298; // Schlafzimmer FensterKontakt Batterie
+
+        sym[244] = ips[0].ID55813; // Schlafzimmer Temp DiffSensor Batterie
+        sym[245] = ips[0].ID42343; // Schlafzimmer Heizungs Thermostat Batterie
+        sym[246] = ips[0].ID44533; // Schlafzimmer Heizungs Wand Regler Batterie
+        sym[247] = ips[0].ID44533; // Wohnzimmer 6fach Licht Taster Batterie
+        sym[248] = ips[0].ID58490; // Schlafzimmer Fenster state
+        sym[249] = ips[0].ID19999; // Schlafzimmer Heizkörper state
 
 
       } catch (err) {

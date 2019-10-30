@@ -29,6 +29,7 @@
             try {
                 socket = new WebSocket(host);
                 state('WebSocket: ' + socket.readyState);
+
                 socket.onopen = function (msg) {
                     var a = 0;
                     if (this.readyState === 1) {
