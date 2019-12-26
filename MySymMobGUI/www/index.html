@@ -185,7 +185,7 @@
         </div>
         <script>
             var Back = new IconBtn();
-            Back.create("kopfleiste", "2vh", "80vw", "Back.png");
+            Back.create("kopfleiste", "2vh", "80vw", back);
         </script>
 
         <!-- ----------------------------------------------------------------------- -->
@@ -219,7 +219,7 @@
             var LeftMenuNet = new GlideButton();
             LeftMenuNet.create("MainMenu", "green", "Netzwerk", network, "MenuNet", "", "MM");
             var MenuSecurity1 = new GlideButton();
-            MenuSecurity1.create("MainMenu", "cyan", "Security", "_GuestroomBW.jpg", "", "", "MM");
+            MenuSecurity1.create("MainMenu", "cyan", "Security", network, "", "", "MM");
         </script>
 
         <!-- ----------------------------------------------------------------------- -->
@@ -714,19 +714,24 @@
             Rahmen2RolloWZ.create("MainRolloWZ", "310px", "20px", "310px", "200px", "cyan", "Control");
 
             var FontBtnRolloWZup = new FontButtonNew();
-            FontBtnRolloWZup.create("MainRolloWZ", "cyan", "big", "350px", "35px", "fa fa-chevron-up",
+            FontBtnRolloWZup.create("MainRolloWZ", "fontbutton", "cyan", "350px", "35px", "fa fa-chevron-up", "60px",
+                "60px",
                 "send('command(Rollo,WZ,up)')");
             var FontBtnRolloWZstop = new FontButtonNew();
-            FontBtnRolloWZstop.create("MainRolloWZ", "cyan", "big", "350px", "135px", "fa fa-stop",
+            FontBtnRolloWZstop.create("MainRolloWZ", "fontbutton", "cyan", "350px", "135px", "fa fa-stop", "60px",
+                "60px",
                 "send('command(Rollo,WZ,stop)')");
             var FontBtnRolloWZdown = new FontButtonNew();
-            FontBtnRolloWZdown.create("MainRolloWZ", "cyan", "big", "350px", "230px", "fa fa-chevron-down",
+            FontBtnRolloWZdown.create("MainRolloWZ", "fontbutton", "cyan", "350px", "230px", "fa fa-chevron-down",
+                "60px", "60px",
                 "send('command(Rollo,WZ,down)')");
             var FontBtnRolloWZstepUp = new FontButtonNew();
-            FontBtnRolloWZstepUp.create("MainRolloWZ", "cyan", "big", "430px", "35px", "fa fa-plus",
+            FontBtnRolloWZstepUp.create("MainRolloWZ", "fontbutton", "cyan", "430px", "35px", "fa fa-plus", "60px",
+                "60px",
                 "send('command(Rollo,WZ,StepUp)')");
             var FontBtnRolloWZstepDown = new FontButtonNew();
-            FontBtnRolloWZstepDown.create("MainRolloWZ", "cyan", "big", "430px", "230px", "fa fa-minus",
+            FontBtnRolloWZstepDown.create("MainRolloWZ", "fontbutton", "cyan", "430px", "230px", "fa fa-minus", "60px",
+                "60px",
                 "send('command(Rollo,WZ,StepDown)')");
 
 
@@ -787,19 +792,24 @@
             Rahmen2RolloSZ.create("MainRolloSZ", "310px", "20px", "310px", "200px", "sandy", "Control");
 
             var FontBtnRolloSZup = new FontButtonNew();
-            FontBtnRolloSZup.create("MainRolloSZ", "sandy", "big", "350px", "35px", "fa fa-chevron-up",
+            FontBtnRolloSZup.create("MainRolloSZ", "fontbutton", "sandy", "350px", "35px", "fa fa-chevron-up", "60px",
+                "60px",
                 "send('command(Rollo,SZ,up)')");
             var FontBtnRolloSZstop = new FontButtonNew();
-            FontBtnRolloSZstop.create("MainRolloSZ", "sandy", "big", "350px", "135px", "fa fa-stop",
+            FontBtnRolloSZstop.create("MainRolloSZ", "fontbutton", "sandy", "350px", "135px", "fa fa-stop", "60px",
+                "60px",
                 "send('command(Rollo,SZ,stop)')");
             var FontBtnRolloSZdown = new FontButtonNew();
-            FontBtnRolloSZdown.create("MainRolloSZ", "sandy", "big", "350px", "230px", "fa fa-chevron-down",
+            FontBtnRolloSZdown.create("MainRolloSZ", "fontbutton", "sandy", "350px", "230px", "fa fa-chevron-down",
+                "60px", "60px",
                 "send('command(Rollo,SZ,down)')");
             var FontBtnRolloSZstepUp = new FontButtonNew();
-            FontBtnRolloSZstepUp.create("MainRolloSZ", "sandy", "big", "430px", "35px", "fa fa-plus",
+            FontBtnRolloSZstepUp.create("MainRolloSZ", "fontbutton", "sandy", "430px", "35px", "fa fa-plus", "60px",
+                "60px",
                 "send('command(Rollo,SZ,StepUp)')");
             var FontBtnRolloSZstepDown = new FontButtonNew();
-            FontBtnRolloSZstepDown.create("MainRolloSZ", "sandy", "big", "430px", "230px", "fa fa-minus",
+            FontBtnRolloSZstepDown.create("MainRolloSZ", "fontbutton", "sandy", "430px", "230px", "fa fa-minus", "60px",
+                "60px",
                 "send('command(Rollo,SZ,StepDown)')");
 
 
@@ -857,19 +867,24 @@
             Rahmen2RolloKZ.create("MainRolloKZ", "310px", "20px", "310px", "200px", "olive", "Control");
 
             var FontBtnRolloKZup = new FontButtonNew();
-            FontBtnRolloKZup.create("MainRolloKZ", "olive", "big", "350px", "35px", "fa fa-chevron-up",
+            FontBtnRolloKZup.create("MainRolloKZ", "fontbutton", "olive", "350px", "35px", "fa fa-chevron-up", "60px",
+                "60px",
                 "send('command(Rollo,KZ,up)')");
             var FontBtnRolloKZstop = new FontButtonNew();
-            FontBtnRolloKZstop.create("MainRolloKZ", "olive", "big", "350px", "135px", "fa fa-stop",
+            FontBtnRolloKZstop.create("MainRolloKZ", "fontbutton", "olive", "350px", "135px", "fa fa-stop", "60px",
+                "60px",
                 "send('command(Rollo,KZ,stop)')");
             var FontBtnRolloKZdown = new FontButtonNew();
-            FontBtnRolloKZdown.create("MainRolloKZ", "olive", "big", "350px", "230px", "fa fa-chevron-down",
+            FontBtnRolloKZdown.create("MainRolloKZ", "fontbutton", "olive", "350px", "230px", "fa fa-chevron-down",
+                "60px", "60px",
                 "send('command(Rollo,KZ,down)')");
             var FontBtnRolloKZstepUp = new FontButtonNew();
-            FontBtnRolloKZstepUp.create("MainRolloKZ", "olive", "big", "430px", "35px", "fa fa-plus",
+            FontBtnRolloKZstepUp.create("MainRolloKZ", "fontbutton", "olive", "430px", "35px", "fa fa-plus", "60px",
+                "60px",
                 "send('command(Rollo,KZ,StepUp)')");
             var FontBtnRolloKZstepDown = new FontButtonNew();
-            FontBtnRolloKZstepDown.create("MainRolloKZ", "olive", "big", "430px", "230px", "fa fa-minus",
+            FontBtnRolloKZstepDown.create("MainRolloKZ", "fontbutton", "olive", "430px", "230px", "fa fa-minus", "60px",
+                "60px",
                 "send('command(Rollo,KZ,StepDown)')");
 
 
@@ -929,19 +944,24 @@
             Rahmen2RolloK.create("MainRolloK", "310px", "20px", "310px", "200px", "midgreen", "Control");
 
             var FontBtnRolloKup = new FontButtonNew();
-            FontBtnRolloKup.create("MainRolloK", "midgreen", "big", "350px", "35px", "fa fa-chevron-up",
+            FontBtnRolloKup.create("MainRolloK", "fontbutton", "midgreen", "350px", "35px", "fa fa-chevron-up", "60px",
+                "60px",
                 "send('command(Rollo,K,up)')");
             var FontBtnRolloKstop = new FontButtonNew();
-            FontBtnRolloKstop.create("MainRolloK", "midgreen", "big", "350px", "135px", "fa fa-stop",
+            FontBtnRolloKstop.create("MainRolloK", "fontbutton", "midgreen", "350px", "135px", "fa fa-stop", "60px",
+                "60px",
                 "send('command(Rollo,K,stop)')");
             var FontBtnRolloKdown = new FontButtonNew();
-            FontBtnRolloKdown.create("MainRolloK", "midgreen", "big", "350px", "230px", "fa fa-chevron-down",
+            FontBtnRolloKdown.create("MainRolloK", "fontbutton", "midgreen", "350px", "230px", "fa fa-chevron-down",
+                "60px", "60px",
                 "send('command(Rollo,K,down)')");
             var FontBtnRolloKstepUp = new FontButtonNew();
-            FontBtnRolloKstepUp.create("MainRolloK", "midgreen", "big", "430px", "35px", "fa fa-plus",
+            FontBtnRolloKstepUp.create("MainRolloK", "fontbutton", "midgreen", "430px", "35px", "fa fa-plus", "60px",
+                "60px",
                 "send('command(Rollo,K,StepUp)')");
             var FontBtnRolloKstepDown = new FontButtonNew();
-            FontBtnRolloKstepDown.create("MainRolloK", "midgreen", "big", "430px", "230px", "fa fa-minus",
+            FontBtnRolloKstepDown.create("MainRolloK", "fontbutton", "midgreen", "430px", "230px", "fa fa-minus",
+                "60px", "60px",
                 "send('command(Rollo,K,StepDown)')");
 
 
@@ -1001,19 +1021,23 @@
             Rahmen2RolloB.create("MainRolloB", "310px", "20px", "310px", "200px", "blue", "Control");
 
             var FontBtnRolloBup = new FontButtonNew();
-            FontBtnRolloBup.create("MainRolloB", "blue", "big", "350px", "35px", "fa fa-chevron-up",
+            FontBtnRolloBup.create("MainRolloB", "fontbutton", "blue", "350px", "35px", "fa fa-chevron-up", "60px",
+                "60px",
                 "send('command(Rollo,B,up)')");
             var FontBtnRolloBstop = new FontButtonNew();
-            FontBtnRolloBstop.create("MainRolloB", "blue", "big", "350px", "135px", "fa fa-stop",
+            FontBtnRolloBstop.create("MainRolloB", "fontbutton", "blue", "350px", "135px", "fa fa-stop", "60px", "60px",
                 "send('command(Rollo,B,stop)')");
             var FontBtnRolloBdown = new FontButtonNew();
-            FontBtnRolloBdown.create("MainRolloB", "blue", "big", "350px", "230px", "fa fa-chevron-down",
+            FontBtnRolloBdown.create("MainRolloB", "fontbutton", "blue", "350px", "230px", "fa fa-chevron-down", "60px",
+                "60px",
                 "send('command(Rollo,B,down)')");
             var FontBtnRolloBstepUp = new FontButtonNew();
-            FontBtnRolloBstepUp.create("MainRolloB", "blue", "big", "430px", "35px", "fa fa-plus",
+            FontBtnRolloBstepUp.create("MainRolloB", "fontbutton", "blue", "430px", "35px", "fa fa-plus", "60px",
+                "60px",
                 "send('command(Rollo,B,StepUp)')");
             var FontBtnRolloBstepDown = new FontButtonNew();
-            FontBtnRolloBstepDown.create("MainRolloB", "blue", "big", "430px", "230px", "fa fa-minus",
+            FontBtnRolloBstepDown.create("MainRolloB", "fontbutton", "blue", "430px", "230px", "fa fa-minus", "60px",
+                "60px",
                 "send('command(Rollo,B,StepDown)')");
 
 

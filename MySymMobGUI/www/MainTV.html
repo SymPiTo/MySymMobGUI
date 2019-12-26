@@ -6,19 +6,23 @@
     MainWinTV.createMain("MainTV", "bgPurple");
     //-------------------------------------------------
     var RahmenTV = new Kachel();
-    RahmenTV.create("MainTV", "210px", "15px", "400px", "95px", "transparent", "TV Control")
-
+    RahmenTV.create("MainTV", "280px", "15px", "400px", "95px", "transparent", "TV Control")
+    //Sender Liste aufrufen
     var btnTVStation = new FontCtrlButton();
-    btnTVStation.create("MainTV", "purple", "245px", "45px", "fa fa-podcast", "Sender", "ctrlWindow",
-        "", "MainTVSender", "120px", "40px", "black", "19px", "red");
+    btnTVStation.create("MainTV", "purple", "320px", "45px", "fa fa-podcast", "Sender", "ctrlWindow",
+        "", "MainTV_Sender", "120px", "40px", "black", "19px", "white");
+    // Aus-Einschaltknopf
+    var btnTVPower = new FontButtonNew();
+    btnTVPower.create("MainTV", "fontbutton", "purple", "73vh", "85%", "fa fa-power-off", "60px",
+        "60px", "send('command(DenonCeol,power,toggle)')");
 </script>
 <!-- ----------------------------------------------------------------------- -->
 <!--                        TV Sender Liste                                  -->
 <!-- ----------------------------------------------------------------------- -->
 <script>
     var CtrlMainTVSender = new Area();
-    CtrlMainTVSender.createCtrl("MainTVSender", "bgPurpleLight");
+    CtrlMainTVSender.createCtrl("MainTV_Sender", "bgPurpleLight");
     //-------------------------------------------------
     var CtrlTVList = new DynIconList();
-    CtrlTVList.create("MainTVSender", "TV");
+    CtrlTVList.create("MainTV_Sender", "TV");
 </script>

@@ -1796,8 +1796,8 @@ WebKit inertia scrolling is being added here for any present/future devices that
 
 .fontbutton {
 	border: thin #000000 solid;
-	height: 70px;
-	width: 100px;
+	border-radius: 5px;
+
 	-webkit-transition: All 0.5s ease;
 	-moz-transition: All 0.5s ease;
 	-o-transition: All 0.5s ease;
@@ -1806,108 +1806,7 @@ WebKit inertia scrolling is being added here for any present/future devices that
 
 }
 
-.fontbutton.normal {
-	width: 100px;
-	height: 50px;
 
-	margin: 1px;
-}
-
-.fontbutton.normal>span {
-	position: relative;
-	top: 5%;
-}
-
-.fontbutton.small {
-	width: 60px;
-	margin: 2px;
-}
-
-.fontbutton.mid {
-	width: 60px;
-	height: 60px;
-	margin: 1px;
-}
-
-.fontbutton.mid>span {
-	position: relative;
-	top: 15%;
-}
-
-.fontbutton.big {
-	width: 80px;
-	margin: 2px;
-}
-
-.fontbutton.big>span {
-	position: relative;
-	top: 20%;
-}
-
-.fontbutton.wide {
-	width: 130px;
-	height: 60px;
-	margin: 2px;
-}
-
-.fontbutton.xxl {
-	width: 200px;
-	margin: 2px;
-}
-
-
-.fontbutton.cyan {
-	background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 45%));
-}
-
-.fontbutton.olive {
-	background: -webkit-linear-gradient(hsl(82, 100%, 25%), hsl(82, 100%, 45%));
-}
-
-.fontbutton.red {
-	background: -webkit-linear-gradient(hsl(0, 100%, 25%), hsl(0, 100%, 45%));
-}
-
-.fontbutton.purple {
-	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%), hsl(300, 100%, 25%));
-}
-
-.fontbutton.blue {
-	background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 45%));
-	/* CHROME */
-}
-
-.fontbutton.grey {
-	background: -webkit-linear-gradient(hsl(200, 0%, 25%), hsl(200, 0%, 45%), hsl(200, 0%, 25%));
-}
-
-
-.fontbutton:hover {}
-
-.fontbutton.cyan:active {
-	background: -webkit-linear-gradient(hsl(174, 100%, 5%), hsl(174, 100%, 15%));
-}
-
-.fontbutton.olive:active {
-	background: -webkit-linear-gradient(hsl(82, 100%, 5%), hsl(82, 100%, 15%));
-}
-
-
-.fontbutton.red:active {
-	background: -webkit-linear-gradient(hsl(0, 100%, 5%), hsl(0, 100%, 15%));
-}
-
-.fontbutton.purple:active {
-	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%), hsl(300, 100%, 5%));
-}
-
-.fontbutton.blue:active {
-	background: -webkit-linear-gradient(hsl(200, 100%, 5%), hsl(200, 100%, 15%));
-}
-
-.fontbutton.grey:active {
-	background: -webkit-linear-gradient(hsl(200, 0%, 5%), hsl(200, 0%, 15%), hsl(200, 0%, 5%));
-}
 
 .ctrlbutton {
 	border: thin #000000 solid;

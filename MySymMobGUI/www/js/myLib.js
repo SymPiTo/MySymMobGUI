@@ -1156,14 +1156,12 @@ class GlideButton {
                     loadContent();
                 } else {
                     if (IDMain !== "") {
-                        //script für Ctrl Window nachaden
-                        document.getElementsByClassName("StartScreen")[0].style.width = "0px";
-                        //SubMenue Leiste verkuerzt einblenden
-                        document.getElementById(ParentID).style.width = "8vw";
+                        //MainMenue Leiste ausblenden
+                        document.getElementById("MainMenu").style.width = "0vw";
+                        //SubMenue Leiste verkuerzt ausblenden
+                        document.getElementById(ParentID).style.width = "0.1vw";
                         //Haupt Fenster einblenden
-                        document.getElementById(IDMain).style.width = "58vw";
-                        //Control Fenster einblenden
-                        document.getElementById(IDMain + "Ctrl").style.width = "26vw";
+                        document.getElementById(IDMain).style.width = "99vw";
                     } else {
                         document.getElementsByClassName("StartScreen")[0].style.width = "0px";
                         //SubMenue Leiste verkuerzt einblenden
@@ -1564,6 +1562,11 @@ class DynIconList {
                     var cmd = "command(DenonCeol,loadAudioPlaylist," + item['playlistname'] + ")";
                 }
                 send(cmd);
+                //umschalten auf Haupt Ansicht
+                document.getElementById(ParentID).style.width = "0.1vw";
+                var position = ParentID.search(/_/);
+                var mainID = ParentID.substr(0, position);
+                document.getElementById(mainID).style.width = "99vw";
             };
 
             document.getElementById(ParentID).appendChild(elem);
@@ -1648,23 +1651,42 @@ class CDLibrary {
 class FontButtonNew {
     constructor() {
         this.ID = "";
+        this.ID1 = "";
+        this.b = "";
+        this.h = "";
+
+        // options
+        this.textSize = "28px";
+        this.textColor = "black";
     }
-    create(ParentID, color, size, posTop, posLeft, symbol, cmd) {
+    create(ParentID, btnClass, color, posTop, posLeft, symbol, b, h, cmd, ...param) {
+        this.h = h;
+        this.b = b;
+        if (param.length > 0) {
+            this.textSize = param[0];
+            this.textColor = param[1];
+        }
+
+
         var elem = document.createElement("div");
-        elem.className = "fontbutton";
-        elem.classList.add(size, color);
+        elem.className = btnClass;
+        elem.classList.add(color);
         this.ID = elem;
         elem.style.position = "absolute";
         elem.style.left = posLeft;
         elem.style.top = posTop;
-
+        elem.style.width = this.b;
+        elem.style.height = this.h;
+        elem.style.display = "flex";
+        elem.style.alignItems = "center";
+        elem.style.justifyContent = "center";
         elem.setAttribute("onclick", cmd);
+
         var elem1 = document.createElement("span");
         elem1.className = symbol;
-        elem1.style.fontSize = "30px";
-        elem1.style.padding = "5px";
-        elem1.style.color = "white";
-
+        elem1.style.fontSize = this.textSize;
+        elem1.style.color = this.textColor;
+        this.ID1 = elem1;
 
         elem.append(elem1);
         document.getElementById(ParentID).appendChild(elem);
@@ -1672,10 +1694,23 @@ class FontButtonNew {
 
     update(value) {
         if (value === true) {
-            this.ID.style.color = "lime";
+            this.ID1.style.color = "lime";
         } else {
-            this.ID.style.color = "white";
+            this.ID1.style.color = "white";
         }
+    }
+
+    off() {
+        this.ID.style.transition = "all 2s ease-in";
+
+        this.ID.style.opacity = "0";
+        this.ID.style.visibility = "hidden";
+    }
+    on() {
+        this.ID.style.transition = "all 2s ease-in";
+
+        this.ID.style.opacity = "1";
+        this.ID.style.visibility = "visible";
     }
 };
 
@@ -3077,7 +3112,8 @@ class IconBtn {
         this.ID = elem;
 
         var Bild = document.createElement("IMG");
-        Bild.src = "images/" + this.icon;
+
+        Bild.src = this.icon;
         Bild.style.width = "40px";
         Bild.style.height = "40px";
         elem.onclick = function () {
