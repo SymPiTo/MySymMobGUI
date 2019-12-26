@@ -3,12 +3,14 @@
 	box-sizing: border-box;
 	text-align: center;
 }
+
 /*This just stops me getting horizontal scrolling if anything overflows the width*/
 body {
-    overflow-x: hidden;
+	overflow-x: hidden;
 
-	
+
 }
+
 /*Just removing default browser padding/margin*/
 /*
 html,
@@ -18,57 +20,58 @@ body {
 }
 */
 
-button {
-	 
-	
-}
+button {}
+
 button :hover {
- color:black;
- 
+	color: black;
+
 
 }
+
 button :active {
- color:black;
- opacity:0.1; 
+	color: black;
+	opacity: 0.1;
 
 }
 
 
 /*Flexbox gives us the flexiness we need. The top just stays put as there is no scrolling on the body due to the page never exceeding viewport height*/
 .Top {
-	display:flex; 
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	background-color: grey;
-        color: white;
+	color: white;
 	font-size: x-large;
 	position: absolute;
 	Left: 0px;
 	top: 0px;
- 	z-index:10;
+	z-index: 10;
 	width: 100%;
 	height: 10vh;
 	border-bottom-style: solid;
 	border-bottom-width: thick;
 	color: #FFFF00;
 }
+
 .Bottom {
-	display:flex; 
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	background-color: black;
-        color: white;
+	color: white;
 	font-size: x-large;
 	position: absolute;
 	Left: 0px;
 	top: 95vh;
- 	z-index:10;
+	z-index: 10;
 	width: 100%;
 	height: 5vh;
 	border-top-style: solid;
 	border-btop-width: thick;
 	color: #FFFF00;
 }
+
 /*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
 .Container {
 	display: flex;
@@ -89,7 +92,7 @@ button :active {
 }
 
 
- 
+
 
 /*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
 WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
@@ -106,21 +109,21 @@ WebKit inertia scrolling is being added here for any present/future devices that
 .MenuHz,
 .MenuRollo,
 .MenuNet,
-.area
-{
-    overflow: auto;
-    padding: .0rem;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-	
-	   /*Transition*/
-  -webkit-transition: All 0.5s ease;
-  -moz-transition: All 0.5s ease;
-  -o-transition: All 0.5s ease;
-  -ms-transition: All 0.5s ease;
-  transition: All 0.5s ease;
-	
+.area {
+	overflow: auto;
+	padding: .0rem;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+
+	/*Transition*/
+	-webkit-transition: All 0.5s ease;
+	-moz-transition: All 0.5s ease;
+	-o-transition: All 0.5s ease;
+	-ms-transition: All 0.5s ease;
+	transition: All 0.5s ease;
+
 }
+
 /*Entirely optional â€“ just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
 .MainMenu::-webkit-scrollbar,
 .MenuStart::-webkit-scrollbar,
@@ -135,35 +138,38 @@ WebKit inertia scrolling is being added here for any present/future devices that
 .MenuRollo::-webkit-scrollbar,
 .MenuNet::-webkit-scrollbar,
 .area::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
+
 /*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
-.areaMain{
-	position:absolute;
+.areaMain {
+	position: absolute;
 	top: 10vh;
 	width: 0px;
 	height: 85vh;
-    left:0.1vw;
+	left: 0.1vw;
 }
 
 
-.areaCtrl{
-	position:absolute;
+.areaCtrl {
+	position: absolute;
 	top: 10vh;
 	width: 0px;
 	height: 90vh;
-        left:74vw;
+	left: 0.1vw;
 }
 
 .StartScreen {
 	position: absolute;
 	top: 10vh;
-        left: 28vw;
+	left: 28vw;
 	width: 72vw;
-        height:95vh;
-	background: -webkit-linear-gradient(hsl(750, 100%, 85%), hsl(450, 100%, 65%), hsl(750, 100%, 85%)); /* CHROME */
+	height: 95vh;
+	background: -webkit-linear-gradient(hsl(750, 100%, 85%), hsl(450, 100%, 65%), hsl(750, 100%, 85%));
+	/* CHROME */
 	background-repeat: no-repeat;
 }
+
 .MainMenu {
 	position: relative;
 	top: 10vh;
@@ -171,419 +177,440 @@ WebKit inertia scrolling is being added here for any present/future devices that
 	background-color: black;
 	margin-bottom: 1px;
 	margin-right: 1px;
-        
+
 }
 
-.HzAll{
-            position:absolute;
-            top: 10vh;
-            width: 0px;
-            height: 95vh;
-            left: 16.2vw;
- 
+.HzAll {
+	position: absolute;
+	top: 10vh;
+	width: 0px;
+	height: 95vh;
+	left: 16.2vw;
+
 }
 
-    .HzAllCtrl{
-            position:absolute;
-            top: 5vh;
-            width: 0px;
-            height: 95vh;
-            left: 74vw;
-    }
-
-
-    
-    .Wetter{
-            position:absolute;
-            top: 5vh;
-            width: 0px;
-            height: 95vh;
-            left: 16.2vw;
-    }  
-    .WetterCtrl{
-            position:absolute;
-            top: 5vh;
-            width: 0px;
-            height: 95vh;
-            left: 74vw;
-    }
-
-
-.HeizungWZ{
-	position:absolute;
+.HzAllCtrl {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:16.2vw;
+	left: 74vw;
+}
+
+
+
+.Wetter {
+	position: absolute;
+	top: 5vh;
+	width: 0px;
+	height: 95vh;
+	left: 16.2vw;
+}
+
+.WetterCtrl {
+	position: absolute;
+	top: 5vh;
+	width: 0px;
+	height: 95vh;
+	left: 74vw;
+}
+
+
+.HeizungWZ {
+	position: absolute;
+	top: 5vh;
+	width: 0px;
+	height: 95vh;
+	left: 16.2vw;
 	background: hsl(174, 100%, 10%);
 	/*border-right-color: #FFFFFF;
 	border-right-style: solid;
 	border-right-width: 1px; */
 }
 
-.HeizungCtrlWZ{
-	position:absolute;
+.HeizungCtrlWZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:74vw;
+	left: 74vw;
 	background: hsl(174, 100%, 10%);
 }
 
-.HeizungKZ{
-	position:absolute;
+.HeizungKZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 16.2vw;
+	left: 16.2vw;
 	background: hsl(82, 100%, 10%);
 	/*border-right-color: #FFFFFF;
 	border-right-style: solid;
 	border-right-width: 1px; */
 }
 
-.HeizungCtrlKZ{
-	position:absolute;
+.HeizungCtrlKZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:74vw;
+	left: 74vw;
 	background: hsl(82, 100%, 10%);
 }
-.HeizungSZ{
-	position:absolute;
+
+.HeizungSZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:16.2vw;
+	left: 16.2vw;
 	background: hsl(28, 100%, 10%);
 	/* border-right-color: #FFFFFF;
 	border-right-style: solid;
 	border-right-width: 1px; */
 }
 
-.HeizungCtrlSZ{
-	position:absolute;
+.HeizungCtrlSZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:74vw;
+	left: 74vw;
 	background: hsl(28, 100%, 10%);
 }
-.HeizungK{
-	position:absolute;
+
+.HeizungK {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:16.2vw;
-background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152, 70%, 15%)); /* CHROME */
+	left: 16.2vw;
+	background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152, 70%, 25%), hsl(152, 70%, 15%));
+	/* CHROME */
 	/* border-right-color: #FFFFFF;
 	border-right-style: solid;
 	border-right-width: 1px; */
 }
 
-.HeizungCtrlK{
-	position:absolute;
+.HeizungCtrlK {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:74vw;
-background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152, 70%, 15%)); /* CHROME */
+	left: 74vw;
+	background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152, 70%, 25%), hsl(152, 70%, 15%));
+	/* CHROME */
 }
+
 /* MID */
-.RolloWZ{
-	position:absolute;
+.RolloWZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:16.2vw;
+	left: 16.2vw;
 	background: hsl(174, 100%, 10%);
 	/* border-right-color: #FFFFFF;
 	border-right-style: solid;
 	border-right-width: 1px; */
 }
+
 /* MID */
-.RolloCtrlWZ{
-	position:absolute;
+.RolloCtrlWZ {
+	position: absolute;
 	top: 5vh;
-        left:74vw;
+	left: 74vw;
 	width: 0px;
 	height: 95vh;
 	background: hsl(174, 100%, 10%);
 }
 
-.RolloKZ{
-	position:absolute;
+.RolloKZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 16.2vw;
+	left: 16.2vw;
 	background: hsl(82, 100%, 10%);
 	/* border-right-color: #FFFFFF;
 	border-right-style: solid;
 	border-right-width: 1px; */
 }
 
-.RolloCtrlKZ{
-	position:absolute;
+.RolloCtrlKZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background: hsl(82, 100%, 10%);
 }
-.RolloSZ{
-	position:absolute;
+
+.RolloSZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 16.2vw;
+	left: 16.2vw;
 	background: hsl(28, 100%, 10%);
 	/* border-right-color: #FFFFFF;
 	border-right-style: solid;
 	border-right-width: 1px; */
 }
 
-.RolloCtrlSZ{
-	position:absolute;
+.RolloCtrlSZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background: hsl(28, 100%, 10%);
 }
-.RolloK{
-	position:absolute;
+
+.RolloK {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 16.2vw;
-background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152, 70%, 15%)); /* CHROME */
+	left: 16.2vw;
+	background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152, 70%, 25%), hsl(152, 70%, 15%));
+	/* CHROME */
 	/* border-right-color: #FFFFFF;
 	border-right-style: solid;
 	border-right-width: 1px; */
 }
 
-.RolloCtrlK{
-	position:absolute;
+.RolloCtrlK {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:74vw;
-background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152, 70%, 15%)); /* CHROME */
+	left: 74vw;
+	background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152, 70%, 25%), hsl(152, 70%, 15%));
+	/* CHROME */
 }
-.RolloB{
-	position:absolute;
+
+.RolloB {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 16.2vw;
+	left: 16.2vw;
 	background: hsl(200, 100%, 10%);
 	/* border-right-color: #FFFFFF;
 	border-right-style: solid;
 	border-right-width: 1px; */
 }
 
-.RolloCtrlB{
-	position:absolute;
+.RolloCtrlB {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background: hsl(200, 100%, 10%);
 }
 
 /* Schlafzimmer Main and Ctrl window color = sandy*/
-.LightSZ, .SonosSZ{
-	position:absolute;
+.LightSZ,
+.SonosSZ {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 16.2vw;
-	background: hsl(28, 100%, 10%);
-}
-.LightSZCtrl, .SonosSZCtrl{
-	position:absolute;
-	top: 5vh;
-	width: 0px;
-	height: 95vh;
-        left: 74vw;
+	left: 16.2vw;
 	background: hsl(28, 100%, 10%);
 }
 
-
-
-.Uhr{
-	position:absolute;
+.LightSZCtrl,
+.SonosSZCtrl {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 16.2vw;
-        background: hsl(38, 100%, 10%);
-	
-	
-}
-.UhrCtrl{
-	position:absolute;
-	top: 5vh;
-	width: 0px;
-	height: 95vh;
-        left: 74vw;
-        
-    background: #0f3854;
-    background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
-    background-size: 100%;
+	left: 74vw;
+	background: hsl(28, 100%, 10%);
 }
 
 
-.Rezepte{
-	position:absolute;
+
+.Uhr {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 16.2vw;
-	background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152, 70%, 15%));
+	left: 16.2vw;
+	background: hsl(38, 100%, 10%);
+
+
 }
-.RezepteCtrl{
-	position:absolute;
+
+.UhrCtrl {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:74vw;
-        background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152, 70%, 15%)); /* CHROME */
+	left: 74vw;
+
+	background: #0f3854;
+	background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+	background-size: 100%;
 }
-.RezepteCtrlList{
-	position:absolute;
+
+
+.Rezepte {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left:74vw;
-        background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152, 70%, 15%)); /* CHROME */
+	left: 16.2vw;
+	background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152, 70%, 25%), hsl(152, 70%, 15%));
 }
+
+.RezepteCtrl {
+	position: absolute;
+	top: 5vh;
+	width: 0px;
+	height: 95vh;
+	left: 74vw;
+	background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152, 70%, 25%), hsl(152, 70%, 15%));
+	/* CHROME */
+}
+
+.RezepteCtrlList {
+	position: absolute;
+	top: 5vh;
+	width: 0px;
+	height: 95vh;
+	left: 74vw;
+	background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152, 70%, 25%), hsl(152, 70%, 15%));
+	/* CHROME */
+}
+
 .TimePicker {
-	position:relative;
+	position: relative;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 58vw;
+	left: 58vw;
 	background: hsl(300, 100%, 10%);
 	/*border-left-style: solid;
 	border-left-width: thin; */
 }
+
 .TimePickerX {
-	position:relative;
+	position: relative;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 58vw;
+	left: 58vw;
 	background: hsl(300, 100%, 10%);
 	/*border-left-style: solid;
 	border-left-width: thin; */
 }
 
 .CDctrl {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
-	 background: hsl(300, 100%, 10%);
+	left: 74vw;
+	background: hsl(300, 100%, 10%);
 	/*border-left-style: solid;
 	border-left-width: thin; */
 }
+
 .CEOLCDctrl {
-	position:absolute;
-	top:  5vh;
-        left: 74vw;
+	position: absolute;
+	top: 5vh;
+	left: 74vw;
 	width: 0px;
 	height: 95vh;
 	background: hsl(300, 100%, 10%);
-        background-color: darkslategray;
-	/* border-left-style: solid;
-	border-left-width: thin; */
-}
-.CEOLctrl {
-	position:absolute;
-	top:  5vh;
-        left: 74vw;
-	width: 0px;
-	height: 95vh;
-	background-color: darkslategray
-       
-       
+	background-color: darkslategray;
 	/* border-left-style: solid;
 	border-left-width: thin; */
 }
 
-.UPNPConfig{
-	position:absolute;
+.CEOLctrl {
+	position: absolute;
+	top: 5vh;
+	left: 74vw;
+	width: 0px;
+	height: 95vh;
+	background-color: darkslategray
+		/* border-left-style: solid;
+	border-left-width: thin; */
+}
+
+.UPNPConfig {
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background: hsl(300, 100%, 10%);
 	/* border-left-style: solid;
 	border-left-width: thin; */
 }
 
 .CDLib {
-	position:absolute;
-	top:  5vh;
-        left: 74vw;
+	position: absolute;
+	top: 5vh;
+	left: 74vw;
 	width: 0px;
 	height: 95vh;
 	background-color: darkslategray
-             
-      
-	/* border-left-style: solid;
+		/* border-left-style: solid;
 	border-left-width: thin; */
 }
+
 .LibList {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background: hsl(300, 100%, 10%);
 	/* border-left-style: solid;
 	border-left-width: thin; */
 }
 
-.AudioBookLib{
-	position:absolute;
-	top:  5vh;
-        left: 74vw;
+.AudioBookLib {
+	position: absolute;
+	top: 5vh;
+	left: 74vw;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background: hsl(900, 100%, 10%);
 }
 
 
 .UpnpCD {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 16.2vw;
+	left: 16.2vw;
 	background: hsl(300, 100%, 10%);
 }
 
 .Ceol {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
-        left:16.2vw;
+	left: 16.2vw;
 	width: 0px;
 	height: 95vh;
 	background: hsl(300, 100%, 10%);
 }
- 
+
 .floorplan {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
-        left:8.1vw;
+	left: 8.1vw;
 	width: 0px;
-        height:95vh;
+	height: 95vh;
 	background-color: #FFFFFF;
 	background-image: url('../images/Wohnung_Grundriss.jpg');
 	background-repeat: no-repeat;
@@ -594,90 +621,90 @@ background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152
 
 
 
-.MenuWZ{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 95vh;
+.MenuWZ {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 95vh;
 }
 
-.MenuSZ{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 125vh;	
+.MenuSZ {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 125vh;
 }
 
-.MenuKZ{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 95vh;
+.MenuKZ {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 95vh;
 }
 
-.MenuK{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 95vh;
- }
- 
-.MenuSec{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 95vh;
- }
- 
-.MenuStart{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 450px;
- }
- 
-.MenuB{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 95vh;
- }
-
-.MenuMultimedia{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 95vh;
+.MenuK {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 95vh;
 }
 
-.MenuHz{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 450px;	 
+.MenuSec {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 95vh;
 }
 
-.MenuRollo{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 530px;
+.MenuStart {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 450px;
+}
+
+.MenuB {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 95vh;
+}
+
+.MenuMultimedia {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 95vh;
+}
+
+.MenuHz {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 450px;
+}
+
+.MenuRollo {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 530px;
 
 }
 
-.MenuNet{
-    position:relative;
-    top: 10vh;
-    width: 0px;
-    height: 450px;
+.MenuNet {
+	position: relative;
+	top: 10vh;
+	width: 0px;
+	height: 450px;
 
 }
 
 
 .RadioStation {
-	position:absolute;
-	top:  5vh;
-        left: 74vw;
+	position: absolute;
+	top: 5vh;
+	left: 74vw;
 	flex-direction: column;
 	width: 0px;
 	height: 95vh;
@@ -688,24 +715,24 @@ background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152
 
 
 .CoverCD {
-	position:absolute;
-	top:  5vh;
-        left: 74vw;
+	position: absolute;
+	top: 5vh;
+	left: 74vw;
 	height: 95vh;
-	
-	padding-bottom:5px;
+
+	padding-bottom: 5px;
 	width: 0px;
 	background-color: darkslategray
-	/* border-left-style: solid;
+		/* border-left-style: solid;
 	border-left-width: thin; */
 }
 
 
 
-.RolladenAll{
-	position:absolute;
+.RolladenAll {
+	position: absolute;
 	top: 5vh;
-        left: 16.2vw;
+	left: 16.2vw;
 	width: 0px;
 	height: 95vh;
 	background: hsl(174, 100%, 10%);
@@ -715,220 +742,226 @@ background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152
   	background: hsl(30, 56%, 25%); */
 }
 
-.SecurityCode{
-	position:absolute;
+.SecurityCode {
+	position: absolute;
 	top: 5vh;
-        left: 16vw;
-        width: 0vw;
-	height: 95vh;	
+	left: 16vw;
+	width: 0vw;
+	height: 95vh;
 	background-color: maroon;
-        color: white;
-}
- 
-
-.WaterAlarm{
-	position:absolute;
-	top: 5vh;
-        left: 16vw;
-        width: 0vw;
-	height: 95vh;	
-	background-color: maroon;
-        color: white;
+	color: white;
 }
 
-.BatAlarm{
-	position:absolute;
+
+.WaterAlarm {
+	position: absolute;
 	top: 5vh;
-        left: 16vw;
-        width: 0vw;
-	height: 95vh;	
+	left: 16vw;
+	width: 0vw;
+	height: 95vh;
 	background-color: maroon;
-        color: white;
+	color: white;
 }
 
-.Network{
-	position:absolute;
+.BatAlarm {
+	position: absolute;
 	top: 5vh;
-        left: 16.2vw;
-        width: 0px;
-	height: 95vh;	
+	left: 16vw;
+	width: 0vw;
+	height: 95vh;
+	background-color: maroon;
+	color: white;
+}
+
+.Network {
+	position: absolute;
+	top: 5vh;
+	left: 16.2vw;
+	width: 0px;
+	height: 95vh;
 	background-color: black;
 }
+
 .IRadio {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
-        left: 16.2vw;
+	left: 16.2vw;
 	width: 0px;
 	height: 95vh;
 	background: hsl(300, 100%, 10%);
 	color: #FFFFFF;
 }
-.WSS{
-	position:absolute;
+
+.WSS {
+	position: absolute;
 	top: 5vh;
-        left: 16.2vw;
-        width: 0px;
-	height: 95vh;	
+	left: 16.2vw;
+	width: 0px;
+	height: 95vh;
 	background-color: black;
 }
+
 .TV {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
-        left: 16.2vw;
+	left: 16.2vw;
 	width: 0px;
 	height: 95vh;
 	background: hsl(300, 100%, 10%);
 	color: #FFFFFF;
-} 
+}
 
 
 .TVChannel {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
-        left: 74vw;
+	left: 74vw;
 	flex-direction: column;
 	width: 0px;
 	height: 95vh;
-        background: hsl(300, 100%, 10%);
-} 
+	background: hsl(300, 100%, 10%);
+}
 
 .TVINet {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
-        left: 74vw;
+	left: 74vw;
 	width: 0px;
 	height: 95vh;
-	background: hsl(300,  1%, 10%);
-} 
+	background: hsl(300, 1%, 10%);
+}
 
 .CEOLServerCtrl {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background-color: darkslategray
 }
 
 .UpnpServerCtrl {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background: hsl(300, 100%, 10%);
 }
 
 .Navigation {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background: hsl(300, 100%, 10%);
 }
 
 .TVGuide {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
-        left: 74vw;
+	left: 74vw;
 	flex-direction: column;
 	width: 0px;
 	height: 95vh;
 	background: hsl(300, 100%, 10%);
 
-	padding-top:2%;
+	padding-top: 2%;
 	font-size: medium;
 	color: #FFFFFF;
 }
 
 .TVSourceCtrl {
-	position:absolute;
+	position: absolute;
 	top: 5vh;
 	width: 0px;
 	height: 95vh;
-        left: 74vw;
+	left: 74vw;
 	background: hsl(300, 100%, 10%);
 }
 
-.upnp{
-	position:absolute;
+.upnp {
+	position: absolute;
 	top: 5vh;
-        left: 16.2vw;
- 	height: 95vh;
+	left: 16.2vw;
+	height: 95vh;
 	width: 0px;
 	background: hsl(300, 100%, 10%);
 }
- 
+
 
 
 /*LEFT - GLIDE BUTTON*/
 .GlideButton {
-  border: 0px solid #eee;
-  height: 90px;
-  width: max-width;
-  padding-left: 5px;
-  padding-right: 50px;
-  overflow: hidden;
-  display: flex;
-  justify-content: row;
-  line-height: 40px;
-  font-size:2.0em;
-  color:white;
-  margin-bottom:0px;
+	border: 0px solid #eee;
+	height: 90px;
+	width: max-width;
+	padding-left: 5px;
+	padding-right: 50px;
+	overflow: hidden;
+	display: flex;
+	justify-content: row;
+	line-height: 40px;
+	font-size: 2.0em;
+	color: white;
+	margin-bottom: 0px;
 
-   /*Transition*/
-  -webkit-transition: All 0.5s ease;
-  -moz-transition: All 0.5s ease;
-  -o-transition: All 0.5s ease;
-  -ms-transition: All 0.5s ease;
-  transition: All 0.5s ease;
+	/*Transition*/
+	-webkit-transition: All 0.5s ease;
+	-moz-transition: All 0.5s ease;
+	-o-transition: All 0.5s ease;
+	-ms-transition: All 0.5s ease;
+	transition: All 0.5s ease;
 }
 
 
 
 /*UnterMenubutton*/
 .buttonglide {
-  border: 0px solid #eee;
-  height: 90px;
-  width: max-width;
-  padding-left: 5px;
-  padding-right: 20px;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  line-height: 40px;
-  font-size:2.0em;
-  color:white;
+	border: 0px solid #eee;
+	height: 90px;
+	width: max-width;
+	padding-left: 5px;
+	padding-right: 20px;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	line-height: 40px;
+	font-size: 2.0em;
+	color: white;
 
-  /*Gradient*/
-   /* Standard syntax (must be last) */
+	/*Gradient*/
+	/* Standard syntax (must be last) */
 
-   /*Transition*/
-  -webkit-transition: All 0.5s ease;
-  -moz-transition: All 0.5s ease;
-  -o-transition: All 0.5s ease;
-  -ms-transition: All 0.5s ease;
-  transition: All 0.5s ease;
+	/*Transition*/
+	-webkit-transition: All 0.5s ease;
+	-moz-transition: All 0.5s ease;
+	-o-transition: All 0.5s ease;
+	-ms-transition: All 0.5s ease;
+	transition: All 0.5s ease;
 }
+
 .buttonglide.mid {
 	width: 250px;
 	margin: 5px 10px 5px 10px;
 }
+
 .buttonglide.small {
-	width:200px;
+	width: 200px;
 	height: 70px;
 }
- 
+
 
 .buttonglide:hover {
-	opacity: .5; 
-	color:black;
+	opacity: .5;
+	color: black;
 }
+
 .buttonglide:active {
-	opacity: .35; 
-	color:black;
+	opacity: .35;
+	color: black;
 }
 
 
@@ -936,13 +969,14 @@ background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152
 
 
 .room {
-  
+
 	color: white;
 	font-size: x-large;
 	font-family: Arial;
-        text-align: center;
-        padding-left: 20px;
+	text-align: center;
+	padding-left: 20px;
 }
+
 .Wert {
 	width: 60px;
 	height: 18px;
@@ -968,134 +1002,144 @@ background: -webkit-linear-gradient(hsl(152, 70%, 15%), hsl(152,70%,25%),hsl(152
 	font-family: helvetica;
 	z-index: 2;
 }
- 
 
 
-#plan{
+
+#plan {
 	z-index: 1;
 	width: 100%;
 	height: 99vh;
-overflow: hidden;
+	overflow: hidden;
 }
 
 
 
 
 
-#coverbild{
+#coverbild {
 	margin-top: 10px;
 	width: 270px;
 	height: 270px;
 	padding: 20px;
- 
+
 
 
 }
 
- 
-.iconTV{
+
+.iconTV {
 	margin-top: 5px;
 	width: 110px;
 	height: 110px;
-        opacity: 0.5;
+	opacity: 0.5;
 }
+
 .iconTV:hover {
-    opacity: 0.8;
+	opacity: 0.8;
 }
+
 .iconTVToggle {
 	margin-top: 5px;
 	width: 110px;
 	height: 110px;
-    opacity: 1;
+	opacity: 1;
 }
 
-#icon{
+#icon {
 	margin-top: 10px;
 	width: 70px;
 	height: 70px;
-	
+
 }
 
-.icon{
+.icon {
 	margin-top: 10px;
 	width: 70px;
 	height: 70px;
 }
-.icon.big{
+
+.icon.big {
 	margin-top: 10px;
 	width: 250px;
 	height: 250px;
 }
-.icon.wide{
+
+.icon.wide {
 	margin-top: 10px;
 	width: 450px;
 	height: 170px;
 }
-.icon.normal{
+
+.icon.normal {
 	margin-top: 10px;
 	width: 250px;
 	height: 170px;
 }
-.icon.small{
+
+.icon.small {
 	margin-top: 10px;
 	width: 20px;
 	height: 50px;
 }
-.icon.size2{
-	margin-top: 10px;
-	width: 50px;
-	height: 50px;   
-}
 
-.iconRadio{
+.icon.size2 {
 	margin-top: 10px;
-	width: 95px;
-	height: 95px;
-	
-}
-.iconRadio:active {
-    opacity: 0.3;
-}
-
-.iconXS{
-	width: 60px;
-	height: 60px;
-}
-.iconXSS{
-        margin-top: 5px;
 	width: 50px;
 	height: 50px;
 }
-#iconsmall{
+
+.iconRadio {
+	margin-top: 10px;
+	width: 95px;
+	height: 95px;
+
+}
+
+.iconRadio:active {
+	opacity: 0.3;
+}
+
+.iconXS {
+	width: 60px;
+	height: 60px;
+}
+
+.iconXSS {
+	margin-top: 5px;
+	width: 50px;
+	height: 50px;
+}
+
+#iconsmall {
 	width: 105px;
 	height: 105px;
 }
 
-#iconmid{
+#iconmid {
 	width: 125px;
 	height: 125px;
 }
 
 
-#iconBig{
-	
+#iconBig {
+
 	width: 125px;
 	height: 125px;
-	
+
 }
 
-#CDCover_A{
+#CDCover_A {
 	width: 220px;
 	height: 220px;
 }
 
 
 
-#stattext{
+#stattext {
 	font-size: xx-large;
 	position: relative;
 	left: 50px;
-	color:lime;
+	color: lime;
 }
 
 
@@ -1106,118 +1150,141 @@ overflow: hidden;
 	width: 200px;
 	padding-left: 10px;
 }
- 
- 
- .containerTV {
-  display: flex; /* or inline-flex */
+
+
+.containerTV {
+	display: flex;
+	/* or inline-flex */
 	justify-content: center;
-	 
+
 
 
 }
-.nav {
-border-radius: 80px; 
-border: thin solid #808080; 
-margin-top: 10px; 
-width: 240px; 
-height:240px; 
-display: block; 
-margin-left: auto; 
-margin-right: auto;       
-} 
 
- .spalte {
-	display: flex; /* or inline-flex */;
+.nav {
+	border-radius: 80px;
+	border: thin solid #808080;
+	margin-top: 10px;
+	width: 240px;
+	height: 240px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.spalte {
+	display: flex;
+	/* or inline-flex */
+	;
 	flex-direction: column;
 	justify-content: center;
-  	align-items: center;
+	align-items: center;
 	height: 95vh;
 }
- .spalteLeft {
-	display: flex; /* or inline-flex */;
+
+.spalteLeft {
+	display: flex;
+	/* or inline-flex */
+	;
 	flex-direction: column;
- 
-	}
- .col {
-	display: flex; /* or inline-flex */;
+
+}
+
+.col {
+	display: flex;
+	/* or inline-flex */
+	;
 	flex-direction: column;
 	justify-content: center;
-  	align-items: center;
+	align-items: center;
 }
- 
- .reihe {
-	display: flex; /* or inline-flex */;
+
+.reihe {
+	display: flex;
+	/* or inline-flex */
+	;
 	flex-direction: row;
 	justify-content: space-between;
- 
+
 }
- .DenonDisplay {
-	display: flex; /* or inline-flex */;
+
+.DenonDisplay {
+	display: flex;
+	/* or inline-flex */
+	;
 	flex-direction: row;
 	align-items: center;
- 	margin:20px;
+	margin: 20px;
 	border: 1px #C0C0C0 inset;
 	border-color: #777777;
-	 
+
 	background-color: hsl(174, 100%, 5%);
 }
 
- .ScrollReihe {
-	display: flex; /* or inline-flex */;
+.ScrollReihe {
+	display: flex;
+	/* or inline-flex */
+	;
 	flex-direction: row;
 	justify-content: space-between;
 	padding-right: 0px;
 }
 
 
- .reihe1 {
-	display: flex; /* or inline-flex */;
+.reihe1 {
+	display: flex;
+	/* or inline-flex */
+	;
 	flex-direction: row;
 	justify-content: space-between;
 	padding: 50px;
 }
- .reihe2 {
-	display: flex; /* or inline-flex */;
+
+.reihe2 {
+	display: flex;
+	/* or inline-flex */
+	;
 	flex-direction: row;
 	justify-content: space-between;
 	padding-top: 0px;
-	position:relative;
-	top:4px;
+	position: relative;
+	top: 4px;
 }
 
- .reiheM {
-  display: flex; /* or inline-flex */
-  flex-direction: row;
-  justify-content: space-evenly;
+.reiheM {
+	display: flex;
+	/* or inline-flex */
+	flex-direction: row;
+	justify-content: space-evenly;
 
 }
 
 
 .TVAnzeige {
-    position: absolute;
-    left: 10vw;
-    top: 0vh;
-    border: 1px #C0C0C0 inset;
-    border-color: #777777;
-    font-family: 'dot matrix', arial;
-    font-size: 30px;
-    background-color: hsl(174, 100%, 5%);
-    padding: 5px;
-    color: #00FF00;
-    border-width: thin;
-    width: 400px;
-    height: 80px;
-}
-
-
-.DenonAnzeige {
-	
+	position: absolute;
+	left: 10vw;
+	top: 0vh;
 	border: 1px #C0C0C0 inset;
 	border-color: #777777;
 	font-family: 'dot matrix', arial;
 	font-size: 30px;
 	background-color: hsl(174, 100%, 5%);
-	 
+	padding: 5px;
+	color: #00FF00;
+	border-width: thin;
+	width: 400px;
+	height: 80px;
+}
+
+
+.DenonAnzeige {
+
+	border: 1px #C0C0C0 inset;
+	border-color: #777777;
+	font-family: 'dot matrix', arial;
+	font-size: 30px;
+	background-color: hsl(174, 100%, 5%);
+
 	color: #00FF00;
 	border-width: thin;
 
@@ -1244,375 +1311,419 @@ margin-right: auto;
 	height: 90px;
 	width: 100%;
 	background-image: url('images/textures/metal-silber brushed.jpg');
-	
-} 
+
+}
 
 .panel {
 	height: 90px;
 	width: 100%;
 	background-image: url('images/textures/metal-silber brushed.jpg');
 }
- 
- 
- 
 
-.CDscreen{
+
+
+
+.CDscreen {
 	height: 0px;
 	width: 100%;
 	background-color: #FF0000;
-} 
+}
 
 
 #power_A {
-	color:black;
+	color: black;
 }
 
 
 
-.flex1{
-flex: initial;	
-width: 20%;	
+.flex1 {
+	flex: initial;
+	width: 20%;
 }
 
-.flex2{
-	
-width:40%;	
+.flex2 {
+
+	width: 40%;
 }
 
-.flex3{
-flex:1 ;	
-width:40%;	
+.flex3 {
+	flex: 1;
+	width: 40%;
 }
 
 
- 
 
- #inlay {
-	 
+
+#inlay {
+
 	background-color: navajowhite;
 	height: 200px;
 	width: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-top: 0px;
 	text-align: center;
 	line-height: 300%;
 	font-size: 16px;
 	color: black;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 150px; 
-		position: relative;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 150px;
+	position: relative;
 	left: 25px;
 	top: 20px;
- }
- 
- #pushbutton1 {
+}
+
+#pushbutton1 {
 	height: 50px;
 	width: 50px;
 	position: relative;
 	left: 15px;
 	top: 15px;
- }
- #container_button {
-    background-color: #252525;
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0%;
-    margin-top: 0px;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    -webkit-box-shadow: inset 0px 0.5% 0px #585858, 0.25% 0.25% 0px #000, 0.5% 0.5% 1.25% #000;
-    -moz-box-shadow: inset 0px 0.5% 0px #585858, 0.25% 0.25% 0px #000, 0.5% 0.5% 1.25% #000;
-    box-shadow: inset 0px 0.5% 0px #585858, 0.25% 0.25% 0px #000, 0.5% 0.5% 1.25% #000;
 }
+
+#container_button {
+	background-color: #252525;
+	width: 100%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0%;
+	margin-top: 0px;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	-webkit-box-shadow: inset 0px 0.5% 0px #585858, 0.25% 0.25% 0px #000, 0.5% 0.5% 1.25% #000;
+	-moz-box-shadow: inset 0px 0.5% 0px #585858, 0.25% 0.25% 0px #000, 0.5% 0.5% 1.25% #000;
+	box-shadow: inset 0px 0.5% 0px #585858, 0.25% 0.25% 0px #000, 0.5% 0.5% 1.25% #000;
+}
+
 #hole {
-    background-color: #151515;
-    width: 77.5%;
-    height: 77.5%;
-    margin-left: auto;
-    margin-right: auto;
-    top: 12.5%;
-    position: relative;
-    -webkit-border-radius: 51.66%;
-    -moz-border-radius: 51.66%;
-    border-radius: 51.66%;
-    -webkit-box-shadow: 0.25% 0.25% 0px #5d5d5d;
-    -moz-box-shadow: 0.25% 0.25% 0px #5d5d5d;
-    box-shadow: 0.25% 0.25% 0px #5d5d5d;
+	background-color: #151515;
+	width: 77.5%;
+	height: 77.5%;
+	margin-left: auto;
+	margin-right: auto;
+	top: 12.5%;
+	position: relative;
+	-webkit-border-radius: 51.66%;
+	-moz-border-radius: 51.66%;
+	border-radius: 51.66%;
+	-webkit-box-shadow: 0.25% 0.25% 0px #5d5d5d;
+	-moz-box-shadow: 0.25% 0.25% 0px #5d5d5d;
+	box-shadow: 0.25% 0.25% 0px #5d5d5d;
 }
+
 #button {
-    width: 96.77%;
-    height: 96.77%;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: auto;
-    cursor: pointer;
-    top: -1.6%;
-    position: relative;
-    background-image: linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
-    background-image: -o-linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
-    background-image: -moz-linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
-    background-image: -webkit-linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
-    background-image: -ms-linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    -webkit-box-shadow: inset 0px 0.5% 0px #a8a8a8, 0px 0.5% 0px #2a2a2a, 0px 0.75% 0px #2a2a2a, 0px 1% 0px #2a2a2a, 0px 1.25% 0px #2a2a2a, 0px 1.5% 0px #2a2a2a, 0px 1.75% 0px #2a2a2a, 0px 2% 0px #2a2a2a, 0px 2.25% 0px #2a2a2a, 0px 2.5% 0px #2a2a2a, 2.5% 5% 2.5% #000;
-    -moz-box-shadow: inset 0px 0.5% 0px #a8a8a8, 0px 0.5% 0px #2a2a2a, 0px 0.75% 0px #2a2a2a, 0px 1% 0px #2a2a2a, 0px 1.25% 0px #2a2a2a, 0px 1.5% 0px #2a2a2a, 0px 1.75% 0px #2a2a2a, 0px 2% 0px #2a2a2a, 0px 2.25% 0px #2a2a2a, 0px 2.5% 0px #2a2a2a, 2.5% 5% 2.5% #000;
-    box-shadow: inset 0px 0.5% 0px #a8a8a8, 0px 0.5% 0px #2a2a2a, 0px 0.75% 0px #2a2a2a, 0px 1% 0px #2a2a2a, 0px 1.25% 0px #2a2a2a, 0px 1.5% 0px #2a2a2a, 0px 1.75% 0px #2a2a2a, 0px 2% 0px #2a2a2a, 0px 2.25% 0px #2a2a2a, 0px 2.5% 0px #2a2a2a, 2.5% 5% 2.5% #000;
-    -webkit-transition: all .2s;
-    -moz-transition: all .2s;
-    transition: all .2s;
+	width: 96.77%;
+	height: 96.77%;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+	cursor: pointer;
+	top: -1.6%;
+	position: relative;
+	background-image: linear-gradient(bottom, rgb(82, 79, 82) 0%, rgb(134, 134, 134) 57%);
+	background-image: -o-linear-gradient(bottom, rgb(82, 79, 82) 0%, rgb(134, 134, 134) 57%);
+	background-image: -moz-linear-gradient(bottom, rgb(82, 79, 82) 0%, rgb(134, 134, 134) 57%);
+	background-image: -webkit-linear-gradient(bottom, rgb(82, 79, 82) 0%, rgb(134, 134, 134) 57%);
+	background-image: -ms-linear-gradient(bottom, rgb(82, 79, 82) 0%, rgb(134, 134, 134) 57%);
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-box-shadow: inset 0px 0.5% 0px #a8a8a8, 0px 0.5% 0px #2a2a2a, 0px 0.75% 0px #2a2a2a, 0px 1% 0px #2a2a2a, 0px 1.25% 0px #2a2a2a, 0px 1.5% 0px #2a2a2a, 0px 1.75% 0px #2a2a2a, 0px 2% 0px #2a2a2a, 0px 2.25% 0px #2a2a2a, 0px 2.5% 0px #2a2a2a, 2.5% 5% 2.5% #000;
+	-moz-box-shadow: inset 0px 0.5% 0px #a8a8a8, 0px 0.5% 0px #2a2a2a, 0px 0.75% 0px #2a2a2a, 0px 1% 0px #2a2a2a, 0px 1.25% 0px #2a2a2a, 0px 1.5% 0px #2a2a2a, 0px 1.75% 0px #2a2a2a, 0px 2% 0px #2a2a2a, 0px 2.25% 0px #2a2a2a, 0px 2.5% 0px #2a2a2a, 2.5% 5% 2.5% #000;
+	box-shadow: inset 0px 0.5% 0px #a8a8a8, 0px 0.5% 0px #2a2a2a, 0px 0.75% 0px #2a2a2a, 0px 1% 0px #2a2a2a, 0px 1.25% 0px #2a2a2a, 0px 1.5% 0px #2a2a2a, 0px 1.75% 0px #2a2a2a, 0px 2% 0px #2a2a2a, 0px 2.25% 0px #2a2a2a, 0px 2.5% 0px #2a2a2a, 2.5% 5% 2.5% #000;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	transition: all .2s;
 }
+
 #button:active {
-    top: 1.25%;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: inset 0px 0.5% 0px #a8a8a8;
+	top: 1.25%;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: inset 0px 0.5% 0px #a8a8a8;
 }
+
 #triangle {
-    width: 0px;
-    height: 0px;
-    margin-left: 50%;
-    margin-top: 50%;
-    left: -27px;
-    top: -50px;
-    position: relative;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 80px solid #22a9db;
-    z-index: 2;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
+	width: 0px;
+	height: 0px;
+	margin-left: 50%;
+	margin-top: 50%;
+	left: -27px;
+	top: -50px;
+	position: relative;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 80px solid #22a9db;
+	z-index: 2;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s;
 }
-#button:hover #triangle { border-bottom: 80px solid #45bde9 }
-#button:active #triangle { border-bottom: 80px solid #e94545 }
+
+#button:hover #triangle {
+	border-bottom: 80px solid #45bde9
+}
+
+#button:active #triangle {
+	border-bottom: 80px solid #e94545
+}
+
 #lighter_triangle {
-    width: 0px;
-    height: 0px;
-    margin-left: 50%;
-    margin-top: 50%;
-    left: -27px;
-    top: -48px;
-    position: absolute;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 80px solid #43c0ee;
-    z-index: 1;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
+	width: 0px;
+	height: 0px;
+	margin-left: 50%;
+	margin-top: 50%;
+	left: -27px;
+	top: -48px;
+	position: absolute;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 80px solid #43c0ee;
+	z-index: 1;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s;
 }
-#button:hover #lighter_triangle { border-bottom: 80px solid #8bdaf7 }
-#button:active #lighter_triangle { border-bottom: 80px solid #f78b8b }
+
+#button:hover #lighter_triangle {
+	border-bottom: 80px solid #8bdaf7
+}
+
+#button:active #lighter_triangle {
+	border-bottom: 80px solid #f78b8b
+}
+
 #darker_triangle {
-    width: 0px;
-    height: 0px;
-    margin-left: 50%;
-    margin-top: 50%;
-    left: -28px;
-    top: -53px;
-    position: absolute;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 80px solid #0a7da7;
-    z-index: 1;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
+	width: 0px;
+	height: 0px;
+	margin-left: 50%;
+	margin-top: 50%;
+	left: -28px;
+	top: -53px;
+	position: absolute;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 80px solid #0a7da7;
+	z-index: 1;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s;
 }
-#button:hover #darker_triangle { border-bottom: 80px solid #1d98c5 }
-#button:active #darker_triangle { border-bottom: 80px solid #c51d1d }
 
-
- 
-#plus{
-    background: #22a9db;
-    width: 10%;
-    height: 50%;
-    margin-left: 50%;
-    margin-top: 50%;
-    left:  33.3%;
-    top: -25%;
-    position: relative;
-    margin-left: 11%;
-	z-index: 2;
- 
+#button:hover #darker_triangle {
+	border-bottom: 80px solid #1d98c5
 }
-#plus:before{
-    background: #22a9db;
-    content: "";
-    width: 500%;
-    height: 25%;
-    position: absolute;
-    top: 33%;
-    left: -200%;
-} 
-#button:hover #plus { background:  #45bde9 }
-#button:active #plus { background:  #e94545 }
-#button:hover #plus:before { background:  #45bde9 }
-#button:active #plus:before { background:  #e94545 }
+
+#button:active #darker_triangle {
+	border-bottom: 80px solid #c51d1d
+}
 
 
-#minus{
-    background: #22a9db;
-    width: 50%;
-    height: 10%;
-    margin-left: 50%;
-    margin-top: 50%;
-    left:  13.3%;
-    top: -5%;
-    position: relative;
-    margin-left: 11%;
+
+#plus {
+	background: #22a9db;
+	width: 10%;
+	height: 50%;
+	margin-left: 50%;
+	margin-top: 50%;
+	left: 33.3%;
+	top: -25%;
+	position: relative;
+	margin-left: 11%;
 	z-index: 2;
-} 
-#button:hover #minus { background:  #45bde9 }
-#button:active #minus { background:  #e94545 }
- 
 
- 
- 
- 
+}
+
+#plus:before {
+	background: #22a9db;
+	content: "";
+	width: 500%;
+	height: 25%;
+	position: absolute;
+	top: 33%;
+	left: -200%;
+}
+
+#button:hover #plus {
+	background: #45bde9
+}
+
+#button:active #plus {
+	background: #e94545
+}
+
+#button:hover #plus:before {
+	background: #45bde9
+}
+
+#button:active #plus:before {
+	background: #e94545
+}
+
+
+#minus {
+	background: #22a9db;
+	width: 50%;
+	height: 10%;
+	margin-left: 50%;
+	margin-top: 50%;
+	left: 13.3%;
+	top: -5%;
+	position: relative;
+	margin-left: 11%;
+	z-index: 2;
+}
+
+#button:hover #minus {
+	background: #45bde9
+}
+
+#button:active #minus {
+	background: #e94545
+}
+
+
+
+
+
 #pushbutton2 {
-  width: 80px;
-  height: 100px;  
-  border-bottom: 1px solid #eee;
-  
-  background-image: -webkit-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: -moz-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: -ms-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: -o-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: linear-gradient(top, #999, #d0d0d0 80% );
-  
-  -moz-border-radius: 100px;  
-  -webkit-border-radius: 100px;  
-  border-radius: 0px;
-  
-  box-shadow: inset rgba(0,0,0,0.2) 0px 5px 6px ;
-  
- 
-  padding-left: 10px;
-  padding-top:  10px;
- 
+	width: 80px;
+	height: 100px;
+	border-bottom: 1px solid #eee;
+
+	background-image: -webkit-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: -moz-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: -ms-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: -o-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: linear-gradient(top, #999, #d0d0d0 80%);
+
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 0px;
+
+	box-shadow: inset rgba(0, 0, 0, 0.2) 0px 5px 6px;
+
+
+	padding-left: 10px;
+	padding-top: 10px;
+
 }
 
 .butt {
-  width: 64px;
-  height: 80px;
- 
-  cursor: touch;
-  font-family: "Lucida Sans";
-  font-weight: bold;
-  font-size: 46px;
-  color: #888;
-  text-shadow: 0px 1px 0px #fff;
-  text-align: center;
-  line-height: 80px;
-  
-  -moz-border-radius: 100px;  
-  -webkit-border-radius: 100px;  
-  border-radius: 0px;  
-  
-  background-image: -webkit-linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100% );
-  background-image: -moz-linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100% );
-  background-image: -ms-linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100% );
-  background-image: -o-linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100% );
-  background-image: linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100% );
-  
-  background-position: 0 6px;
-  background-color: #eee;
-  background-repeat: no-repeat;
-  
-  -webkit-box-shadow: rgba(0,0,0,.4) 0 3px 6px;  
-  -moz-box-shadow: rgba(0,0,0,.4) 0 3px 6px;  
-  box-shadow: rgba(0,0,0,.4) 0 3px 6px;
-  
-  -webkit-transition: all .1s ease-in;
-  -moz-transition: all .1s ease-in;
-  -ms-transition: all .1s ease-in;
-  -o-transition: all .1s ease-in;
-  transition: all .1s ease-in;
+	width: 64px;
+	height: 80px;
+
+	cursor: touch;
+	font-family: "Lucida Sans";
+	font-weight: bold;
+	font-size: 46px;
+	color: #888;
+	text-shadow: 0px 1px 0px #fff;
+	text-align: center;
+	line-height: 80px;
+
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 0px;
+
+	background-image: -webkit-linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100%);
+	background-image: -moz-linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100%);
+	background-image: -ms-linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100%);
+	background-image: -o-linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100%);
+	background-image: linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100%);
+
+	background-position: 0 6px;
+	background-color: #eee;
+	background-repeat: no-repeat;
+
+	-webkit-box-shadow: rgba(0, 0, 0, .4) 0 3px 6px;
+	-moz-box-shadow: rgba(0, 0, 0, .4) 0 3px 6px;
+	box-shadow: rgba(0, 0, 0, .4) 0 3px 6px;
+
+	-webkit-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	-ms-transition: all .1s ease-in;
+	-o-transition: all .1s ease-in;
+	transition: all .1s ease-in;
 }
 
 .butt:hover {
-  background-position: 0 0px;
-  
-  -webkit-box-shadow: rgba(0,0,0,.4) 0 3px 8px;  
-  -moz-box-shadow: rgba(0,0,0,.4) 0 3px 8px;  
-  box-shadow: rgba(0,0,0,.4) 0 3px 8px;
+	background-position: 0 0px;
+
+	-webkit-box-shadow: rgba(0, 0, 0, .4) 0 3px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, .4) 0 3px 8px;
+	box-shadow: rgba(0, 0, 0, .4) 0 3px 8px;
 }
 
 .butt:active {
-  width: 58px;
-  height: 76px;
-  margin: 2px 0 0 2px;   
-  border-bottom: 1px solid #fff;
-  font-size: 42px;
-  color: #777;
+	width: 58px;
+	height: 76px;
+	margin: 2px 0 0 2px;
+	border-bottom: 1px solid #fff;
+	font-size: 42px;
+	color: #777;
 
-  -webkit-box-shadow: inset rgba(0,0,0,.5) 0px 5px 10px;
-  -moz-box-shadow: inset rgba(0,0,0,.5) 0px 5px 10px;
-  box-shadow: inset rgba(0,0,0,.5) 0px 5px 10px;
+	-webkit-box-shadow: inset rgba(0, 0, 0, .5) 0px 5px 10px;
+	-moz-box-shadow: inset rgba(0, 0, 0, .5) 0px 5px 10px;
+	box-shadow: inset rgba(0, 0, 0, .5) 0px 5px 10px;
 }
 
- 
+
 #cover {
-  width: 80px;
-  height: 50px;  
-  border-bottom: 2px solid #eee;
-  
-  background-image: -webkit-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: -moz-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: -ms-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: -o-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: linear-gradient(top, #999, #d0d0d0 80% );
-  
-  -moz-border-radius: 100px;  
-  -webkit-border-radius: 100px;  
-  border-radius: 0px;
-  
-  box-shadow: inset rgba(0,0,0,0.2) 0px 5px 6px ;
-  
-  font-family: "Lucida Sans";
-  font-weight: bold;
-  font-size: 16px;
-  color: #333;
-  text-shadow: 0px 1px 0px #fff;
-  text-align: center;
-  line-height: 50px;
-  
+	width: 80px;
+	height: 50px;
+	border-bottom: 2px solid #eee;
+
+	background-image: -webkit-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: -moz-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: -ms-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: -o-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: linear-gradient(top, #999, #d0d0d0 80%);
+
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 0px;
+
+	box-shadow: inset rgba(0, 0, 0, 0.2) 0px 5px 6px;
+
+	font-family: "Lucida Sans";
+	font-weight: bold;
+	font-size: 16px;
+	color: #333;
+	text-shadow: 0px 1px 0px #fff;
+	text-align: center;
+	line-height: 50px;
+
 }
 
 
 
- 
+
 #pushbutton3 {
-  width: 80px;
-  height: 60px;  
-  border-bottom: 2px solid #eee;
-  
-  background-image: -webkit-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: -moz-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: -ms-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: -o-linear-gradient(top, #999, #d0d0d0 80% );
-  background-image: linear-gradient(top, #999, #d0d0d0 80% );
-  
-  -moz-border-radius: 100px;  
-  -webkit-border-radius: 100px;  
-  border-radius: 0px;
-  
-  box-shadow: inset rgba(0,0,0,0.2) 0px 5px 6px ;
-  
- 
-  padding-left: 10px;
-  padding-top:  10px;
- 
+	width: 80px;
+	height: 60px;
+	border-bottom: 2px solid #eee;
+
+	background-image: -webkit-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: -moz-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: -ms-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: -o-linear-gradient(top, #999, #d0d0d0 80%);
+	background-image: linear-gradient(top, #999, #d0d0d0 80%);
+
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 0px;
+
+	box-shadow: inset rgba(0, 0, 0, 0.2) 0px 5px 6px;
+
+
+	padding-left: 10px;
+	padding-top: 10px;
+
 }
 
 .butt3 {
@@ -1629,13 +1740,13 @@ width:40%;
 	-moz-border-radius: 100px;
 	-webkit-border-radius: 100px;
 	border-radius: 0px;
-	background-image: linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100% );
+	background-image: linear-gradient(top, #eee, #bbb 70%, #9f9f9f 100%);
 	background-position: 0 6px;
 	background-color: #eee;
 	background-repeat: no-repeat;
-	-webkit-box-shadow: rgba(0,0,0,.4) 0 3px 6px;
-	-moz-box-shadow: rgba(0,0,0,.4) 0 3px 6px;
-	box-shadow: rgba(0,0,0,.4) 0 3px 6px;
+	-webkit-box-shadow: rgba(0, 0, 0, .4) 0 3px 6px;
+	-moz-box-shadow: rgba(0, 0, 0, .4) 0 3px 6px;
+	box-shadow: rgba(0, 0, 0, .4) 0 3px 6px;
 	-webkit-transition: all .1s ease-in;
 	-moz-transition: all .1s ease-in;
 	-ms-transition: all .1s ease-in;
@@ -1644,46 +1755,46 @@ width:40%;
 }
 
 .butt3:hover {
-  background-position: 0 0px;
-  
-  -webkit-box-shadow: rgba(0,0,0,.4) 0 3px 8px;  
-  -moz-box-shadow: rgba(0,0,0,.4) 0 3px 8px;  
-  box-shadow: rgba(0,0,0,.4) 0 3px 8px;
+	background-position: 0 0px;
+
+	-webkit-box-shadow: rgba(0, 0, 0, .4) 0 3px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, .4) 0 3px 8px;
+	box-shadow: rgba(0, 0, 0, .4) 0 3px 8px;
 }
 
 .butt3:active {
-  width: 60px;
-  height: 38px;
-  margin: 2px 0 0 2px;   
-  border-bottom: 1px solid #fff;
-  font-size: 16px;
-  color: #777;
-  -webkit-box-shadow: inset rgba(0,0,0,.5) 0px 5px 10px;
-  -moz-box-shadow: inset rgba(0,0,0,.5) 0px 5px 10px;
-  box-shadow: inset rgba(0,0,0,.5) 0px 5px 10px;
+	width: 60px;
+	height: 38px;
+	margin: 2px 0 0 2px;
+	border-bottom: 1px solid #fff;
+	font-size: 16px;
+	color: #777;
+	-webkit-box-shadow: inset rgba(0, 0, 0, .5) 0px 5px 10px;
+	-moz-box-shadow: inset rgba(0, 0, 0, .5) 0px 5px 10px;
+	box-shadow: inset rgba(0, 0, 0, .5) 0px 5px 10px;
 }
 
 .ZahlenContainer {
 	border: thin black solid;
 
-        display: flex;
-        flex-wrap: Wrap ;
-        justify-content: space-evenly;
-        color: white;
+	display: flex;
+	flex-wrap: Wrap;
+	justify-content: space-evenly;
+	color: white;
 }
 
 
 .NavContainer {
-	 
-        border-radius: 80px;
-     
-        display: flex;
-        flex-wrap: Wrap ;
-        justify-content: center;
-      
+
+	border-radius: 80px;
+
+	display: flex;
+	flex-wrap: Wrap;
+	justify-content: center;
+
 }
 
-.fontbutton{
+.fontbutton {
 	border: thin #000000 solid;
 	height: 70px;
 	width: 100px;
@@ -1692,76 +1803,91 @@ width:40%;
 	-o-transition: All 0.5s ease;
 	-ms-transition: All 0.5s ease;
 	transition: All 0.5s ease;
-	
+
 }
-.fontbutton.normal{
-    width: 100px;
-    height: 50px;
-    
-    margin:1px;
+
+.fontbutton.normal {
+	width: 100px;
+	height: 50px;
+
+	margin: 1px;
 }
-.fontbutton.normal>span{
-    position: relative;
-    top: 5%;
+
+.fontbutton.normal>span {
+	position: relative;
+	top: 5%;
 }
-.fontbutton.small{
+
+.fontbutton.small {
 	width: 60px;
-	margin:2px;
+	margin: 2px;
 }
-.fontbutton.mid{
+
+.fontbutton.mid {
 	width: 60px;
-	height:60px;
-	margin:1px;
+	height: 60px;
+	margin: 1px;
 }
-.fontbutton.mid>span{
-    position: relative;
-    top: 15%;
+
+.fontbutton.mid>span {
+	position: relative;
+	top: 15%;
 }
-.fontbutton.big{
+
+.fontbutton.big {
 	width: 80px;
-	margin:2px;
+	margin: 2px;
 }
-.fontbutton.big>span{
-    position: relative;
-    top: 20%;
+
+.fontbutton.big>span {
+	position: relative;
+	top: 20%;
 }
-.fontbutton.wide{
+
+.fontbutton.wide {
 	width: 130px;
-        height: 60px;
-	margin:2px;
+	height: 60px;
+	margin: 2px;
 }
-.fontbutton.xxl{
+
+.fontbutton.xxl {
 	width: 200px;
-	margin:2px;
+	margin: 2px;
 }
 
 
-.fontbutton.cyan{
+.fontbutton.cyan {
 	background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 45%));
 }
-.fontbutton.olive{
+
+.fontbutton.olive {
 	background: -webkit-linear-gradient(hsl(82, 100%, 25%), hsl(82, 100%, 45%));
 }
 
-.fontbutton.red{
+.fontbutton.red {
 	background: -webkit-linear-gradient(hsl(0, 100%, 25%), hsl(0, 100%, 45%));
 }
-.fontbutton.purple{
-	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%),hsl(300, 100%, 25%));
-}
-.fontbutton.blue{
-	background:-webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 45%)); /* CHROME */
-}
-.fontbutton.grey {
-    background: -webkit-linear-gradient(hsl(200, 0%, 25%), hsl(200, 0%, 45%),hsl(200, 0%, 25%));
+
+.fontbutton.purple {
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%), hsl(300, 100%, 25%));
 }
 
-  
-.fontbutton:hover {
+.fontbutton.blue {
+	background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 45%));
+	/* CHROME */
 }
+
+.fontbutton.grey {
+	background: -webkit-linear-gradient(hsl(200, 0%, 25%), hsl(200, 0%, 45%), hsl(200, 0%, 25%));
+}
+
+
+.fontbutton:hover {}
+
 .fontbutton.cyan:active {
 	background: -webkit-linear-gradient(hsl(174, 100%, 5%), hsl(174, 100%, 15%));
 }
+
 .fontbutton.olive:active {
 	background: -webkit-linear-gradient(hsl(82, 100%, 5%), hsl(82, 100%, 15%));
 }
@@ -1770,166 +1896,190 @@ width:40%;
 .fontbutton.red:active {
 	background: -webkit-linear-gradient(hsl(0, 100%, 5%), hsl(0, 100%, 15%));
 }
+
 .fontbutton.purple:active {
-	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%),hsl(300, 100%, 5%));
+	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%), hsl(300, 100%, 5%));
 }
+
 .fontbutton.blue:active {
 	background: -webkit-linear-gradient(hsl(200, 100%, 5%), hsl(200, 100%, 15%));
 }
+
 .fontbutton.grey:active {
-    background: -webkit-linear-gradient(hsl(200, 0%, 5%), hsl(200, 0%, 15%), hsl(200, 0%, 5%));
+	background: -webkit-linear-gradient(hsl(200, 0%, 5%), hsl(200, 0%, 15%), hsl(200, 0%, 5%));
 }
 
-.ctrlbutton{
+.ctrlbutton {
 	border: thin #000000 solid;
 	border-radius: 5px;
-	margin: 1px; 
+	margin: 1px;
 	-webkit-transition: All 0.5s ease;
 	-moz-transition: All 0.5s ease;
 	-o-transition: All 0.5s ease;
 	-ms-transition: All 0.5s ease;
 	transition: All 0.5s ease;
- 
-	 display: flex;
-	 align-items: center;
-	 justify-content: center;
-       
-	 
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+
 }
 
 
 
 .Tile {
-   width: 200px;
-   height: 225px;
-   color: black;
-   font-size: 24px;
-}   
-.size5{
-    width: 100px;
-    height: 55px;
-    font-size: 24px;
-    padding-top: 14px;
-    z-index: 2;
-}   
+	width: 200px;
+	height: 225px;
+	color: black;
+	font-size: 24px;
+}
+
+.size5 {
+	width: 100px;
+	height: 55px;
+	font-size: 24px;
+	padding-top: 14px;
+	z-index: 2;
+}
 
 
 
 
-.var{
+.var {
 	border-color: #666666;
 	border-style: solid;
 	border-width: 1px;
-    
-}
-.var.normal{
-    width: 75px;
-    height: 25px;
-    font-size: 14px;
-    padding-top: 5px;
-    z-index: 10;
+
 }
 
-.anzeige{
+.var.normal {
+	width: 75px;
+	height: 25px;
+	font-size: 14px;
+	padding-top: 5px;
+	z-index: 10;
+}
+
+.anzeige {
 	border-color: #666666;
 	border-style: solid;
 	border-width: 1px;
 	display: flex;
 	flex-direction: column;
- 
+
 	width: 202px;
-	
+
 	margin: 1px;
 	font-size: small;
 	padding: 5px;
-        
-}
-.anzeige.cyan{
-	background-color: hsl(174, 100%, 5%);	
+
 }
 
-.anzeige.olive{
-	background-color: hsl(82, 100%, 5%);	
+.anzeige.cyan {
+	background-color: hsl(174, 100%, 5%);
 }
-.anzeige.sandy{
-	background-color: hsl(28, 100%, 5%);	
+
+.anzeige.olive {
+	background-color: hsl(82, 100%, 5%);
 }
-.anzeige.red{
-	background-color: hsl(0, 100%, 5%);	
+
+.anzeige.sandy {
+	background-color: hsl(28, 100%, 5%);
 }
-.anzeige.blue{
-	background-color: hsl(200, 100%, 5%); 
+
+.anzeige.red {
+	background-color: hsl(0, 100%, 5%);
 }
+
+.anzeige.blue {
+	background-color: hsl(200, 100%, 5%);
+}
+
 .anzeige.midgreen {
-    background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152,70%,45%),hsl(152, 70%, 25%)); /* CHROME */
-} 
-.anzeige.midgreen:active{
-    background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152,70%,45%),hsl(152, 70%, 25%)); /* CHROME */
-} 
-.anzeige.blueA{
-        background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 45%), hsl(200, 100%, 25%));
+	background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 45%), hsl(152, 70%, 25%));
+	/* CHROME */
 }
+
+.anzeige.midgreen:active {
+	background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 45%), hsl(152, 70%, 25%));
+	/* CHROME */
+}
+
+.anzeige.blueA {
+	background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 45%), hsl(200, 100%, 25%));
+}
+
 .anzeige.blueA:active {
 	background: -webkit-linear-gradient(hsl(200, 0%, 5%), hsl(200, 0%, 15%), hsl(200, 100%, 5%));
 }
-.anzeige.long{
-    height: 225px;
-    word-wrap:break-word;
-}
-.anzeige.normal{
-    height: 60px;
+
+.anzeige.long {
+	height: 225px;
+	word-wrap: break-word;
 }
 
-.anzeige.size05{
-    height: 50px;
-}
-.anzeige.size06{
-    height: 60px;
-}
-.anzeige.size07{
-    height: 70px;
+.anzeige.normal {
+	height: 60px;
 }
 
-.status{
-	border-color:#666666;
+.anzeige.size05 {
+	height: 50px;
+}
+
+.anzeige.size06 {
+	height: 60px;
+}
+
+.anzeige.size07 {
+	height: 70px;
+}
+
+.status {
+	border-color: #666666;
 	border-style: solid;
 	border-width: 1px;
- 	width: 202px;
+	width: 202px;
 	height: 25px;
 	padding: 2px;
 	margin: 2px;
-    float: end;
+	float: end;
 }
-.status.Bat{
+
+.status.Bat {
 	height: 30px;
 }
-.status.cyan{
-	background-color: hsl(174, 100%, 5%);	
+
+.status.cyan {
+	background-color: hsl(174, 100%, 5%);
 }
 
-.status.olive{
-	background-color: hsl(82, 100%, 5%);	
+.status.olive {
+	background-color: hsl(82, 100%, 5%);
 }
 
-.status.sandy{
-	background-color: hsl(28, 100%, 5%);	
+.status.sandy {
+	background-color: hsl(28, 100%, 5%);
 }
-.status.red{
-	background-color: hsl(0, 100%, 5%);	
+
+.status.red {
+	background-color: hsl(0, 100%, 5%);
 }
+
 .status.midgreen {
-    background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152,70%,45%),hsl(152, 70%, 25%)); /* CHROME */
-} 
-
-
-.blackground{
-	display:flex;
-	flex-direction: row;
- 	width:200px;
+	background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 45%), hsl(152, 70%, 25%));
+	/* CHROME */
 }
 
 
-.tempcontrol{
+.blackground {
+	display: flex;
+	flex-direction: row;
+	width: 200px;
+}
+
+
+.tempcontrol {
 	border-color: #888888;
 	border-style: solid;
 	border-width: thin;
@@ -1940,31 +2090,37 @@ width:40%;
 	height: 190px;
 	margin: 0px;
 }
-.tempcontrol.cyan{
-	background-color: hsl(178, 100%, 5%);	
+
+.tempcontrol.cyan {
+	background-color: hsl(178, 100%, 5%);
 }
-.tempcontrol.olive{
-	background-color: hsl(82, 100%, 5%);	
+
+.tempcontrol.olive {
+	background-color: hsl(82, 100%, 5%);
 }
-.tempcontrol.sandy{
-	background-color: hsl(28, 100%, 5%);	
+
+.tempcontrol.sandy {
+	background-color: hsl(28, 100%, 5%);
 }
-.tempcontrol.red{
-	background-color: hsl(0, 100%, 5%);	
+
+.tempcontrol.red {
+	background-color: hsl(0, 100%, 5%);
 }
+
 .tempcontrol.midgreen {
-    background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152,70%,45%),hsl(152, 70%, 25%)); /* CHROME */
-} 
+	background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 45%), hsl(152, 70%, 25%));
+	/* CHROME */
+}
 
 
-#awesomeIcon{
-    position: relative;
-    z-index: 1;
-    left: -60px;
-    top: 40px;
-    color: #7B7B7B;
+#awesomeIcon {
+	position: relative;
+	z-index: 1;
+	left: -60px;
+	top: 40px;
+	color: #7B7B7B;
 
-    width: 0;
+	width: 0;
 }
 
 
@@ -1981,7 +2137,9 @@ width:40%;
 }
 
 /* Hide default HTML checkbox */
-.switch input {display:none;}
+.switch input {
+	display: none;
+}
 
 /* The slider */
 .slider {
@@ -1998,166 +2156,193 @@ width:40%;
 	padding-top: 20px;
 }
 
-input:checked + .slider {
+input:checked+.slider {
 	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%));
-	color:lime;
+	color: lime;
 }
 
 
 
 /* The radio button Selector */
-#radioselector{
-	 
+#radioselector {
+
 	margin: 4px;
 	float: left;
- 	height:50px;
- 	overflow-y:auto;
-	 }
+	height: 50px;
+	overflow-y: auto;
+}
+
 #radioselector label {
 	float: left;
-	 
-	width:100px;
-	height:40px;
+
+	width: 100px;
+	height: 40px;
 	margin: 4px;
 	overflow: auto;
-	
+
 }
-#radioselector label span{
+
+#radioselector label span {
 	text-align: center;
 	font-size: 22px;
-	 
-	padding-top:10px;
+
+	padding-top: 10px;
 	display: block;
-	color:white;
+	color: white;
 }
-#radioselector label input{
-	position:absolute;
+
+#radioselector label input {
+	position: absolute;
 	top: 10px;
-	width:30px;
-	height:30px;
-	display:none; 
+	width: 30px;
+	height: 30px;
+	display: none;
 }
-#radioselector input:checked + span {
-background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%));
-height:40px;
-color:lime;
+
+#radioselector input:checked+span {
+	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%));
+	height: 40px;
+	color: lime;
 }
+
 #radioselector .yellow {
-	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%));	
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%));
 }
+
 #radioselector .blue {
-background-color: blue;
+	background-color: blue;
 }
+
 #radioselector .pink {
-background-color: pink;
+	background-color: pink;
 }
+
 #radioselector .green {
-background-color: green;
+	background-color: green;
 }
+
 #radioselector .purple {
-background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%),hsl(300, 100%, 25%));	
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%), hsl(300, 100%, 25%));
 }
 
 
 
 /* The radio button Selector big*/
-#Bradioselector{
+#Bradioselector {
 	margin: 4px;
-	width:200px;
+	width: 200px;
 	float: left;
-	 }
+}
+
 #Bradioselector label {
 	float: left;
-	width:190px;
-	height:60px;
+	width: 190px;
+	height: 60px;
 	margin: 4px;
 	overflow: auto;
 }
-#Bradioselector label span{
+
+#Bradioselector label span {
 	text-align: right;
 	font-size: 22px;
-	padding-right:4px; 
-	padding-top:10px;
+	padding-right: 4px;
+	padding-top: 10px;
 	display: block;
-	color:white;
+	color: white;
 }
-#Bradioselector label input{
-	position:absolute;
+
+#Bradioselector label input {
+	position: absolute;
 	top: -20px;
-	display:none;
+	display: none;
 }
-#Bradioselector input:checked + span {
-background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%));
-height:60px;
-color:lime;
+
+#Bradioselector input:checked+span {
+	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%));
+	height: 60px;
+	color: lime;
 }
+
 #Bradioselector .yellow {
-	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%));	
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%));
 }
+
 #Bradioselector .blue {
-background-color: blue;
+	background-color: blue;
 }
+
 #Bradioselector .pink {
-background-color: pink;
+	background-color: pink;
 }
+
 #Bradioselector .green {
-background-color: green;
+	background-color: green;
 }
+
 #Bradioselector .purple {
-background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%),hsl(300, 100%, 25%));	
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%), hsl(300, 100%, 25%));
 }
 
 
 
 /* The radio button Selector */
-#radioselectorA{
+#radioselectorA {
 	margin: 2px;
 	float: left;
- 	height:50px;
- 	overflow-y:auto;
-	 }
+	height: 50px;
+	overflow-y: auto;
+}
+
 #radioselectorA label {
 	float: left;
-	width:85px;
-	height:35px;
+	width: 85px;
+	height: 35px;
 	margin: 1px;
-/*	//overflow: auto;*/
-	
+	/*	//overflow: auto;*/
+
 }
-#radioselectorA label span{
+
+#radioselectorA label span {
 	text-align: center;
 	font-size: 18px;
-	padding-top:10px;
+	padding-top: 10px;
 	display: block;
-	color:white;
+	color: white;
 }
-#radioselectorA label input{
-	position:absolute;
-	top: 30px;
-	width:20px;
-	height:20px;
 
-	display:none; 
+#radioselectorA label input {
+	position: absolute;
+	top: 30px;
+	width: 20px;
+	height: 20px;
+
+	display: none;
 }
-#radioselectorA input:checked + span {
-background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%));
-height:35px;
-color:lime;
+
+#radioselectorA input:checked+span {
+	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%));
+	height: 35px;
+	color: lime;
 }
+
 #radioselectorA .yellow {
-	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%));	
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%));
 }
+
 #radioselectorA .blue {
-background-color: blue;
+	background-color: blue;
 }
+
 #radioselectorA .pink {
-background-color: pink;
+	background-color: pink;
 }
+
 #radioselectorA .green {
-background-color: green;
+	background-color: green;
 }
+
 #radioselectorA .purple {
-background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%),hsl(300, 100%, 25%));	
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%), hsl(300, 100%, 25%));
 }
 
 
@@ -2165,21 +2350,22 @@ background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%),hsl
 
 
 .IconS {
-    width:60px;
-    height:60px;
+	width: 60px;
+	height: 60px;
 }
 
 .IconMid {
-    width:50px;
-    height:50px;
-    margin-top:5px;
+	width: 50px;
+	height: 50px;
+	margin-top: 5px;
 }
 
 .IconSmall {
-    width:60px;
-    height:40px;
-    margin-top:10px;
+	width: 60px;
+	height: 40px;
+	margin-top: 10px;
 }
+
 /*LEFT - GLIDE BUTTON*/
 .IconButton {
 	display: flex;
@@ -2188,177 +2374,241 @@ background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%),hsl
 	text-align: center;
 	font-size: 1.2em;
 	color: white;
-	margin:2px;
+	margin: 2px;
 }
+
 .IconButton.small {
-  height: 70px;
-  width: 200px;
+	height: 70px;
+	width: 200px;
 }
 
 .IconButton.smaller {
-  height: 50px;
-  width: 180px;
+	height: 50px;
+	width: 180px;
 }
 
 .IconButton.cyan {
 	/*Gradient*/
-	  background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 45%));
+	background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 45%));
 }
-.IconButton.olive {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(82, 100%, 25%), hsl(82, 100%, 45%)); /* CHROME */
-}
-.IconButton.sandy {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(28, 100%, 25%), hsl(28, 100%, 45%)); /* CHROME */
-}
-.IconButton.red {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(0, 100%, 25%), hsl(0, 100%, 45%)); /* CHROME */
-}
-.IconButton.yellow {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(51, 100%, 25%), hsl(51, 100%, 45%)); /* CHROME */
-}
-.IconButton.purple {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%),hsl(300, 100%, 25%)); /* CHROME */
-}
-.IconButton.grey {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(205, 10%, 45%), hsl(205, 10%, 75%)); /* CHROME */
-}
-.IconButton .pink {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(350, 100%, 65%), hsl(350, 100%, 85%)); /* CHROME */
-}
-.IconButton.blue{
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 45%)); /* CHROME */
-}
-.IconButton.brown{
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(30, 56%, 25%), hsl(30, 56%, 45%)); /* CHROME */
-}
-.IconButton.green{
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(120, 56%, 25%), hsl(120, 56%, 45%)); /* CHROME */
-}
-.IconButton.midgreen {
-    background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152,70%,45%),hsl(152, 70%, 25%)); /* CHROME */
-} 
 
-.IconButton:hover {
-}	 
+.IconButton.olive {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(82, 100%, 25%), hsl(82, 100%, 45%));
+	/* CHROME */
+}
+
+.IconButton.sandy {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(28, 100%, 25%), hsl(28, 100%, 45%));
+	/* CHROME */
+}
+
+.IconButton.red {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(0, 100%, 25%), hsl(0, 100%, 45%));
+	/* CHROME */
+}
+
+.IconButton.yellow {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(51, 100%, 25%), hsl(51, 100%, 45%));
+	/* CHROME */
+}
+
+.IconButton.purple {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%), hsl(300, 100%, 25%));
+	/* CHROME */
+}
+
+.IconButton.grey {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(205, 10%, 45%), hsl(205, 10%, 75%));
+	/* CHROME */
+}
+
+.IconButton .pink {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(350, 100%, 65%), hsl(350, 100%, 85%));
+	/* CHROME */
+}
+
+.IconButton.blue {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 45%));
+	/* CHROME */
+}
+
+.IconButton.brown {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(30, 56%, 25%), hsl(30, 56%, 45%));
+	/* CHROME */
+}
+
+.IconButton.green {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(120, 56%, 25%), hsl(120, 56%, 45%));
+	/* CHROME */
+}
+
+.IconButton.midgreen {
+	background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 45%), hsl(152, 70%, 25%));
+	/* CHROME */
+}
+
+.IconButton:hover {}
 
 .IconButton.cyan:hover {
 	background: -webkit-linear-gradient(hsl(174, 100%, 15%), hsl(174, 100%, 25%));
 }
-.IconButton.olive:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(82, 100%, 15%), hsl(82, 100%, 25%)); /* CHROME */
-}
-.IconButton.sandy:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(28, 100%, 15%), hsl(28, 100%, 25%)); /* CHROME */
-}
-.IconButton.red:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(0, 100%, 15%), hsl(0, 100%, 25%)); /* CHROME */
-}
-.IconButton.yellow:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(51, 100%, 15%), hsl(51, 100%, 25%)); /* CHROME */
-}
-.IconButton.purple:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(300, 100%, 15%), hsl(300, 100%, 25%),hsl(300, 100%, 15%)); /* CHROME */
-}
-.IconButton.grey:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(205, 10%, 15%), hsl(204, 10%, 25%)); /* CHROME */
-}
-.IconButton.pink:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(350, 100%, 75%), hsl(350, 100%, 85%)); /* CHROME */
-}
-.IconButton.blue:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(200, 100%, 15%), hsl(200, 100%, 25%)); /* CHROME */
-}
-.IconButton.brown:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(30, 56%, 15%), hsl(30, 56%, 25%)); /* CHROME */
-}
-.IconButton.green:hover {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(120, 56%, 15%), hsl(120, 56%, 25%)); /* CHROME */
-}
-.IconButton.midgreen:hover {
-    background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152,70%,45%),hsl(152, 70%, 25%)); /* CHROME */
-} 
 
-.IconButton:active {
-	 
+.IconButton.olive:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(82, 100%, 15%), hsl(82, 100%, 25%));
+	/* CHROME */
 }
+
+.IconButton.sandy:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(28, 100%, 15%), hsl(28, 100%, 25%));
+	/* CHROME */
+}
+
+.IconButton.red:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(0, 100%, 15%), hsl(0, 100%, 25%));
+	/* CHROME */
+}
+
+.IconButton.yellow:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(51, 100%, 15%), hsl(51, 100%, 25%));
+	/* CHROME */
+}
+
+.IconButton.purple:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(300, 100%, 15%), hsl(300, 100%, 25%), hsl(300, 100%, 15%));
+	/* CHROME */
+}
+
+.IconButton.grey:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(205, 10%, 15%), hsl(204, 10%, 25%));
+	/* CHROME */
+}
+
+.IconButton.pink:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(350, 100%, 75%), hsl(350, 100%, 85%));
+	/* CHROME */
+}
+
+.IconButton.blue:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(200, 100%, 15%), hsl(200, 100%, 25%));
+	/* CHROME */
+}
+
+.IconButton.brown:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(30, 56%, 15%), hsl(30, 56%, 25%));
+	/* CHROME */
+}
+
+.IconButton.green:hover {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(120, 56%, 15%), hsl(120, 56%, 25%));
+	/* CHROME */
+}
+
+.IconButton.midgreen:hover {
+	background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 45%), hsl(152, 70%, 25%));
+	/* CHROME */
+}
+
+.IconButton:active {}
+
 .IconButton.cyan:active {
 	background: -webkit-linear-gradient(hsl(174, 100%, 5%), hsl(174, 100%, 15%));
 }
 
 .IconButton.olive:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(82, 100%, 5%), hsl(82, 100%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(82, 100%, 5%), hsl(82, 100%, 15%));
+	/* CHROME */
 }
+
 .IconButton.sandy:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(28, 100%, 5%), hsl(28, 100%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(28, 100%, 5%), hsl(28, 100%, 15%));
+	/* CHROME */
 }
+
 .IconButton.red:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(0, 100%, 5%), hsl(0, 100%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(0, 100%, 5%), hsl(0, 100%, 15%));
+	/* CHROME */
 }
+
 .IconButton.yellow:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(51, 100%, 5%), hsl(51, 100%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(51, 100%, 5%), hsl(51, 100%, 15%));
+	/* CHROME */
 }
+
 .IconButton.purple:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%),hsl(300, 100%, 5%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%), hsl(300, 100%, 5%));
+	/* CHROME */
 }
+
 .IconButton.grey:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(205, 10%, 25%), hsl(205, 10%, 35%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(205, 10%, 25%), hsl(205, 10%, 35%));
+	/* CHROME */
 }
+
 .IconButton.pink:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(350, 100%, 45%), hsl(350, 100%, 55%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(350, 100%, 45%), hsl(350, 100%, 55%));
+	/* CHROME */
 }
+
 .IconButton.blue:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(200, 100%, 5%), hsl(200, 100%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(200, 100%, 5%), hsl(200, 100%, 15%));
+	/* CHROME */
 }
+
 .IconButton.brown:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(30, 56%, 5%), hsl(30, 56%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(30, 56%, 5%), hsl(30, 56%, 15%));
+	/* CHROME */
 }
+
 .IconButton.green:active {
-	  /*Gradient*/
-	  background: -webkit-linear-gradient(hsl(120, 56%, 5%), hsl(120, 56%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(120, 56%, 5%), hsl(120, 56%, 15%));
+	/* CHROME */
 }
+
 .IconButton.midgreen:active {
-    background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152,70%,45%),hsl(152, 70%, 25%)); /* CHROME */
-} 
+	background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 45%), hsl(152, 70%, 25%));
+	/* CHROME */
+}
 
 
 
 
 
 #progressbar {
-    width: 98%;
-    /* Full Width */
+	width: 98%;
+	/* Full Width */
 	height: 5px;
-    margin: 5px ;
-    background: #000;
+	margin: 5px;
+	background: #000;
 }
 
 .expand {
@@ -2367,12 +2617,12 @@ background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%),hsl
 	margin: 2px 0;
 	background: #2187e7;
 	position: absolute;
-	box-shadow: 0px 0px 10px 1px rgba(0,198,255,0.7);
+	box-shadow: 0px 0px 10px 1px rgba(0, 198, 255, 0.7);
 	left: 6px;
 }
 
 
-.auswahl{
+.auswahl {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
@@ -2388,60 +2638,64 @@ background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%),hsl
 
 /*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
 .timeContainer {
-    display: flex;
-    overflow: hidden;
-    height: 225px;
-    margin-top: -20px;
-    padding-top: 20px;
-    margin-bottom: -20px;
-    padding-bottom: 20px;    
-    position: relative;
-    top:10px;
-    width: 225px;
-    left:20px;
-    backface-visibility: hidden;
-    will-change: overflow;
-    margin-left: 5px;
-    margin-bottom: 5px;
+	display: flex;
+	overflow: hidden;
+	height: 225px;
+	margin-top: -20px;
+	padding-top: 20px;
+	margin-bottom: -20px;
+	padding-bottom: 20px;
+	position: relative;
+	top: 10px;
+	width: 225px;
+	left: 20px;
+	backface-visibility: hidden;
+	will-change: overflow;
+	margin-left: 5px;
+	margin-bottom: 5px;
 
 }
+
 /*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
 WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
 */
 .timeLeft,
 .Middle,
 .timeRight {
-    overflow: auto;
-    height: auto;
-    padding: .5rem;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
+	overflow: auto;
+	height: auto;
+	padding: .5rem;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
 }
+
 /*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
 .timeLeft::-webkit-scrollbar,
 .timeMiddle::-webkit-scrollbar,
 .timeRight::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
+
 /*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
 .timeLeft {
-    width: 12.5rem;
-    background: green;
-    font-size: 32px;
-	-webkit-mask-image: -webkit-linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5)25%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.1) 100%);
-	 background: -webkit-linear-gradient(hsl(120, 56%, 0%), hsl(120, 56%, 15%),hsl(120, 56%, 75%), hsl(120, 56%, 15%),hsl(120, 56%, 0%));
+	width: 12.5rem;
+	background: green;
+	font-size: 32px;
+	-webkit-mask-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5)25%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0.1) 100%);
+	background: -webkit-linear-gradient(hsl(120, 56%, 0%), hsl(120, 56%, 15%), hsl(120, 56%, 75%), hsl(120, 56%, 15%), hsl(120, 56%, 0%));
 }
+
 .timeMiddle {
-    flex: 1;
-    
+	flex: 1;
+
 }
 
 .timeRight {
-    width: 12.5rem;
-    
-    font-size: 32px;
-	-webkit-mask-image: -webkit-linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5)25%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.1) 100%);
-	 background: -webkit-linear-gradient(hsl(120, 56%, 0%), hsl(120, 56%, 15%),hsl(120, 56%, 75%), hsl(120, 56%, 15%),hsl(120, 56%, 0%));
+	width: 12.5rem;
+
+	font-size: 32px;
+	-webkit-mask-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5)25%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0.1) 100%);
+	background: -webkit-linear-gradient(hsl(120, 56%, 0%), hsl(120, 56%, 15%), hsl(120, 56%, 75%), hsl(120, 56%, 15%), hsl(120, 56%, 0%));
 
 }
 
@@ -2449,174 +2703,237 @@ WebKit inertia scrolling is being added here for any present/future devices that
 /* Check Box 
  /* The container */
 .CBcontainer {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    padding-top: 7px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
- 
-    width: 240px;
-    height: 40px;
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	padding-top: 7px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	width: 240px;
+	height: 40px;
 }
+
 .CBcontainer.blue {
-    background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 35%), hsl(200, 100%, 45%), hsl(200, 100%, 35%),hsl(200, 100%, 25%));
+	background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 35%), hsl(200, 100%, 45%), hsl(200, 100%, 35%), hsl(200, 100%, 25%));
 }
+
 .CBcontainer.cyan {
-	background: -webkit-linear-gradient(hsl(174, 100%, 25%),hsl(174, 100%, 35%), hsl(174, 100%, 45%), hsl(174, 100%, 35%), hsl(174, 100%, 25%));
+	background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 35%), hsl(174, 100%, 45%), hsl(174, 100%, 35%), hsl(174, 100%, 25%));
 }
+
 .CBcontainer.olive {
 	background: -webkit-linear-gradient(hsl(82, 100%, 25%), hsl(82, 100%, 35%), hsl(82, 100%, 45%), hsl(82, 100%, 35%), hsl(82, 100%, 25%));
 }
+
 .CBcontainer.sandy {
-	background: -webkit-linear-gradient(hsl(28, 100%, 25%), hsl(28, 100%, 35%), hsl(28, 100%, 45%),  hsl(28, 100%, 35%), hsl(28, 100%, 25%));
+	background: -webkit-linear-gradient(hsl(28, 100%, 25%), hsl(28, 100%, 35%), hsl(28, 100%, 45%), hsl(28, 100%, 35%), hsl(28, 100%, 25%));
 }
+
 .CBcontainer.red {
-	background: -webkit-linear-gradient(hsl(0, 100%, 25%), hsl(0, 100%, 35%), hsl(0, 100%, 45%),hsl(0, 100%, 35%), hsl(0, 100%, 25%));
+	background: -webkit-linear-gradient(hsl(0, 100%, 25%), hsl(0, 100%, 35%), hsl(0, 100%, 45%), hsl(0, 100%, 35%), hsl(0, 100%, 25%));
 }
+
 .CBcontainer.purple {
-	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 35%), hsl(300, 100%, 45%), hsl(300, 100%, 35%) , hsl(300, 100%, 25%));
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 35%), hsl(300, 100%, 45%), hsl(300, 100%, 35%), hsl(300, 100%, 25%));
 	padding-bottom: 20px;
 }
+
 .CBcontainer.midgreen {
-    background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152,70%,45%),hsl(152, 70%, 25%)); /* CHROME */
-} 
+	background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 45%), hsl(152, 70%, 25%));
+	/* CHROME */
+}
+
 /* Hide the browser's default checkbox */
 .CBcontainer input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
 }
 
 /* Create a custom checkbox */
 .checkmark {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    height: 30px;
-    width: 30px;
-    background-color: transparent;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	height: 30px;
+	width: 30px;
+	background-color: transparent;
 }
 
- 
+
 /* When the checkbox is checked, add a blue background */
-.CBcontainer input:checked ~ .checkmark {
-    background-color: transparent;
+.CBcontainer input:checked~.checkmark {
+	background-color: transparent;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+	content: "";
+	position: absolute;
+	display: none;
 }
 
 /* Show the checkmark when checked */
-.CBcontainer input:checked ~ .checkmark:after {
-    display: block;
+.CBcontainer input:checked~.checkmark:after {
+	display: block;
 }
 
 /* Style the checkmark/indicator */
 .CBcontainer .checkmark:after {
-    left: 10px;
-    top: 3px;
-    width: 5px;
-    height: 20px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+	left: 10px;
+	top: 3px;
+	width: 5px;
+	height: 20px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
+
 /* ****************** blinkendes Text Feld ***************************************** */
 .AlarmBox {
-     
-  -webkit-border-radius: 10px;
-  cursor: pointer;
-  background-color: #004A7F; 
-   text-align: center;
-  text-decoration: none;
-  -webkit-animation: glowing 1500ms infinite;
-  -moz-animation: glowing 1500ms infinite;
-  -o-animation: glowing 1500ms infinite;
-  animation: glowing 1500ms infinite;
- }
- @-webkit-keyframes glowing {
-  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
-  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
-  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+
+	-webkit-border-radius: 10px;
+	cursor: pointer;
+	background-color: #004A7F;
+	text-align: center;
+	text-decoration: none;
+	-webkit-animation: glowing 1500ms infinite;
+	-moz-animation: glowing 1500ms infinite;
+	-o-animation: glowing 1500ms infinite;
+	animation: glowing 1500ms infinite;
 }
+
+@-webkit-keyframes glowing {
+	0% {
+		background-color: #B20000;
+		-webkit-box-shadow: 0 0 3px #B20000;
+	}
+
+	50% {
+		background-color: #FF0000;
+		-webkit-box-shadow: 0 0 40px #FF0000;
+	}
+
+	100% {
+		background-color: #B20000;
+		-webkit-box-shadow: 0 0 3px #B20000;
+	}
+}
+
 @-moz-keyframes glowing {
-  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
-  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
-  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+	0% {
+		background-color: #B20000;
+		-moz-box-shadow: 0 0 3px #B20000;
+	}
+
+	50% {
+		background-color: #FF0000;
+		-moz-box-shadow: 0 0 40px #FF0000;
+	}
+
+	100% {
+		background-color: #B20000;
+		-moz-box-shadow: 0 0 3px #B20000;
+	}
 }
+
 @-o-keyframes glowing {
-  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+	0% {
+		background-color: #B20000;
+		box-shadow: 0 0 3px #B20000;
+	}
+
+	50% {
+		background-color: #FF0000;
+		box-shadow: 0 0 40px #FF0000;
+	}
+
+	100% {
+		background-color: #B20000;
+		box-shadow: 0 0 3px #B20000;
+	}
 }
+
 @keyframes glowing {
-  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+	0% {
+		background-color: #B20000;
+		box-shadow: 0 0 3px #B20000;
+	}
+
+	50% {
+		background-color: #FF0000;
+		box-shadow: 0 0 40px #FF0000;
+	}
+
+	100% {
+		background-color: #B20000;
+		box-shadow: 0 0 3px #B20000;
+	}
 }
- 
+
 
 /* ****************** Controls ***************************************** */
 .SecCodeCtrl {
-	position:absolute;
-	top:  5vh;
-        left: 74vw;
+	position: absolute;
+	top: 5vh;
+	left: 74vw;
 	width: 0px;
 	height: 95vh;
-        background-color: maroon;
-       
+	background-color: maroon;
+
 }
 
 .WaterAlarmCtrl {
-	position:absolute;
-	top:  5vh;
-        left: 74vw;
+	position: absolute;
+	top: 5vh;
+	left: 74vw;
 	width: 0px;
 	height: 95vh;
-        background-color: maroon;
-       
+	background-color: maroon;
+
 }
 
 .BatAlarmCtrl {
-	position:absolute;
-	top:  5vh;
-        left: 74vw;
+	position: absolute;
+	top: 5vh;
+	left: 74vw;
 	width: 0px;
 	height: 95vh;
-        background-color: maroon;
-       
+	background-color: maroon;
+
 }
 
-img { border: 0; }
-img.highlight { border: 5px solid blue; }
+img {
+	border: 0;
+}
+
+img.highlight {
+	border: 5px solid blue;
+}
 
 
 /* ****************** Flashing LED ***************************************** */
 .led-box {
-  height: 30px;
-  width: 25%;
-  margin: 10px 0;
-  float: left;
+	height: 30px;
+	width: 25%;
+	margin: 10px 0;
+	float: left;
 }
 
 .led-yellow {
 
 
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
-/*  
+	border-radius: 50%;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
+	/*  
   margin: 0 auto;
   width: 24px;
   height: 24px;
@@ -2626,145 +2943,205 @@ img.highlight { border: 5px solid blue; }
   -ms-animation: blinkYellow 1s infinite;
   -o-animation: blinkYellow 1s infinite;
   animation: blinkYellow 1s infinite;
- */ 
+ */
 }
 
 @-webkit-keyframes blinkYellow {
-    from { background-color: #FF0; }
-    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
-    to { background-color: #FF0; }
+	from {
+		background-color: #FF0;
+	}
+
+	50% {
+		background-color: #AA0;
+		box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0;
+	}
+
+	to {
+		background-color: #FF0;
+	}
 }
 
 @-webkit-keyframes blinkRed {
-    from { background-color: red; }
-    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
-    to { background-color: red; }
+	from {
+		background-color: red;
+	}
+
+	50% {
+		background-color: #AA0;
+		box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0;
+	}
+
+	to {
+		background-color: red;
+	}
 }
 
 @-webkit-keyframes blinkBlue {
-    from { background-color: blue; }
-    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
-    to { background-color: blue; }
+	from {
+		background-color: blue;
+	}
+
+	50% {
+		background-color: #AA0;
+		box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0;
+	}
+
+	to {
+		background-color: blue;
+	}
 }
 
 @keyframes blinkYellow {
-    from { background-color: #FF0; }
-    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
-    to { background-color: #FF0; }
+	from {
+		background-color: #FF0;
+	}
+
+	50% {
+		background-color: #AA0;
+		box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0;
+	}
+
+	to {
+		background-color: #FF0;
+	}
 }
+
 /* ****************************************************************************** */
 
 
 
 /* *********************  HeadLine  ********************************** */
 header {
-  /* background: green;  */
-  display: flex;
-  color: white;
+	/* background: green;  */
+	display: flex;
+	color: white;
 }
 
 header:before,
 header:after {
-  content: '';
-  margin: auto 1em;
-  border-bottom: solid 1px;
-  flex: 1;
+	content: '';
+	margin: auto 1em;
+	border-bottom: solid 1px;
+	flex: 1;
 }
 
 h1 {
-  position: relative;
-  padding: 0.25em 1em;
-  overflow: hidden;
-  background: linear-gradient(currentcolor, currentcolor) no-repeat top center, linear-gradient(currentcolor, currentcolor) no-repeat bottom center;
-  background-size: calc(100% - 1.65em) 1px;
+	position: relative;
+	padding: 0.25em 1em;
+	overflow: hidden;
+	background: linear-gradient(currentcolor, currentcolor) no-repeat top center, linear-gradient(currentcolor, currentcolor) no-repeat bottom center;
+	background-size: calc(100% - 1.65em) 1px;
 }
 
 h1:before,
 h1:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border: solid 1px;
-  border-top: none;
-  border-bottom: none;
-  transform: skew(45deg)
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border: solid 1px;
+	border-top: none;
+	border-bottom: none;
+	transform: skew(45deg)
 }
 
 h1:after {
-  transform: skew(-45deg)
+	transform: skew(-45deg)
 }
- 
 
-  
 
-  
+
+
+
 /* **************************************************************** */
 /* *********************  COLORS ********************************** */
 /* **************************************************************** */
 .red {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(0, 100%, 25%), hsl(0, 100%, 45%), hsl(0, 100%, 25%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(0, 100%, 25%), hsl(0, 100%, 45%), hsl(0, 100%, 25%));
+	/* CHROME */
 }
+
 .red:active {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(0, 100%, 5%), hsl(0, 100%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(0, 100%, 5%), hsl(0, 100%, 15%));
+	/* CHROME */
 }
 
 .sandy {
-    background: -webkit-linear-gradient(hsl(28, 100%, 25%), hsl(28, 100%, 45%), hsl(28, 100%, 25%));
-}
-.sandy:active {
-    background: -webkit-linear-gradient(hsl(28, 100%, 5%), hsl(28, 100%, 25%), hsl(28, 100%, 5%));
+	background: -webkit-linear-gradient(hsl(28, 100%, 25%), hsl(28, 100%, 45%), hsl(28, 100%, 25%));
 }
 
-.brown{
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(30, 56%, 25%), hsl(30, 56%, 45%), hsl(30, 56%, 25%)); /* CHROME */
+.sandy:active {
+	background: -webkit-linear-gradient(hsl(28, 100%, 5%), hsl(28, 100%, 25%), hsl(28, 100%, 5%));
 }
+
+.brown {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(30, 56%, 25%), hsl(30, 56%, 45%), hsl(30, 56%, 25%));
+	/* CHROME */
+}
+
 .brown:active {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(30, 56%, 5%), hsl(30, 56%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(30, 56%, 5%), hsl(30, 56%, 15%));
+	/* CHROME */
 }
 
 
 .yellow {
-    background: -webkit-linear-gradient(hsl(51, 100%, 25%), hsl(51, 100%, 45%), hsl(51, 100%, 25%)); /* CHROME */
+	background: -webkit-linear-gradient(hsl(51, 100%, 25%), hsl(51, 100%, 45%), hsl(51, 100%, 25%));
+	/* CHROME */
 }
+
 .yellow:hover {
-	  background: -webkit-linear-gradient(hsl(51, 100%, 15%), hsl(51, 100%, 25%)); /* CHROME */
+	background: -webkit-linear-gradient(hsl(51, 100%, 15%), hsl(51, 100%, 25%));
+	/* CHROME */
 }
+
 .yellow:active {
-    background: -webkit-linear-gradient(hsl(51, 100%, 5%), hsl(51, 100%, 15%)); /* CHROME */
+	background: -webkit-linear-gradient(hsl(51, 100%, 5%), hsl(51, 100%, 15%));
+	/* CHROME */
 }
+
 .yellowgreen {
-    background: -webkit-linear-gradient(hsl(55, 100%, 25%), hsl(55, 100%, 45%), hsl(55, 100%, 25%)); /* CHROME */
+	background: -webkit-linear-gradient(hsl(55, 100%, 25%), hsl(55, 100%, 45%), hsl(55, 100%, 25%));
+	/* CHROME */
 }
+
 .yellowgreen:active {
-    background: -webkit-linear-gradient(hsl(55, 100%, 5%), hsl(55, 100%, 15%)); /* CHROME */
+	background: -webkit-linear-gradient(hsl(55, 100%, 5%), hsl(55, 100%, 15%));
+	/* CHROME */
 }
 
 .olive {
 	background: -webkit-linear-gradient(hsl(82, 100%, 25%), hsl(82, 100%, 45%), hsl(82, 100%, 25%));
-} 
+}
+
 .olive:active {
 	background: -webkit-linear-gradient(hsl(82, 100%, 5%), hsl(82, 100%, 15%), hsl(82, 100%, 5%));
 }
 
 
-.green{
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(120, 56%, 25%), hsl(120, 56%, 45%), hsl(120, 56%, 25%)); /* CHROME */
+.green {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(120, 56%, 25%), hsl(120, 56%, 45%), hsl(120, 56%, 25%));
+	/* CHROME */
 }
+
 .green:active {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(120, 56%, 5%), hsl(120, 56%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(120, 56%, 5%), hsl(120, 56%, 15%));
+	/* CHROME */
 }
+
 .midgreen {
-    background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 35%), hsl(152,70%, 45%), hsl(152, 70%, 35%), hsl(152, 70%, 25%)); /* CHROME */ 
+	background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152, 70%, 35%), hsl(152, 70%, 45%), hsl(152, 70%, 35%), hsl(152, 70%, 25%));
+	/* CHROME */
 }
+
 /*
 .midgreen:hover {
     background: -webkit-linear-gradient(hsl(152, 70%, 25%), hsl(152,70%,45%),hsl(152, 70%, 25%));  
@@ -2772,60 +3149,74 @@ h1:after {
 } 
 */
 .midgreen:active {
-    background: -webkit-linear-gradient(hsl(152, 70%, 5%), hsl(152,70%,25%),hsl(152, 70%, 5%)); /* CHROME */
+	background: -webkit-linear-gradient(hsl(152, 70%, 5%), hsl(152, 70%, 25%), hsl(152, 70%, 5%));
+	/* CHROME */
 }
 
 .cyan {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 45%), hsl(174, 100%, 25%)); /* CHROME
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 45%), hsl(174, 100%, 25%));
+	/* CHROME
     background: linear-gradient(0deg, hsl(174, 100%, 25%) 5%, hsl(174, 100%, 45%) 70%)); /* Standard syntax (must be last) */
 }
+
 .cyan:active {
-    background: -webkit-linear-gradient(hsl(174, 100%, 5%), hsl(174, 100%, 15%));
-  }
-
-
-.blue{
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 45%), hsl(200, 100%, 25%)); /* CHROME */
+	background: -webkit-linear-gradient(hsl(174, 100%, 5%), hsl(174, 100%, 15%));
 }
+
+
+.blue {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(200, 100%, 25%), hsl(200, 100%, 45%), hsl(200, 100%, 25%));
+	/* CHROME */
+}
+
 .blue:active {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(200, 100%, 5%), hsl(200, 100%, 15%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(200, 100%, 5%), hsl(200, 100%, 15%));
+	/* CHROME */
 }
 
 .grey {
-    background: -webkit-linear-gradient(hsl(205, 10%, 45%), hsl(205, 10%, 55%), hsl(205, 10%, 75%), hsl(205, 10%, 35%), hsl(205, 10%, 45%)); /* CHROME */
+	background: -webkit-linear-gradient(hsl(205, 10%, 45%), hsl(205, 10%, 55%), hsl(205, 10%, 75%), hsl(205, 10%, 35%), hsl(205, 10%, 45%));
+	/* CHROME */
 }
+
 .grey:active {
-    background: -webkit-linear-gradient(hsl(205, 10%, 5%), hsl(205, 10%, 25%), hsl(205, 10%, 5%));
+	background: -webkit-linear-gradient(hsl(205, 10%, 5%), hsl(205, 10%, 25%), hsl(205, 10%, 5%));
 }
 
 .violet {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(270, 100%, 45%), hsl(270, 100%, 65%), hsl(270, 100%, 75%), hsl(270, 100%, 65%), hsl(270, 100%, 45%)); /* CHROME */
-}
-.violet:active {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(270, 100%, 25%), hsl(270, 100%, 45%), hsl(270, 100%,25%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(270, 100%, 45%), hsl(270, 100%, 65%), hsl(270, 100%, 75%), hsl(270, 100%, 65%), hsl(270, 100%, 45%));
+	/* CHROME */
 }
 
-.purple{
+.violet:active {
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(270, 100%, 25%), hsl(270, 100%, 45%), hsl(270, 100%, 25%));
+	/* CHROME */
+}
+
+.purple {
 	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 45%), hsl(300, 100%, 25%));
 }
+
 .purple:active {
 	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%), hsl(300, 100%, 5%));
 }
 
 
 .pink {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(350, 100%, 65%), hsl(350, 100%, 85%), hsl(350, 100%, 65%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(350, 100%, 65%), hsl(350, 100%, 85%), hsl(350, 100%, 65%));
+	/* CHROME */
 }
 
 .pink:active {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(350, 100%, 45%), hsl(350, 100%, 55%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(350, 100%, 45%), hsl(350, 100%, 55%));
+	/* CHROME */
 }
 
 
@@ -2834,87 +3225,111 @@ h1:after {
 
 
 .cyanLight {
-    background: -webkit-linear-gradient(hsl(174, 100%, 75%), hsl(174, 100%, 95%), hsl(174, 100%, 75%))
+	background: -webkit-linear-gradient(hsl(174, 100%, 75%), hsl(174, 100%, 95%), hsl(174, 100%, 75%))
 }
+
 .sandyLight {
-    background: -webkit-linear-gradient(hsl(28, 100%, 75%), hsl(28, 100%, 95%), hsl(28, 100%, 75%))
+	background: -webkit-linear-gradient(hsl(28, 100%, 75%), hsl(28, 100%, 95%), hsl(28, 100%, 75%))
 }
+
 .yellowgreenLight {
-    background: -webkit-linear-gradient(hsl(55, 100%, 75%), hsl(55, 100%, 95%), hsl(55, 100%, 75%))
+	background: -webkit-linear-gradient(hsl(55, 100%, 75%), hsl(55, 100%, 95%), hsl(55, 100%, 75%))
 }
+
 .midgreenLight {
-    background: -webkit-linear-gradient(hsl(152, 70%, 75%), hsl(152,70%, 95%), hsl(152, 70%, 75%)); 
+	background: -webkit-linear-gradient(hsl(152, 70%, 75%), hsl(152, 70%, 95%), hsl(152, 70%, 75%));
 }
+
 .oliveLight {
 	background: -webkit-linear-gradient(hsl(82, 100%, 75%), hsl(82, 100%, 95%), hsl(82, 100%, 75%));
-} 
+}
+
 .blueLight {
-    background: -webkit-linear-gradient(hsl(200, 100%, 75%), hsl(200, 100%, 95%), hsl(200, 100%, 75%));  
+	background: -webkit-linear-gradient(hsl(200, 100%, 75%), hsl(200, 100%, 95%), hsl(200, 100%, 75%));
 }
+
 .violetLight {
-    background: -webkit-linear-gradient(hsl(270, 100%, 75%), hsl(270, 100%, 95%), hsl(270, 100%, 75%)); 
+	background: -webkit-linear-gradient(hsl(270, 100%, 75%), hsl(270, 100%, 95%), hsl(270, 100%, 75%));
 }
+
 .yellowgreenLight {
-    background: -webkit-linear-gradient(hsl(55, 100%, 75%), hsl(55, 100%, 95%), hsl(55, 100%, 75%));  
+	background: -webkit-linear-gradient(hsl(55, 100%, 75%), hsl(55, 100%, 95%), hsl(55, 100%, 75%));
 }
+
 .redLight {
-    /*Gradient*/
-    background: -webkit-linear-gradient(hsl(0, 100%, 75%), hsl(0, 100%, 95%), hsl(0, 100%, 75%)); /* CHROME */
+	/*Gradient*/
+	background: -webkit-linear-gradient(hsl(0, 100%, 75%), hsl(0, 100%, 95%), hsl(0, 100%, 75%));
+	/* CHROME */
 }
 
 .black {
-    background: black;
+	background: black;
 }
 
 .purpleBtn:active {
-    background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%), hsl(205, 100%, 5%));
+	background: -webkit-linear-gradient(hsl(300, 100%, 5%), hsl(300, 100%, 15%), hsl(205, 100%, 5%));
 }
 
 
 /* *********************  Background COLORS ********************************** */
 .bgPurple {
-    background: hsl(300, 100%, 10%);
-} 
+	background: hsl(300, 100%, 10%);
+}
+
 .bgPurpleLight {
-    background: hsl(300, 100%, 20%);
-} 
+	background: hsl(300, 100%, 20%);
+}
+
 .bgCyan {
-    background: hsl(174, 100%, 10%);
+	background: hsl(174, 100%, 10%);
 }
+
 .bgCyanLight {
-    background: hsl(174, 100%, 15%);
+	background: hsl(174, 100%, 15%);
 }
+
 .bgOlive {
-    background: hsl(82, 100%, 10%);
+	background: hsl(82, 100%, 10%);
 }
-.bgCyan{
-    background: hsl(174, 100%, 10%);
+
+.bgCyan {
+	background: hsl(174, 100%, 10%);
 }
+
 .bgSandy {
-    background: hsl(28, 100%, 10%);
+	background: hsl(28, 100%, 10%);
 }
+
 .bgYellowGreen {
-    background: hsl(55, 100%, 10%);
+	background: hsl(55, 100%, 10%);
 }
+
 .bgMidgreen {
-    background: hsl(152, 70%, 15%); 
+	background: hsl(152, 70%, 15%);
 }
+
 .bgRed {
-    background: maroon; 
+	background: maroon;
 }
+
 .bgGrey {
-    background: -webkit-linear-gradient(hsl(205, 10%, 45%), hsl(205, 10%, 75%), hsl(205, 10%, 45%)); /* CHROME */
-} 
-.bgBlue{
-    background: hsl(200, 100%, 10%); 
+	background: -webkit-linear-gradient(hsl(205, 10%, 45%), hsl(205, 10%, 75%), hsl(205, 10%, 45%));
+	/* CHROME */
 }
+
+.bgBlue {
+	background: hsl(200, 100%, 10%);
+}
+
 .bgViolet {
-    background: hsl(270, 100%, 10%);
+	background: hsl(270, 100%, 10%);
 }
 
 .bgGreyBtn {
-    background: -webkit-linear-gradient(hsl(174, 100%, 45%), hsl(174, 100%, 75%), hsl(174, 100%, 45%)); /* CHROME */
-} 
+	background: -webkit-linear-gradient(hsl(174, 100%, 45%), hsl(174, 100%, 75%), hsl(174, 100%, 45%));
+	/* CHROME */
+}
+
 /* *********************  Background COLORS ********************************** */
 
 
@@ -2922,47 +3337,71 @@ h1:after {
 
 
 .cyanBtn {
-    background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 35%), hsl(174, 100%, 45%), hsl(174, 100%, 35%), hsl(174, 100%, 25%)); /* CHROME */
-  box-shadow: inset hsla(0,0%,15%,  1) 0  0px 0px 2px, /* border */
-    inset hsla(0,0%,15%, .8) 0 -1px 5px 2px, /* soft SD */
-    inset hsla(0,0%,0%, .25) 0 -1px 0px 4px, /* bottom SD */
-    inset hsla(0,0%,100%,.7) 0  2px 1px 4px, /* top HL */
-    hsla(0,0%, 0%,.15) 0 -2px 3px 2px, /* outer SD */
-    hsla(0,0%,100%,.5) 0  2px 3px 2px; /* outer HL */ 
-    transition: color .2s;
-}  
+	background: -webkit-linear-gradient(hsl(174, 100%, 25%), hsl(174, 100%, 35%), hsl(174, 100%, 45%), hsl(174, 100%, 35%), hsl(174, 100%, 25%));
+	/* CHROME */
+	box-shadow: inset hsla(0, 0%, 15%, 1) 0 0px 0px 2px,
+		/* border */
+		inset hsla(0, 0%, 15%, .8) 0 -1px 5px 2px,
+		/* soft SD */
+		inset hsla(0, 0%, 0%, .25) 0 -1px 0px 4px,
+		/* bottom SD */
+		inset hsla(0, 0%, 100%, .7) 0 2px 1px 4px,
+		/* top HL */
+		hsla(0, 0%, 0%, .15) 0 -2px 3px 2px,
+		/* outer SD */
+		hsla(0, 0%, 100%, .5) 0 2px 3px 2px;
+	/* outer HL */
+	transition: color .2s;
+}
+
 .cyanBtn:active {
- background: -webkit-linear-gradient(hsl(174, 100%, 5%), hsl(174, 100%, 15%),hsl(174, 100%, 5%));
+	background: -webkit-linear-gradient(hsl(174, 100%, 5%), hsl(174, 100%, 15%), hsl(174, 100%, 5%));
 }
 
 .greyBtn {
-    background: -webkit-linear-gradient(hsl(205, 10%, 45%), hsl(205, 10%, 55%), hsl(205, 10%, 75%), hsl(205, 10%, 35%), hsl(205, 10%, 45%)); /* CHROME */
-  box-shadow: inset hsla(0,0%,15%,  1) 0  0px 0px 2px, /* border */
-    inset hsla(0,0%,15%, .8) 0 -1px 5px 2px, /* soft SD */
-    inset hsla(0,0%,0%, .25) 0 -1px 0px 4px, /* bottom SD */
-    inset hsla(0,0%,100%,.7) 0  2px 1px 4px, /* top HL */
-    hsla(0,0%, 0%,.15) 0 -2px 3px 2px, /* outer SD */
-    hsla(0,0%,100%,.5) 0  2px 3px 2px; /* outer HL */ 
-    transition: color .2s;
-} 
+	background: -webkit-linear-gradient(hsl(205, 10%, 45%), hsl(205, 10%, 55%), hsl(205, 10%, 75%), hsl(205, 10%, 35%), hsl(205, 10%, 45%));
+	/* CHROME */
+	box-shadow: inset hsla(0, 0%, 15%, 1) 0 0px 0px 2px,
+		/* border */
+		inset hsla(0, 0%, 15%, .8) 0 -1px 5px 2px,
+		/* soft SD */
+		inset hsla(0, 0%, 0%, .25) 0 -1px 0px 4px,
+		/* bottom SD */
+		inset hsla(0, 0%, 100%, .7) 0 2px 1px 4px,
+		/* top HL */
+		hsla(0, 0%, 0%, .15) 0 -2px 3px 2px,
+		/* outer SD */
+		hsla(0, 0%, 100%, .5) 0 2px 3px 2px;
+	/* outer HL */
+	transition: color .2s;
+}
+
 /*
 .grey:hover {
     background: -webkit-linear-gradient(hsl(205, 10%, 25%), hsl(204, 10%, 45%), hsl(205, 10%, 25%));  
 }
 */
 .greyBtn:active {
-    background: -webkit-linear-gradient(hsl(205, 10%, 5%), hsl(205, 10%, 25%), hsl(205, 10%, 5%));
+	background: -webkit-linear-gradient(hsl(205, 10%, 5%), hsl(205, 10%, 25%), hsl(205, 10%, 5%));
 }
+
 .purpleBtn {
-    background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 35%), hsl(300, 100%, 45%), hsl(300, 100%, 35%), hsl(300, 100%, 25%)); /* CHROME */
-  box-shadow: inset hsla(0,0%,15%,  1) 0  0px 0px 2px, /* border */
-    inset hsla(0,0%,15%, .8) 0 -1px 5px 2px, /* soft SD */
-    inset hsla(0,0%,0%, .25) 0 -1px 0px 4px, /* bottom SD */
-    inset hsla(0,0%,100%,.7) 0  2px 1px 4px, /* top HL */
-    hsla(0,0%, 0%,.15) 0 -2px 3px 2px, /* outer SD */
-    hsla(0,0%,100%,.5) 0  2px 3px 2px; /* outer HL */ 
-    transition: color .2s;
-} 
+	background: -webkit-linear-gradient(hsl(300, 100%, 25%), hsl(300, 100%, 35%), hsl(300, 100%, 45%), hsl(300, 100%, 35%), hsl(300, 100%, 25%));
+	/* CHROME */
+	box-shadow: inset hsla(0, 0%, 15%, 1) 0 0px 0px 2px,
+		/* border */
+		inset hsla(0, 0%, 15%, .8) 0 -1px 5px 2px,
+		/* soft SD */
+		inset hsla(0, 0%, 0%, .25) 0 -1px 0px 4px,
+		/* bottom SD */
+		inset hsla(0, 0%, 100%, .7) 0 2px 1px 4px,
+		/* top HL */
+		hsla(0, 0%, 0%, .15) 0 -2px 3px 2px,
+		/* outer SD */
+		hsla(0, 0%, 100%, .5) 0 2px 3px 2px;
+	/* outer HL */
+	transition: color .2s;
+}
 
 
 
@@ -2972,103 +3411,102 @@ h1:after {
 
 
 /* *********************  Weather ********************************** */
-    .weathertablecell { 
-        width: 170px; 
-         
-        vertical-align: top; 
-        padding-bottom: 0px; 
-        padding-top: 0px; 
-        margin-top: 0px; 
-        margin-right: 0px; 
-        margin-bottom: 0px; 
-        margin-left: 0px; 
-    } 
-    .weatherframe { 
-        background-color: rgba(136,123,123,0.55); 
-        border-radius: 25px; 
-        padding-left: 0px; 
-        margin-left: 4px; 
-        margin-right: 4px; 
-        padding-top: 0px; 
-        margin-top: 3px; 
-        -webkit-box-shadow: 2px 2px 13px 0px rgba(50,49,49,1.00); 
-        box-shadow: 2px 2px 13px 0px rgba(50,49,49,1.00); 
-        padding-bottom: 0px; 
-        margin-bottom: 0px; 
-        position: relative; 
-       
-    }
-    
+.weathertablecell {
+	width: 170px;
 
-    /* *********************  Toggle Switch - Schiebe Schalter ********************************** */
- .MoveSwitch {
-  position: relative;
-  display: inline-block;
-  width: 200px;
-  height: 40px;
+	vertical-align: top;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
 
-  border: solid 1px black;
+.weatherframe {
+	background-color: rgba(136, 123, 123, 0.55);
+	border-radius: 25px;
+	padding-left: 0px;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding-top: 0px;
+	margin-top: 3px;
+	-webkit-box-shadow: 2px 2px 13px 0px rgba(50, 49, 49, 1.00);
+	box-shadow: 2px 2px 13px 0px rgba(50, 49, 49, 1.00);
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	position: relative;
 
 }
 
-.MoveSwitch input {display:none;}
+
+/* *********************  Toggle Switch - Schiebe Schalter ********************************** */
+.MoveSwitch {
+	position: relative;
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+
+	border: solid 1px black;
+
+}
+
+.MoveSwitch input {
+	display: none;
+}
 
 .MoveSlider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: transparent;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: transparent;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
 .MoveSlider:before {
-  position: absolute;
-  content: "";
-  height: 30px;
-  width: 30px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	content: "";
+	height: 30px;
+	width: 30px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
-Input:checked + .MoveSlider {
-  background-color: transparent;
-   
+Input:checked+.MoveSlider {
+	background-color: transparent;
+
 }
 
-Input:focus + .MoveSlider {
-  box-shadow: 0 0 1px #2196F3;
+Input:focus+.MoveSlider {
+	box-shadow: 0 0 1px #2196F3;
 }
 
-Input:checked + .MoveSlider:before {
-  -webkit-transform: translateX(161px);
-  -ms-transform: translateX(161px);
-  transform: translateX(161px);
-}
-.MoveSlider:after
-{
- content:'Manual';
- color: red;
- display: block;
- position: absolute;
- transform: translate(-50%,-50%);
- top: 50%;
- left: 50%;
- font-size: 20px;
- font-family: Verdana, sans-serif;
+Input:checked+.MoveSlider:before {
+	-webkit-transform: translateX(161px);
+	-ms-transform: translateX(161px);
+	transform: translateX(161px);
 }
 
-Input:checked + .MoveSlider:after
-{  
-  color: lime;
-  content:'Automatic';
+.MoveSlider:after {
+	content: 'Manual';
+	color: red;
+	display: block;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	font-size: 20px;
+	font-family: Verdana, sans-serif;
 }
 
-
-
+Input:checked+.MoveSlider:after {
+	color: lime;
+	content: 'Automatic';
+}

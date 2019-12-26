@@ -1063,6 +1063,7 @@ class GlideButton {
         var elem1 = document.createElement("div");
         elem1.className = "GlideButton";
         elem1.classList.add(farbe, "area");
+
         elem1.onclick = function () {
             this.kopftext = titel;
             if (MenuType === "R") {
@@ -1126,10 +1127,61 @@ class GlideButton {
                     //Haupt Fenster komplett einblenden
                     document.getElementById(IDFull).style.width = "92vw";
                 }
-            } else {
+            }
+            if (MenuType === "SMload") {
+                //part HTML nachladen
+                var x = document.getElementById(IDMain);
+                if (x == null) {
+                    function loadContent() {
+                        jQuery.get(IDMain + ".html", function (data) {
+                            jQuery("#Main").html(data);
+
+                        }).done(function () {
+                            if (IDMain !== "") {
+                                //MainMenue Leiste ausblenden
+                                document.getElementById("MainMenu").style.width = "0vw";
+                                //SubMenue Leiste verkuerzt ausblenden
+                                document.getElementById(ParentID).style.width = "0.1vw";
+                                //Haupt Fenster einblenden
+                                document.getElementById(IDMain).style.width = "99vw";
+                            } else {
+                                document.getElementsByClassName("StartScreen")[0].style.width = "0px";
+                                //SubMenue Leiste verkuerzt einblenden
+                                document.getElementById(ParentID).style.width = "8vw";
+                                //Haupt Fenster komplett einblenden
+                                document.getElementById(IDFull).style.width = "92vw";
+                            }
+                        })
+                    }
+                    loadContent();
+                } else {
+                    if (IDMain !== "") {
+                        //script für Ctrl Window nachaden
+                        document.getElementsByClassName("StartScreen")[0].style.width = "0px";
+                        //SubMenue Leiste verkuerzt einblenden
+                        document.getElementById(ParentID).style.width = "8vw";
+                        //Haupt Fenster einblenden
+                        document.getElementById(IDMain).style.width = "58vw";
+                        //Control Fenster einblenden
+                        document.getElementById(IDMain + "Ctrl").style.width = "26vw";
+                    } else {
+                        document.getElementsByClassName("StartScreen")[0].style.width = "0px";
+                        //SubMenue Leiste verkuerzt einblenden
+                        document.getElementById(ParentID).style.width = "8vw";
+                        //Haupt Fenster komplett einblenden
+                        document.getElementById(IDFull).style.width = "92vw";
+                    }
+                }
+
+
+
+
+
+
 
             }
 
+            var kopfleiste = document.getElementsByClassName("Top")[0];
             kopfleiste.className = "Top";
             kopfleiste.classList.add(farbe);
             kopfleiste.style.color = "black";
@@ -1139,7 +1191,8 @@ class GlideButton {
         var elem2 = document.createElement("img");
         elem2.className = "icon";
         if (image != "") {
-            elem2.src = "images/" + image;
+            //elem2.src = "images/" + image;
+            elem2.src = image;
         }
         elem1.append(elem2);
 
@@ -1371,36 +1424,64 @@ class AlarmBox {
 
 
 /* --------------------- Klasse IconSelectList ---------------------------------------- */
-class IconList {
+class DynIconList {
     constructor() {
 
     }
 
     create(ParentID, source) {
 
-        if (source == "CD") {
-            var SourceList = [];
-            for (var i = 1; i < 99; i++) {
-                SourceList[i] = {
-                    No: i - 1,
-                    selected: false,
-                    icon: i
-                };
-            }
-
-        } else {
-            // Liste einlesen
-            var Liste = new data();
-            switch (source) {
-                case "TV":
-                    var SourceList = Liste.getTVchannels();
-                    break;
-                case "IRadio":
-                    var SourceList = Liste.getIRadiochannels();
-                    break;
-                default:
-            }
+        // Liste einlesen
+        var Liste = new data();
+        switch (source) {
+            case "CD":
+                var SourceListJson = Liste.getMusicLib();
+                var SourceList = Array();
+                var SourceList1 = JSON.parse(SourceListJson);
+                SourceList = SourceList1['media'];
+                break;
+            case "CeolCD":
+                var SourceListJson = Liste.getMusicLib();
+                var SourceList = Array();
+                var SourceList1 = JSON.parse(SourceListJson);
+                SourceList = SourceList1['media'];
+                break;
+            case "TV":
+                var SourceListJson = Liste.getTVchannels();
+                var SourceList = Array();
+                var SourceList1 = JSON.parse(SourceListJson);
+                SourceList = SourceList1['media'];
+                break;
+            case "IRadio":
+                var SourceList = Liste.getIRadiochannels();
+                break;
+            case "Audio":
+                var SourceListJson = Liste.getAudiobookLib();
+                var SourceList = Array();
+                var SourceList1 = JSON.parse(SourceListJson);
+                SourceList = SourceList1['media'];
+                break;
+            case "Video":
+                var SourceListJson = Liste.getVideoLib();
+                var SourceList = Array();
+                var SourceList1 = JSON.parse(SourceListJson);
+                SourceList = SourceList1['media'];
+                break;
+            case "Foto":
+                var SourceListJson = Liste.getFotoLib();
+                var SourceList = Array();
+                var SourceList1 = JSON.parse(SourceListJson);
+                SourceList = SourceList1['media'];
+                break;
+            case "CeolAudio":
+                var SourceListJson = Liste.getAudiobookLib();
+                var SourceList = Array();
+                var SourceList1 = JSON.parse(SourceListJson);
+                SourceList = SourceList1['media'];
+                break;
+            default:
         }
+
         SourceList.forEach(function (item) {
             var elem = document.createElement("img");
 
@@ -1412,38 +1493,48 @@ class IconList {
                     var icon = item["icon"];
                     break;
                 case "CD":
-
-                    var n = item["icon"];
-                    var laenge = n.toString().length;
-
-                    if (laenge == 1) {
-                        n = "000" + n.toString();
-                    }
-                    if (laenge == 2) {
-                        n = "00" + n.toString();
-                    }
-                    if (laenge == 3) {
-                        n = "0" + n.toString();
-                    }
-                    if (laenge == 4) {
-                        n = n.toString();
-                    }
+                    var icon = item["icon"];
                     break;
-
+                case "Audio":
+                    var icon = item["icon"];
+                    break
+                case "Video":
+                    var icon = item["icon"];
+                    break
+                case "Foto":
+                    var icon = item["icon"];
+                    break
+                case "CeolCD":
+                    var icon = item["icon"];
+                    break;
+                case "CeolAudio":
+                    var icon = item["icon"];
+                    break
                 default:
             }
 
             elem.className = "iconTV";
-            elem.id = source + item["No"];
+            elem.id = source + item["no"];
             elem.style.padding = "2px";
             if (source === "TV") {
                 elem.src = "images/Sender/" + icon;
             } else if (source === "IRadio") {
                 elem.src = "images/RadioStation/" + icon;
             } else if (source === "CD") {
-                elem.src = "CDs/" + n + ".jpg";
+                elem.src = icon;
+            } else if (source === "Audio") {
+                elem.src = icon;
+            } else if (source === "Video") {
+                elem.src = icon;
+            } else if (source === "Foto") {
+                elem.src = icon;
+            } else if (source === "CeolCD") {
+                elem.src = icon;
+            } else if (source === "CeolAudio") {
+                elem.src = icon;
             }
             elem.onclick = function () {
+                var test = SourceList;
                 var index = SourceList.findIndex((item) => item.selected === true);
                 if (index !== -1) {
                     SourceList[index]['selected'] = false;
@@ -1456,12 +1547,21 @@ class IconList {
                 elem.classList.remove("iconTV");
                 item['selected'] = true;
                 if (source === "TV") {
-                    var cmd = "command(TV,Channel," + item['Sender'] + ")";
+                    var cmd = "func(STV_setChannelbyName, 44308," + item['sender'] + ")";
                 } else if (source === "IRadio") {
                     var cmd = "command(DenonCeol,Channel," + item['FV'] + ")";
                 } else if (source === "CD") {
-                    var wert = item;
-                    cmd("command(" + wert.substring(4, wert.length) + ",loadCDPlaylist," + wert.substring(0, 4) + ")");
+                    var cmd = "command(upnp,loadCDPlaylist," + item['playlistname'] + ")";
+                } else if (source === "Audio") {
+                    var cmd = "command(upnp,loadAudioPlaylist," + item['playlistname'] + ")";
+                } else if (source === "Video") {
+                    var cmd = "command(upnp,loadVideoPlaylist," + item['playlistname'] + ")";
+                } else if (source === "Foto") {
+                    var cmd = "command(upnp,loadFotoPlaylist," + item['playlistname'] + ")";
+                } else if (source === "CeolCD") {
+                    var cmd = "command(DenonCeol,loadCDPlaylist," + item['playlistname'] + ")";
+                } else if (source === "CeolAudio") {
+                    var cmd = "command(DenonCeol,loadAudioPlaylist," + item['playlistname'] + ")";
                 }
                 send(cmd);
             };
@@ -1470,9 +1570,6 @@ class IconList {
         });
 
     }
-
-
-
 }
 
 
@@ -3250,7 +3347,7 @@ class Kachel {
 
 
 /* ---------------------  Klasse FontCtrlButton   ---------------------------------------- */
-/* -------------------------- Version: 1.05.10.2019 ------------------------- */
+/* -------------------------- Version: 1.23.12.2019 ------------------------- */
 class FontCtrlButton {
     constructor() {
         this.ID = "";
@@ -3289,6 +3386,13 @@ class FontCtrlButton {
                 break;
             case "ctrlWindow":
                 container.onclick = function () {
+                    // alle Main auf 0px verkleinern 
+                    var Main = document.getElementsByTagName("Main");
+                    var MainWindow = Array.from(Main);
+                    MainWindow.forEach(function (element) {
+                        var a = element.className;
+                        document.getElementsByClassName(a)[0].style.width = "0px";
+                    });
                     // alle Ctrl auf 0px verkleinern 
                     var Ctrl = document.getElementsByTagName("Ctrl");
                     var MCtrlWindow = Array.from(Ctrl);
@@ -3297,11 +3401,18 @@ class FontCtrlButton {
                         document.getElementsByClassName(a)[0].style.width = "0px";
                     });
                     // ctrlWindow umschalten
-                    document.getElementsByClassName(ctrlWin)[0].style.width = "26vw";
+                    document.getElementsByClassName(ctrlWin)[0].style.width = "100vw";
                 };
                 break;
             case "CtrlFunc":
                 container.onclick = function () {
+                    // alle Main auf 0px verkleinern 
+                    var Main = document.getElementsByTagName("Main");
+                    var MainWindow = Array.from(Main);
+                    MainWindow.forEach(function (element) {
+                        var a = element.className;
+                        document.getElementsByClassName(a)[0].style.width = "0px";
+                    });
                     // alle Ctrl auf 0px verkleinern 
                     var Ctrl = document.getElementsByTagName("Ctrl");
                     var MCtrlWindow = Array.from(Ctrl);
@@ -3310,7 +3421,7 @@ class FontCtrlButton {
                         document.getElementsByClassName(a)[0].style.width = "0px";
                     });
                     // ctrlWindow umschalten
-                    document.getElementsByClassName(ctrlWin)[0].style.width = "26vw";
+                    document.getElementsByClassName(ctrlWin)[0].style.width = "56vw";
                     ShowHidePanel(cmd);
                 }
                 break;
