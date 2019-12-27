@@ -165,6 +165,110 @@ class TimePicker {
 }
 
 /* -------------------------------------------------------------------------- */
+/*                            class Dynamic ImageDisplay                      */
+/* -------------------------------------------------------------------------- */
+/* -------------------------- Version: 1.04.10.2019 ------------------------- */
+
+class MediaDisplay {
+    constructor() {
+        this.ID = "";
+        this.imgID = "";
+        this.AlbumObj = "";
+        this.ArtistObj = "";
+        this.TtileObj = "";
+        this.CreatorObj = "";
+        this.b = "";
+        this.h = "";
+        //optionale Parameter
+    }
+
+
+    create(ParentID, posTop, posLeft, b, h, farbe) {
+        this.b = b;
+        this.h = h;
+        var elem = document.createElement("div");
+        elem.className = "DenonDisplay";
+        elem.classList.add(farbe);
+        elem.style.position = "absolute";
+        elem.style.left = posLeft;
+        elem.style.top = posTop;
+        elem.style.marginLeft = "5px";
+        elem.style.marginRight = "5px";
+        elem.style.height = this.h;
+        elem.style.width = this.b;
+        this.ID = elem;
+
+        var elem1 = document.createElement("img");
+        elem1.className = "icon";
+        elem1.style.opacity = "0.75";
+        elem1.style.border = "5px  grey inset";
+        elem1.style.height = "150px";
+        elem1.style.width = "150px";
+        elem1.style.margin = "10px";
+        elem1.style.marginRight = "30px";
+        elem1.src = "";
+        this.imgID = elem1;
+
+        elem.append(elem1);
+
+        var elem2 = document.createElement("div");
+        elem2.className = "spalteLeft";
+
+        elem.append(elem2);
+
+        var Album = document.createElement("div");
+        Album.innerHTML = "- - -:";
+        this.AlbumObj = Album;
+        Album.style.marginBottom = "15px";
+        Album.style.fontSize = "1.4rem";
+        Album.style.color = "lime";
+
+        var Artist = document.createElement("div");
+        Artist.innerHTML = "Artist: ";
+        var ArtistA = document.createElement("div");
+        this.ArtistObj = ArtistA;
+        ArtistA.innerHTML = "- - -";
+        ArtistA.style.marginBottom = "15px";
+        ArtistA.style.color = "yellow";
+
+        var Creator = document.createElement("div");
+        Creator.innerHTML = "Creator:";
+        var CreatorA = document.createElement("div");
+        this.CreatorObj = CreatorA;
+        CreatorA.innerHTML = "- - -";
+        CreatorA.style.color = "yellow";
+
+        var Title = document.createElement("div");
+        Title.innerHTML = "Title:";
+        var TitleA = document.createElement("div");
+        this.TitleObj = TitleA;
+        TitleA.innerHTML = "- - -";
+        TitleA.style.color = "yellow";
+
+
+        elem2.append(Album);
+        elem2.append(Artist);
+        elem2.append(ArtistA);
+        elem2.append(Creator);
+        elem2.append(CreatorA);
+        elem2.append(Title);
+        elem2.append(TitleA);
+        document.getElementById(ParentID).appendChild(elem);
+    }
+
+    update(sourceurl, Album, Artist, Title, Creator) {
+        this.imgID.src = sourceurl;
+        this.AlbumObj.innerHTML = Album;
+        this.ArtistObj.innerHTML = Artist;
+        this.TitleObj.innerHTML = Title;
+        this.CreatorObj = Creator;
+
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
 /*                              Class CtrlButton                              */
 /* -------------------------------------------------------------------------- */
 
@@ -2378,7 +2482,7 @@ class SetIframe {
         this.differenz = 0;
     }
 
-    create(ParentID, posTop, posLeft, sizeH, sizeW, source) {
+    create(ParentID, posTop, posLeft, sizeH, sizeW, color, source) {
         //var source = "<p>Some new content inside the iframe!</p>";
         //var source = "<table width='auto'><tr><td width='auto'height='80px'><div><img src=https://a2.tvspielfilm.de/itv_sofa/2019-03-10/5c6affc281896536498e11b9_149.jpg alt='not Found'></div></td><td width='980px'><div style='text-align:left; margin-left:10px;'><b style=color:#C00000;>19:05 | RTL | Vermisst</b><br><small>Rund um den Globus sucht Sandra Eckardt nach verschollenen Personen. Nicht immer gibt’s ein Happy End.  Sechs neue Folgen, so. </small><br></div></td></tr></table>";
         var ifrm = document.createElement("iframe");
@@ -2389,6 +2493,7 @@ class SetIframe {
         ifrm.style.top = posTop;
         ifrm.style.left = posLeft;
         ifrm.srcdoc = "";
+        ifrm.classList.add(color);
         this.ID = ifrm;
 
         document.getElementById(ParentID).appendChild(ifrm);

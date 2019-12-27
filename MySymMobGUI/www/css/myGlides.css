@@ -20,6 +20,7 @@ body {
 }
 */
 
+
 button {}
 
 button :hover {
@@ -34,6 +35,10 @@ button :active {
 
 }
 
+#TopTitle {
+	position: relative;
+	left: 20px;
+}
 
 /*Flexbox gives us the flexiness we need. The top just stays put as there is no scrolling on the body due to the page never exceeding viewport height*/
 .Top {

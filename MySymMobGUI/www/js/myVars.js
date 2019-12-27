@@ -170,7 +170,7 @@
         sym[95] = ips[0].ID31822; //Line3 - Denon
         sym[96] = ips[0].ID22520; //Power - Denon
         sym[97] = ips[0].ID19185; //Volume - Denon
-        sym[98] = ips[0].ID33459; //TVchProgList 31510
+        sym[98] = ips[0].ID33459; //TVchProgList  
         sym[99] = ips[0].ID35025; //TVProgList  49099
         sym[100] = ips[0].ID54563; //Kochbuch Titel
         sym[101] = ips[0].ID18416; //Kochbuch Image
@@ -396,6 +396,12 @@
 
 
     function updateValues(sym) {
+      /* --------------------------- Samsung TV --------------------------- */
+      if (document.getElementById("MainTV")) {
+        btnTVPower.update(sym[76]);
+        TvSendung.update(sym[98], 10000);
+      }
+
       /* --------------------------- Heizung Wohnzimmer --------------------------- */
       MainTempVHzWZ.update(sym[215], 1);
       MainTempRHzWZ.update(sym[216], 1);

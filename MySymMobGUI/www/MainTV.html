@@ -5,11 +5,15 @@
     var MainWinTV = new Area();
     MainWinTV.createMain("MainTV", "SubMenuMedia", "bgPurple");
     //-------------------------------------------------
+
+    var TvSendung = new SetIframe();
+    TvSendung.create("MainTV", "5px", "5px", "200px", "450px", "blue", "");
+
     var RahmenTV = new Kachel();
-    RahmenTV.create("MainTV", "280px", "15px", "400px", "95px", "transparent", "TV Control")
+    RahmenTV.create("MainTV", "280px", "15px", "350px", "95px", "transparent", "TV Control")
     //Sender Liste aufrufen
     var btnTVStation = new FontCtrlButton();
-    btnTVStation.create("MainTV", "purple", "320px", "45px", "fa fa-podcast", "Sender", "ctrlWindow",
+    btnTVStation.create("MainTV", "purple", "320px", "25px", "fa fa-podcast", "Sender", "ctrlWindow",
         "", "MainTV_Sender", "120px", "40px", "black", "19px", "white");
 
 
@@ -28,7 +32,7 @@
 
     // Aus-Einschaltknopf
     var btnTVPower = new FontButtonNew();
-    btnTVPower.create("MainTV", "fontbutton", "purple", "73vh", "85%", "fa fa-power-off", "60px",
+    btnTVPower.create("MainTV", "fontbutton", "purple", "73vh", "80%", "fa fa-power-off", "60px",
         "60px", "send('command(TV,power,toggle)')");
 </script>
 <!-- ----------------------------------------------------------------------- -->
