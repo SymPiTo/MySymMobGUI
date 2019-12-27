@@ -3,7 +3,7 @@
 <!-- ----------------------------------------------------------------------- -->
 <script>
     var MainWinTV = new Area();
-    MainWinTV.createMain("MainTV", "bgPurple");
+    MainWinTV.createMain("MainTV", "SubMenuMedia", "bgPurple");
     //-------------------------------------------------
     var RahmenTV = new Kachel();
     RahmenTV.create("MainTV", "280px", "15px", "400px", "95px", "transparent", "TV Control")
@@ -11,6 +11,21 @@
     var btnTVStation = new FontCtrlButton();
     btnTVStation.create("MainTV", "purple", "320px", "45px", "fa fa-podcast", "Sender", "ctrlWindow",
         "", "MainTV_Sender", "120px", "40px", "black", "19px", "white");
+
+
+    var FontBtnTVVolDwn = new FontButtonNew();
+    FontBtnTVVolDwn.create("MainTV", "fontbutton", "purple", "73vh", "20px", "fa fa-volume-down", "60px",
+        "50px",
+        "send('func(STV_decVolume, 44308)')");
+    var FontBtnTVMute = new FontButtonNew();
+    FontBtnTVMute.create("MainTV", "fontbutton", "purple", "73vh", "90px", "fa fa-volume-off", "60px",
+        "50px",
+        "send('func(STV_ToggleMute, 44308)')");
+    var FontBtnTVVolUp = new FontButtonNew();
+    FontBtnTVVolUp.create("MainTV", "fontbutton", "purple", "73vh", "160px", "fa fa-volume-up", "60px",
+        "50px",
+        "send('func(STV_incVolume, 44308)')");
+
     // Aus-Einschaltknopf
     var btnTVPower = new FontButtonNew();
     btnTVPower.create("MainTV", "fontbutton", "purple", "73vh", "85%", "fa fa-power-off", "60px",
@@ -21,7 +36,7 @@
 <!-- ----------------------------------------------------------------------- -->
 <script>
     var CtrlMainTVSender = new Area();
-    CtrlMainTVSender.createCtrl("MainTV_Sender", "bgPurpleLight");
+    CtrlMainTVSender.createCtrl("MainTV_Sender", "MainTV", "bgPurpleLight");
     //-------------------------------------------------
     var CtrlTVList = new DynIconList();
     CtrlTVList.create("MainTV_Sender", "TV");

@@ -1114,10 +1114,10 @@ class GlideButton {
                 if (IDMain !== "") {
                     //MainMenue Leiste ausblenden
                     document.getElementById("MainMenu").style.width = "0vw";
-                    //SubMenue Leiste ausblenden auf 0.1vw zum erkennen
-                    document.getElementById(ParentID).style.width = "0.1vw";
+                    //SubMenue Leiste ausblenden 
+                    document.getElementById(ParentID).style.width = "0vw";
                     //Haupt Fenster einblenden
-                    document.getElementById(IDMain).style.width = "99vw";
+                    document.getElementById(IDMain).style.width = "100vw";
                     //Control Fenster einblenden
                     //document.getElementById(IDMain + "Ctrl").style.width = "78vw";
                 } else {
@@ -1141,9 +1141,9 @@ class GlideButton {
                                 //MainMenue Leiste ausblenden
                                 document.getElementById("MainMenu").style.width = "0vw";
                                 //SubMenue Leiste verkuerzt ausblenden
-                                document.getElementById(ParentID).style.width = "0.1vw";
+                                document.getElementById(ParentID).style.width = "0vw";
                                 //Haupt Fenster einblenden
-                                document.getElementById(IDMain).style.width = "99vw";
+                                document.getElementById(IDMain).style.width = "100vw";
                             } else {
                                 document.getElementsByClassName("StartScreen")[0].style.width = "0px";
                                 //SubMenue Leiste verkuerzt einblenden
@@ -1159,9 +1159,9 @@ class GlideButton {
                         //MainMenue Leiste ausblenden
                         document.getElementById("MainMenu").style.width = "0vw";
                         //SubMenue Leiste verkuerzt ausblenden
-                        document.getElementById(ParentID).style.width = "0.1vw";
+                        document.getElementById(ParentID).style.width = "0vw";
                         //Haupt Fenster einblenden
-                        document.getElementById(IDMain).style.width = "99vw";
+                        document.getElementById(IDMain).style.width = "100vw";
                     } else {
                         document.getElementsByClassName("StartScreen")[0].style.width = "0px";
                         //SubMenue Leiste verkuerzt einblenden
@@ -1545,7 +1545,7 @@ class DynIconList {
                 elem.classList.remove("iconTV");
                 item['selected'] = true;
                 if (source === "TV") {
-                    var cmd = "func(STV_T_setChannelbyName, 44308," + item['sender'] + ")";
+                    var cmd = "func(STV_setChannelbyName, 44308," + item['sender'] + ")";
                 } else if (source === "IRadio") {
                     var cmd = "command(DenonCeol,Channel," + item['FV'] + ")";
                 } else if (source === "CD") {
@@ -1563,10 +1563,12 @@ class DynIconList {
                 }
                 send(cmd);
                 //umschalten auf Haupt Ansicht
-                document.getElementById(ParentID).style.width = "0.1vw";
+                /*
+                document.getElementById(ParentID).style.width = "0vw";
                 var position = ParentID.search(/_/);
                 var mainID = ParentID.substr(0, position);
-                document.getElementById(mainID).style.width = "99vw";
+                document.getElementById(mainID).style.width = "100vw";
+                */
             };
 
             document.getElementById(ParentID).appendChild(elem);
@@ -3059,31 +3061,27 @@ class Area {
 
     }
 
-    createMain(MainID, bgcolor) {
+    createMain(MainID, SubMenuID, bgcolor) {
         var elem1 = document.createElement("Main");
         elem1.id = MainID;
-        elem1.className = MainID;
+        elem1.className = SubMenuID;
         elem1.classList.add(bgcolor, "area", "areaMain");
-
-
         document.getElementById("Container").appendChild(elem1);
     }
 
-    createCtrl(CtrlID, bgcolor) {
+    createCtrl(CtrlID, MainID, bgcolor) {
         var elem2 = document.createElement("Ctrl");
         elem2.id = CtrlID;
-        elem2.className = CtrlID;
+        elem2.className = MainID;
         elem2.classList.add(bgcolor, "area", "areaCtrl");
-
-
         document.getElementById("Container").appendChild(elem2);
     }
 }
 
 
 
-/* --------------------- Klasse IconBtn ---------------------------------------- */
-class IconBtn {
+/* --------------------- Klasse BackBtn ---------------------------------------- */
+class BackBtn {
     constructor() {
         this.ID = "";
         this.color = "cyan";
@@ -3117,28 +3115,60 @@ class IconBtn {
         Bild.style.width = "40px";
         Bild.style.height = "40px";
         elem.onclick = function () {
-            // prüfen welches SubMenu aufgeklappt ist
-            var subs = document.getElementsByTagName("SubMenu");
-            var SubMenus = Array.from(subs);
-            SubMenus.forEach(function (element) {
-                var a = element.className;
-                var b = document.getElementsByClassName(a)[0].style.width;
-                if (b === "0.1vw") {
-                    document.getElementsByClassName(a)[0].style.width = "78vw";
-                    document.getElementsByClassName("MainMenu")[0].style.width = "22vw";
-                    // alle Main auf 0px verkleinern 
-                    var Main = document.getElementsByTagName("Main");
-                    var MainWindow = Array.from(Main);
-                    MainWindow.forEach(function (element) {
-                        var a = element.className;
+            //Class->MainMenu auf Breite prüfen -> Ja .> nichts machen
+            var MainMenu = document.getElementById("MainMenu").style.width;
+            var done = false;
+            if (MainMenu > "28vw") {
+                //MainMenu ist ausgeklappt
+                done = true;
+            }
+            if (!done) {
+                //prüfen ob ein SubMenu aufgeklappt ist und welches - Ja -> MainMenu aufklappen
+                var subs = document.getElementsByTagName("SubMenu");
+                var SubMenus = Array.from(subs);
+                SubMenus.forEach(function (element) {
+                    var a = element.className;
+                    var b = document.getElementsByClassName(a)[0].style.width;
+                    //das aufgeklappte SubMenu schliessen und das MainMenu voll aufklappen
+                    if (b === "78vw") {
                         document.getElementsByClassName(a)[0].style.width = "0px";
-                    });
-                }
-                if (b === "78vw") {
-                    document.getElementsByClassName(a)[0].style.width = "0px";
-                    document.getElementsByClassName("MainMenu")[0].style.width = "100vw";
-                }
-            });
+                        document.getElementsByClassName("MainMenu")[0].style.width = "100vw";
+                        done = true;
+                    }
+                });
+            }
+            if (!done) {
+                //prüfen ob eine class mit Tag Main aufgeklappt ist - Ja -> zugehöriges Submenu öffnen und MainMenu verkleinert öffnen
+                var mains = document.getElementsByTagName("Main");
+                var mainwin = Array.from(mains);
+                mainwin.forEach(function (element) {
+
+
+                    //das aufgeklappte SubMenu schliessen und das MainMenu voll aufklappen
+                    if (element.style.width === "100vw") {
+
+                        element.style.width = "0px";
+                        var submenu = element.classList[0];
+                        document.getElementsByClassName("MainMenu")[0].style.width = "22vw";
+                        document.getElementById(submenu).style.width = "78vw";
+                    }
+                });
+            }
+            if (!done) {
+                //prüfen od eine class mit Tag CTRL aufgeklappt ist - Ja -> bis Unterstrich ID kürzen und umschalten 
+                var ctrls = document.getElementsByTagName("CTRL");
+                var ctrlwin = Array.from(ctrls);
+                ctrlwin.forEach(function (element) {
+                    var mainwin = element.classList[0];
+
+                    //das aufgeklappte Ctrl schliessen und das MainWindow voll aufklappen
+                    if (element.style.width === "100vw") {
+                        element.style.width = "0px";
+                        document.getElementById(mainwin).style.width = "100vw";
+                        done = true;
+                    }
+                });
+            }
         }
         this.id1 = Bild;
         elem.append(Bild);
@@ -3437,7 +3467,7 @@ class FontCtrlButton {
                         document.getElementsByClassName(a)[0].style.width = "0px";
                     });
                     // ctrlWindow umschalten
-                    document.getElementsByClassName(ctrlWin)[0].style.width = "100vw";
+                    document.getElementById(ctrlWin).style.width = "100vw";
                 };
                 break;
             case "CtrlFunc":
