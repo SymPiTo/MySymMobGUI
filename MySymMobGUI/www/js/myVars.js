@@ -400,6 +400,7 @@
       if (document.getElementById("MainTV")) {
         btnTVPower.update(sym[76]);
         TvSendung.update(sym[98], 10000);
+        CtrlTvGuide.update(sym[99], 10000);
       }
 
       /* --------------------------- Heizung Wohnzimmer --------------------------- */
