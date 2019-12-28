@@ -2481,6 +2481,7 @@ class SetIframe {
         this.startDate = new Date();
         this.differenz = 0;
         this.bufferA = "";
+        this.buf = "";
     }
 
     create(ParentID, posTop, posLeft, sizeH, sizeW, color, source) {
@@ -2496,7 +2497,7 @@ class SetIframe {
         ifrm.srcdoc = "";
         ifrm.classList.add(color);
         this.ID = ifrm;
-        this.bufferA = new buffer("");
+        this.buf = new buffer("");
         document.getElementById(ParentID).appendChild(ifrm);
     }
 
@@ -2505,9 +2506,9 @@ class SetIframe {
         // var endDate = new Date();
         // this.differenz = (endDate.getTime() - this.startDate.getTime());
         //if (this.differenz > interval) {
-        var oldWert = this.bufferA.wert;
+        var oldWert = this.buf.wert;
         if (oldWert != urlstring) {
-            this.bufferA.wert = urlstring;
+            this.buf.wert = urlstring;
             this.ID.srcdoc = urlstring;
         }
 
@@ -3653,4 +3654,11 @@ class FontCtrlButton {
 
         document.getElementById(ParentID).appendChild(container);
     }
-};
+}
+
+/* --------------------- Klasse message Buffer ---------------------------------------- */
+class buffer {
+    constructor(wert) {
+        this.speicher = wert;
+    }
+}
