@@ -2480,6 +2480,7 @@ class SetIframe {
         this.ID = "";
         this.startDate = new Date();
         this.differenz = 0;
+        this.bufferA = "";
     }
 
     create(ParentID, posTop, posLeft, sizeH, sizeW, color, source) {
@@ -2495,7 +2496,7 @@ class SetIframe {
         ifrm.srcdoc = "";
         ifrm.classList.add(color);
         this.ID = ifrm;
-
+        this.bufferA = new buffer("");
         document.getElementById(ParentID).appendChild(ifrm);
     }
 
@@ -2504,7 +2505,12 @@ class SetIframe {
         // var endDate = new Date();
         // this.differenz = (endDate.getTime() - this.startDate.getTime());
         //if (this.differenz > interval) {
-        this.ID.srcdoc = urlstring;
+        var oldWert = this.bufferA.wert;
+        if (oldWert != urlstring) {
+            this.bufferA.wert = urlstring;
+            this.ID.srcdoc = urlstring;
+        }
+
         //   this.startDate = endDate;
         // }
     }
