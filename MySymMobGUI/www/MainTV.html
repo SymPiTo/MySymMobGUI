@@ -17,6 +17,15 @@
         "", "MainTV_Sender", "120px", "40px", "black", "19px", "white");
 
 
+    var FontBtnTVPrev = new FontButtonNew();
+    FontBtnTVPrev.create("MainTV", "fontbutton", "purple", "65vh", "20px", "fa fa-backward", "60px", "60px",
+        "send('func(STV_prevChannel, 44308)')");
+
+    var FontBtnTVNext = new FontButtonNew();
+    FontBtnTVNext.create("MainTV", "fontbutton", "purple", "65vh", "160px", "fa fa-forward", "60px", "60px",
+        "send('func(STV_nextChannel, 44308)')");
+
+
     var FontBtnTVVolDwn = new FontButtonNew();
     FontBtnTVVolDwn.create("MainTV", "fontbutton", "purple", "73vh", "20px", "fa fa-volume-down", "60px",
         "50px",
