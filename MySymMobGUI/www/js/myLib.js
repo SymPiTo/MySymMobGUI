@@ -2501,12 +2501,12 @@ class SetIframe {
 
     update(urlstring, interval) {
 
-        var endDate = new Date();
-        this.differenz = (endDate.getTime() - this.startDate.getTime());
-        if (this.differenz > interval) {
-            this.ID.srcdoc = urlstring;
-            this.startDate = endDate;
-        }
+        // var endDate = new Date();
+        // this.differenz = (endDate.getTime() - this.startDate.getTime());
+        //if (this.differenz > interval) {
+        this.ID.srcdoc = urlstring;
+        //   this.startDate = endDate;
+        // }
     }
 }
 
