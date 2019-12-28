@@ -7,7 +7,7 @@
     //-------------------------------------------------
 
     var TvSendung = new SetIframe();
-    TvSendung.create("MainTV", "2px", "2px", "225px", "345px", "blue", "");
+    TvSendung.create("MainTV", "2px", "2px", "225px", "343px", "blue", "");
 
     var RahmenTV = new Kachel();
     RahmenTV.create("MainTV", "280px", "15px", "330px", "95px", "transparent", "TV Control")
@@ -16,13 +16,16 @@
     btnTVStation.create("MainTV", "purple", "320px", "25px", "fa fa-podcast", "Sender", "ctrlWindow",
         "", "MainTV_Sender", "120px", "40px", "black", "19px", "white");
 
+    var btnTVGuide = new FontCtrlButton();
+    btnTVGuide.create("MainTV", "purple", "320px", "125px", "fa fa-podcast", "Guide", "ctrlWindow",
+        "", "MainTV_Guide", "120px", "40px", "black", "19px", "white");
 
     var FontBtnTVPrev = new FontButtonNew();
     FontBtnTVPrev.create("MainTV", "fontbutton", "purple", "400px", "20px", "fa fa-backward", "60px", "60px",
         "send('func(STV_prevChannel, 44308)')");
 
     var FontBtnTVNext = new FontButtonNew();
-    FontBtnTVNext.create("MainTV", "fontbutton", "purple", "350px", "160px", "fa fa-forward", "60px", "60px",
+    FontBtnTVNext.create("MainTV", "fontbutton", "purple", "400px", "160px", "fa fa-forward", "60px", "60px",
         "send('func(STV_nextChannel, 44308)')");
 
 
@@ -53,4 +56,14 @@
     //-------------------------------------------------
     var CtrlTVList = new DynIconList();
     CtrlTVList.create("MainTV_Sender", "TV");
+</script>
+<!-- ----------------------------------------------------------------------- -->
+<!--                        TV Guide                                         -->
+<!-- ----------------------------------------------------------------------- -->
+<script>
+    var CtrlMainTVGuide = new Area();
+    CtrlMainTVGuide.createCtrl("MainTV_Guide", "MainTV", "bgPurpleLight");
+    //-------------------------------------------------
+    var CtrlTVList = new DynIconList();
+    CtrlTVList.create("MainTV_Guide", "TV");
 </script>
