@@ -17,7 +17,7 @@
         "", "MainTV_Sender", "120px", "40px", "black", "19px", "white");
 
     var btnTVGuide = new FontCtrlButton();
-    btnTVGuide.create("MainTV", "purple", "320px", "125px", "fa fa-podcast", "Guide", "ctrlWindow",
+    btnTVGuide.create("MainTV", "purple", "320px", "175px", "fa fa-podcast", "Guide", "ctrlWindow",
         "", "MainTV_Guide", "120px", "40px", "black", "19px", "white");
 
     var FontBtnTVPrev = new FontButtonNew();
@@ -64,6 +64,6 @@
     var CtrlMainTVGuide = new Area();
     CtrlMainTVGuide.createCtrl("MainTV_Guide", "MainTV", "bgPurpleLight");
     //-------------------------------------------------
-    var CtrlTVList = new DynIconList();
-    CtrlTVList.create("MainTV_Guide", "TV");
+    var MainWinTVGuide = new Area();
+    MainWinTVGuide.createMain("MainTV_Guide", "MainTV", "bgPurple");
 </script>
