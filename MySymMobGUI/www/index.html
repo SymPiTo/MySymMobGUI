@@ -182,10 +182,16 @@
             <div id="TopTitle">
                 M Y I P S
             </div>
+            <div id="fehler" style="z-index: 6; text-align: right;   background-color: transparent">
+            </div>
         </div>
         <script>
             var Back = new BackBtn();
             Back.create("kopfleiste", "2vh", "80vw", back);
+            var h = window.screen.availHeight;
+            var b = window.screen.availWidth;
+            var bildschirm = h + " - " + b;
+            fehler(bildschirm);
         </script>
 
         <!-- ----------------------------------------------------------------------- -->
