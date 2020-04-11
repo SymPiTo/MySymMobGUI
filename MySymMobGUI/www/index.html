@@ -10,7 +10,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <script src="js/myLib.js"></script>
+    <script src="js/myLib-min.js"></script>
     <script src="js/myVars.js"></script>
     <script src="js/iconSet.js"></script>
     <script src="js/data.js"></script>
@@ -23,6 +23,10 @@
     <script type='text/javascript'>
         var socket;
         var symvar = [];
+        var initialisierung = true;
+
+        var ipsArray = [];
+        var ipsObj = new ipsbuffer(ipsArray);
 
         function init() {
             // var host = 'ws://ylgsiletvcrasj6i.myfritz.net:9000'; // SET THIS TO YOUR SERVER
@@ -68,10 +72,8 @@
                         updateIPSValue(ipsID, IPSValue);
                     } else {
                         ips = JSON.parse(jsontext);
-                        symvar = ips[0];
-
-                        var sym = checkUsedVars(ips);
-                        updateValues(sym);
+                        ipsObj.update(ips[0]);
+                        updateValues();
 
                     }
 
