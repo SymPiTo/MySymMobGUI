@@ -12,7 +12,7 @@
 
       }
       update(symvar) {
-        //objecte zusammenführen
+        //kopiert source Array zu target Array  bestehende Werte werden überschrieben, Neue werden ergänzt.
         const target = this.ips;
         const source = symvar;
         const returnedTarget = Object.assign(target, source);
